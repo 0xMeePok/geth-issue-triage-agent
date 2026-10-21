@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-duplicate"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here.\n"
+  }
+ ]
+}

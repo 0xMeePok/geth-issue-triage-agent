@@ -1,0 +1,1 @@
+{"tool": "add_labels", "arguments": {"item_number": 35819, "labels": [{"name": "type:feature", "confidence": "HIGH", "rationale": "Actionable request for a new per-address-family NAT/ENR option that pins IPv6 and omits IPv4 while keeping the current default. No type label is present."}]}, "accepted": true, "result": "Labels will be added to #35819: type:feature"}

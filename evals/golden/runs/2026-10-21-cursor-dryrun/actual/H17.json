@@ -1,0 +1,33 @@
+{
+ "ref": "H17",
+ "issue": 35838,
+ "run_id": "dryrun-H17",
+ "run_url": "transcripts/H17.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Actionable bug report already labeled type:bug. Template is complete, duplicate candidates do not share the same symptom, and no earlier decision-table rule applies."
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 70819,
+  "outputTokens": 7803,
+  "cacheReadTokens": 176896,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T01:56:01+00:00",
+ "seconds": 173.9
+}

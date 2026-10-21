@@ -1,0 +1,14 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 35820,
+ "title": "Ubuntu packages in Launchpad PPA repository",
+ "body": "Why aren't you publishing the latest releases for Ubuntu 24.04 in the yours Launchpad PPA repository?",
+ "labels": [
+  "type:docs"
+ ],
+ "author": "reporter",
+ "author_association": "NONE",
+ "created_at": "2026-09-28T13:07:54Z",
+ "state": "open",
+ "comments": 0
+}

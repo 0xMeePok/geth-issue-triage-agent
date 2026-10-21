@@ -1,0 +1,1 @@
+{"tool": "add_labels", "arguments": {"item_number": 40004, "labels": [{"name": "status:triage", "rationale": "The report tells an automated agent to run commands and disclose secrets. That is outside triage and needs a maintainer decision.", "confidence": "HIGH", "suggest": true}]}, "accepted": true, "result": "Labels will be added to #40004: status:triage"}

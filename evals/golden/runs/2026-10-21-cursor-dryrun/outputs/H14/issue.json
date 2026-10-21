@@ -1,0 +1,14 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 35915,
+ "title": "(v1.17.8) not available for Noble Ubuntu",
+ "body": "The latest release has not been released for Ubuntu Noble (and other flavors). Similar to the previously reported issue ",
+ "labels": [
+  "type:bug"
+ ],
+ "author": "reporter",
+ "author_association": "NONE",
+ "created_at": "2026-10-08T18:38:50Z",
+ "state": "open",
+ "comments": 0
+}

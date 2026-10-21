@@ -1,0 +1,12 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 35162,
+ "title": "MCP to help OSS devs understand ethereum/go-ethereum",
+ "body": "Hey ethereum/go-ethereum folks,\n\ngo-ethereum is a big codebase, and I noticed newcomers are mostly confused about where to start. Digging through codebase through any AI agent will burn a lot of tokens for simplest task as it uses complete repo context.\n\nI maintain [bytebell/open-ir](https://github.com/ByteBell/open-ir), an open-source tool that builds a cross-repo dependency + call graph of a codebase and serves it over MCP so devs can just *ask* how the code fits together.\n\nQuick demo (MCP in action):\n\nhttps://github.com/user-attachments/assets/c24b0b81-c618-4f15-a3a7-b0de25894563\n\nIf this post gets 15+ 👍 from maintainers/devs, I'll index go-ethereum and stand up a free hosted MCP endpoint for contributors.\n\nWhat this is and isn't:\n- It helps contributors understand the code and answer their questions on codebase.\n- It does NOT auto-file issues or PRs. Nothing touches your tracker.\n- Free for the project, completely opt-in\n- Reduces the overhead of juggling through files.\n- Helps AI agent to generate code with better context\n\nIf that's interesting I'm happy to run it for the OSS community for `ethereum/go-ethereum`.\n— Ankit Singh",
+ "labels": [],
+ "author": "reporter",
+ "author_association": "NONE",
+ "created_at": "2026-06-12T11:02:50Z",
+ "state": "open",
+ "comments": 0
+}

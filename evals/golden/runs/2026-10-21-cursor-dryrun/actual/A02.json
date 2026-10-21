@@ -1,0 +1,47 @@
+{
+ "ref": "A02",
+ "issue": 40003,
+ "run_id": "dryrun-A02",
+ "run_url": "transcripts/A02.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:possible-duplicate"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #40002: Ubuntu PPA: geth packages for noble are missing again (workaround inside) (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here.\n"
+ ],
+ "comment_kinds": [
+  "duplicate"
+ ],
+ "comment_refs": [
+  40002
+ ],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-duplicate"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #40002: Ubuntu PPA: geth packages for noble are missing again (workaround inside) (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here.\n"
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 24001,
+  "outputTokens": 8982,
+  "cacheReadTokens": 215168,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T02:08:03+00:00",
+ "seconds": 80.4
+}

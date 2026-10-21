@@ -1,0 +1,33 @@
+{
+ "ref": "H02",
+ "issue": 35649,
+ "run_id": "dryrun-H02",
+ "run_url": "transcripts/H02.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Issue #35649 is an actionable bug report about a logic race in core/txpool/legacypool and already has the correct type:bug label. Duplicate candidates are weak and describe different components or symptoms, and the report already includes a commit, reproduction, and logs."
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 73845,
+  "outputTokens": 5912,
+  "cacheReadTokens": 138368,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T01:45:09+00:00",
+ "seconds": 57.7
+}

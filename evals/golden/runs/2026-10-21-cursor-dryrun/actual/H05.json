@@ -1,0 +1,37 @@
+{
+ "ref": "H05",
+ "issue": 35819,
+ "run_id": "dryrun-H05",
+ "run_url": "transcripts/H05.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "type:feature"
+ ],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "type:feature"
+   ]
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 14624,
+  "outputTokens": 6547,
+  "cacheReadTokens": 166016,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T01:53:43+00:00",
+ "seconds": 62.2
+}

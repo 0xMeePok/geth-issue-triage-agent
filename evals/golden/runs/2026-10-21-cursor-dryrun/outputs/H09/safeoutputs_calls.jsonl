@@ -1,0 +1,1 @@
+{"tool": "add_labels", "arguments": {"item_number": 35703, "labels": [{"name": "triage:possible-spam", "rationale": "Untouched bug template with a one-word title that is not a technical description of a geth defect.", "confidence": "HIGH"}]}, "accepted": true, "result": "Labels will be added to #35703: triage:possible-spam"}

@@ -1,0 +1,48 @@
+{
+ "ref": "H13",
+ "issue": 35820,
+ "run_id": "dryrun-H13",
+ "run_url": "transcripts/H13.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:possible-duplicate"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (open)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here."
+ ],
+ "comment_kinds": [
+  "duplicate"
+ ],
+ "comment_refs": [
+  35435,
+  35774
+ ],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-duplicate"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (open)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here."
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 22355,
+  "outputTokens": 8208,
+  "cacheReadTokens": 268672,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T01:54:46+00:00",
+ "seconds": 75.5
+}

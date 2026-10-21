@@ -1,0 +1,47 @@
+{
+ "ref": "H07",
+ "issue": 35808,
+ "run_id": "dryrun-H07",
+ "run_url": "transcripts/H07.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:security-report",
+  "type:bug"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report. If this describes a security vulnerability, please do not add exploit details here: go-ethereum handles vulnerabilities privately through the Ethereum Foundation bug bounty at https://bounty.ethereum.org (or bounty@ethereum.org), as described in `SECURITY.md`. A maintainer has been flagged to review this issue.\n"
+ ],
+ "comment_kinds": [
+  "security"
+ ],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report. If this describes a security vulnerability, please do not add exploit details here: go-ethereum handles vulnerabilities privately through the Ethereum Foundation bug bounty at https://bounty.ethereum.org (or bounty@ethereum.org), as described in `SECURITY.md`. A maintainer has been flagged to review this issue.\n"
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 39410,
+  "outputTokens": 5584,
+  "cacheReadTokens": 170240,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T01:52:42+00:00",
+ "seconds": 61.8
+}

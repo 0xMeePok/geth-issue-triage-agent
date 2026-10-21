@@ -1,0 +1,40 @@
+{
+ "ref": "H14",
+ "issue": 35915,
+ "run_id": "dryrun-H14",
+ "run_url": "transcripts/H14.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [
+  "**Automated triage note**\n\nFor reference, an earlier issue reported something similar:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (closed)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (closed)\n\nLinking it in case the history helps the maintainers.\n"
+ ],
+ "comment_kinds": [
+  "related"
+ ],
+ "comment_refs": [
+  35435,
+  35774
+ ],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nFor reference, an earlier issue reported something similar:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (closed)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (closed)\n\nLinking it in case the history helps the maintainers.\n"
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 66230,
+  "outputTokens": 12830,
+  "cacheReadTokens": 278400,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T02:05:17+00:00",
+ "seconds": 134.7
+}

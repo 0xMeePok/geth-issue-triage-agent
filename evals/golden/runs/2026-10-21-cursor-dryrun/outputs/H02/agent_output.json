@@ -1,0 +1,8 @@
+{
+ "items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Issue #35649 is an actionable bug report about a logic race in core/txpool/legacypool and already has the correct type:bug label. Duplicate candidates are weak and describe different components or symptoms, and the report already includes a commit, reproduction, and logs."
+  }
+ ]
+}

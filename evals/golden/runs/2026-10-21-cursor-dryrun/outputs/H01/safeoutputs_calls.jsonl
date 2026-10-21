@@ -1,0 +1,1 @@
+{"tool": "noop", "arguments": {"message": "No action: rule 9. Issue #35565 is an actionable build-failure report (Go 1.27 compile errors in a dependency, with a compiler log) and already has the correct type:bug label. Duplicate scores are weak and do not describe the same symptom."}, "accepted": true, "result": "No-op recorded"}
