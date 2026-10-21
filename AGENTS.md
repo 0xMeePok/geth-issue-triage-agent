@@ -100,3 +100,86 @@ Examples:
 - `trie/archiver: streaming subtree archival to fix OOM`
 
 Use the top-level package paths, comma-separated if multiple areas are affected. Only mention the directories with functional changes, interface changes that trickle all over the codebase should not generate an exhaustive list. The description should be a short, lowercase summary of the change.
+
+---
+
+The sections below were added for the sandbox triage agent. Everything above is
+go-ethereum's own `AGENTS.md` at snapshot `7a73ffe`, unchanged. Procedures belong in
+`.claude/skills/`, and hard limits in the workflow's permissions and safe outputs, not here.
+
+## Project structure
+
+| Path | What lives there |
+|---|---|
+| `cmd/` | executables: `geth` (the client), `clef` (signer), `evm` (incl. `t8n`), `devp2p`, `abigen`, `blsync`, `era`, `keeper`, `utils` (CLI flags) |
+| `core/` | chain import (`blockchain*.go`), state transition, `vm/`, `state/`, `txpool/` (`legacypool`, `blobpool`), `types/` (incl. `bal/` block access lists), `rawdb/`, `filtermaps/` (log index) |
+| `eth/` | the `eth` service: `downloader/`, `syncer/`, `fetcher/`, `filters/` (logs and subscriptions), `catalyst/` (Engine API), `tracers/`, `gasprice/` |
+| `internal/ethapi/` | most JSON-RPC methods (`eth_call`, `eth_simulateV1`, `eth_estimateGas`, overrides) |
+| `node/`, `rpc/` | node lifecycle and HTTP, WebSocket and IPC endpoints, plus the RPC framework |
+| `p2p/` | devp2p networking, discovery v4/v5, ENR, NAT, dialing |
+| `triedb/`, `trie/`, `ethdb/` | state storage (`pathdb`, `hashdb`), Merkle tries, LevelDB/Pebble backends |
+| `beacon/` | light client (`blsync`), Engine API types |
+| `accounts/`, `crypto/`, `signer/` | wallets, `abi/` and `abigen`, cryptography (`bn256`, `kzg4844`, `secp256k1`) |
+| `params/`, `version/` | chain configs and forks; the current version is in `version/version.go` |
+| `build/` | `ci.go` (build, test, lint, release packaging including the Ubuntu PPA) |
+| `docs/` | audit reports and postmortems only (user docs live at geth.ethereum.org) |
+| `.github/ISSUE_TEMPLATE/` | the three issue templates described below |
+
+## Build and test
+
+Use the checklist above: `make all`, `go run ./build/ci.go test -short`, then the full
+`go run ./build/ci.go test`, `lint`, `check_generate` and `check_baddeps`. Go version: see
+`go.mod`. The triage scripts are plain Python 3 (standard library only):
+
+```sh
+python3 -m unittest discover -s .claude/skills/geth-issue-triage/tests
+```
+
+In this sandbox the `testdata/` fixture directories were removed, so fixture-based Go tests
+fail. The triage agent never builds or tests anything.
+
+## Issue tracker facts
+
+- **Templates** (`.github/ISSUE_TEMPLATE/`). `bug.md` auto-applies `type:bug` and asks for the
+  Geth version, CL client, OS, commit, expected and actual behaviour, steps and a backtrace.
+  `feature.md` auto-applies `type:feature` (Rationale and Implementation). `question.md`
+  auto-applies `type:docs` and tells people to ask general questions on Discord or Stack
+  Exchange. About 45% of issues skip the templates and arrive with no label.
+- **Labels in use**: `type:bug`, `type:feature`, `type:docs`, `status:triage` (maintainer decision
+  needed), `need more information`, plus area labels (`rpc`, `snap sync`, `amsterdam`, ...)
+  that maintainers set by hand. `slop` marks low-effort AI-generated content and is
+  maintainer-only.
+- **Agent labels** (sandbox addition, all prefixed `triage:`): `triage:possible-duplicate`,
+  `triage:support-question`, `triage:possible-spam`, `triage:security-report`. These are
+  suggestions only. `triage-agent:halt` is the maintainer kill switch. The full list with
+  colours is `.claude/skills/geth-issue-triage/references/labels.json`.
+- **Bot config drift**: `.github/no-response.yml` expects the label `need:more-information`,
+  but the label that exists is `need more information`, and `stale.yml` uses
+  `status:inactive`, which does not exist. Neither bot acts today, so nothing auto-closes
+  issues.
+- **Support channels**: Discord `https://discord.gg/nthXNEv`, Ethereum Stack Exchange
+  `https://ethereum.stackexchange.com`, docs `https://geth.ethereum.org/docs`.
+- **Security**: `SECURITY.md` says vulnerabilities must not be reported in public issues. They
+  go to `https://bounty.ethereum.org` or `bounty@ethereum.org`. The Engine API is
+  authenticated and trusted, and maintainers decide what counts as a vulnerability.
+- **Releases and packages**: GitHub releases, `https://geth.ethereum.org/downloads`, the
+  Launchpad PPA `ppa:ethereum/ethereum` (built by `build/ci.go`) and Docker
+  `ethereum/client-go`. Missing packages for one distribution are a recurring report.
+- **Code owners**: the upstream map of maintainers per directory is preserved in
+  `.claude/skills/geth-issue-triage/references/upstream-codeowners.txt`. Never @mention them.
+- **Vendored code**: `crypto/bn256/cloudflare` and `crypto/secp256k1/libsecp256k1` are
+  upstream copies, so bugs there belong to those projects first.
+
+## Forbidden changes
+
+These rules apply to every agent and contributor tool:
+
+- Do not modify `.github/workflows/**` (including `*.lock.yml`, which only `gh aw compile`
+  produces), `AGENTS.md`, `.claude/**`, `CONTRIBUTING.md`, `.github/CODEOWNERS`,
+  `SECURITY.md`, `go.mod`, `go.sum` or `build/ci.go` without a maintainer-reviewed pull
+  request. `.github/CODEOWNERS` enforces the review.
+- Do not add, remove or update dependencies, commit binaries, or force-push.
+- The triage agent changes no files at all. It runs read-only, writes only through the
+  workflow's safe outputs (labels and one comment on the triggering issue), and must never
+  close, lock, assign, transfer or delete issues or merge anything. The workflow grants no
+  tool for any of these.

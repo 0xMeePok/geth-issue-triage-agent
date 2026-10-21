@@ -1,3 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.sol linguist-language=Solidity
+
+.github/workflows/*.lock.yml linguist-generated=true
+# gh-aw compiled workflows are generated; review the .md source and recompile instead of editing
+.github/workflows/*.lock.yml linguist-generated=true merge=ours

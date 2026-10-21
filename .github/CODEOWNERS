@@ -1,34 +1,16 @@
-# Lines starting with '#' are comments.
-# Each line is a file pattern followed by one or more owners.
+# Sandbox CODEOWNERS. The upstream go-ethereum map of maintainers per directory is kept as
+# data for the triage skill in .claude/skills/geth-issue-triage/references/upstream-codeowners.txt
+# (upstream maintainers have no access to this sandbox, so they cannot be listed here).
+#
+# Every file that configures or constrains the triage agent needs a code-owner review.
+# In a real deployment these lines would name the go-ethereum triage maintainers.
 
-accounts/usbwallet/             @gballet
-accounts/scwallet/              @gballet
-accounts/abi/                   @gballet @MariusVanDerWijden
-beacon/engine/                  @MariusVanDerWijden @lightclient @fjl
-beacon/light/                   @zsfelfoldi
-beacon/merkle/                  @zsfelfoldi 
-beacon/types/                   @zsfelfoldi @fjl
-beacon/params/                  @zsfelfoldi @fjl
-cmd/evm/                        @MariusVanDerWijden @lightclient
-cmd/keeper/                     @gballet
-core/state/                     @rjl493456442
-crypto/                         @gballet @jwasinger @fjl
-core/                           @rjl493456442
-eth/                            @rjl493456442
-eth/catalyst/                   @MariusVanDerWijden @lightclient @fjl @jwasinger
-eth/tracers/                    @s1na
-ethclient/                      @fjl
-ethdb/                          @rjl493456442
-event/                          @fjl
-trie/                           @rjl493456442 @gballet
-triedb/                         @rjl493456442
-core/tracing/                   @s1na
-graphql/                        @s1na
-internal/ethapi/                @fjl @s1na @lightclient
-internal/era/                   @lightclient
-miner/                          @MariusVanDerWijden @fjl @rjl493456442
-node/                           @fjl
-p2p/                            @fjl @zsfelfoldi
-rlp/                            @fjl
-params/                         @fjl @gballet @rjl493456442 @zsfelfoldi
-rpc/                            @fjl
+.github/workflows/      @0xMeePok
+.github/CODEOWNERS      @0xMeePok
+.github/ISSUE_TEMPLATE/ @0xMeePok
+.claude/                @0xMeePok
+AGENTS.md               @0xMeePok
+CONTRIBUTING.md         @0xMeePok
+.github/CONTRIBUTING.md @0xMeePok
+DESIGN.md               @0xMeePok
+evals/                  @0xMeePok

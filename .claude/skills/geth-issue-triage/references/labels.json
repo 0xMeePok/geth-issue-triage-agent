@@ -1,0 +1,27 @@
+{
+  "_comment": "Label policy used by validate_labels.py. 'agent' labels mirror safe-outputs.add-labels.allowed in .github/workflows/issue-triage.md; the workflow allowlist is the hard limit, this file is the procedural check. Existing upstream labels keep their upstream colour.",
+  "agent": {
+    "type:bug": {"group": "type", "color": "d73a4a", "description": "Something is not working as expected", "upstream": true},
+    "type:feature": {"group": "type", "color": "a2eeef", "description": "New feature or request", "upstream": true},
+    "type:docs": {"group": "type", "color": "0075ca", "description": "Documentation or a question that may improve the docs", "upstream": true},
+    "need more information": {"group": "status", "color": "fbca04", "description": "Reporter must add details before a maintainer can act", "upstream": true},
+    "status:triage": {"group": "status", "color": "d4c5f9", "description": "Needs a maintainer decision", "upstream": true},
+    "triage:possible-duplicate": {"group": "triage", "color": "cfd3d7", "description": "Bot suggestion: may duplicate an earlier issue (maintainer confirms)", "upstream": false},
+    "triage:support-question": {"group": "triage", "color": "c5def5", "description": "Bot suggestion: usage/support question, better asked on Discord or Stack Exchange", "upstream": false},
+    "triage:possible-spam": {"group": "triage", "color": "000000", "description": "Bot suggestion: spam, scam, phishing, promotion or an untouched template", "upstream": false},
+    "triage:security-report": {"group": "triage", "color": "b60205", "description": "Bot suggestion: may describe a vulnerability; see SECURITY.md", "upstream": false}
+  },
+  "human_only": {
+    "triage-agent:halt": {"color": "e11d21", "description": "KILL SWITCH: while any open issue has this label the triage agent does not run or write"},
+    "slop": {"description": "Maintainer judgement about low-effort AI content; never applied by the bot"},
+    "good first issue": {"description": "Maintainer judgement"},
+    "help wanted": {"description": "Maintainer judgement"},
+    "status:on-hold": {"description": "Maintainer judgement"}
+  },
+  "rules": {
+    "max_labels_per_issue_run": 3,
+    "one_per_group": ["type", "triage"],
+    "exclusive": ["triage:possible-spam"],
+    "never_add_type_if_present": true
+  }
+}
