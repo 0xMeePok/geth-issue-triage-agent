@@ -58,8 +58,11 @@ concurrency:
 timeout-minutes: 10
 max-turns: 30
 max-tool-calls: 40
-max-ai-credits: 50
-max-daily-ai-credits: 600
+# Sized from the dry run: 13-52 AI credits per run at xAI list prices (mean about 25).
+# 80 per run leaves headroom over the most expensive case; 1200 per day covers ~48 runs,
+# i.e. the 300-issues-a-week scenario (about 43 a day) without lifting the cap.
+max-ai-credits: 80
+max-daily-ai-credits: 1200
 
 network:
   allowed:
