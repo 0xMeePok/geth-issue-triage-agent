@@ -1,0 +1,35 @@
+{
+ "id": "H16",
+ "recorded": "2026-10-21, after freezing the skill at 2d68dac and before any agent run; ground_truth.json not read",
+ "rule": "8",
+ "preferred": {
+  "labels": [
+   "type:bug"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ],
+   "comment": "security"
+  }
+ ],
+ "extra_labels_allowed": [
+  "status:triage"
+ ],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:possible-duplicate",
+   "triage:support-question",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Unlabelled, code-level abigen v2 bug with file/line references. A security flag is a conservative alternative because the report notes that any contract can emit such a log.",
+ "ground_truth": "see ground_truth.json (read only after scoring)"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "H17",
+ "recorded": "2026-10-21, after freezing the skill at 2d68dac and before any agent run; ground_truth.json not read",
+ "rule": "9",
+ "preferred": {
+  "labels": [],
+  "comment": null
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:possible-duplicate",
+   "triage:support-question",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Complete eth_call/Amsterdam bug report with commit, steps and numbers; already labelled type:bug.",
+ "ground_truth": "see ground_truth.json (read only after scoring)"
+}
