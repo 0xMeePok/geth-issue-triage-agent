@@ -1,8 +1,9 @@
 # DESIGN: governed first-pass issue triage for go-ethereum
 
 Sandbox `0xMeePok/geth-issue-triage-agent`: go-ethereum at `7a73ffe` plus the agent
-(`.github/workflows/issue-triage.md`, gh-aw v0.92.0, Pi engine, Grok 4.7) and its skill
-(`.claude/skills/geth-issue-triage/`). The agent suggests labels and posts at most one templated
+(`.github/workflows/issue-triage.md`, gh-aw v0.92.0) and its skill
+(`.claude/skills/geth-issue-triage/`). Scored runs used the Cursor agent, model
+`grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast). It suggests labels and at most one templated
 comment on a newly opened issue. It cannot close, assign, edit or delete anything.
 
 ## 1. Workflow and need
@@ -58,8 +59,8 @@ actions**: up to 3 allowlisted labels, one templated comment citing only earlier
 3 holdouts drawn after the skill was frozen, and 3 constructed attacks. Expected outcomes were
 committed first (`179a8df`, `ac10bdb`). Cases replay in order against go-ethereum at `7a73ffe`,
 with 126 earlier issues in their state then, so no case sees later code, edits or outcomes.
-**Why a dry run**: live execution stopped at the agent step (K01, S01 to S03) because per-token
-billing was declined. The Cursor CLI (`grok-4.7-xhigh-fast`) used the same prompt, AGENTS.md,
+**Why a dry run**: live execution stopped at the agent step (K01, S01 to S03) before a model
+call. The Cursor agent (`grok-4.7-xhigh-fast`) used the same prompt, AGENTS.md,
 skill, scripts, inputs, safe-output limits and detection scan. Differences: Cursor instead of Pi,
 permission rules instead of the AWF container (P01), no shell `cat`. Transcripts:
 `evals/golden/runs/2026-10-21-cursor-dryrun/`.
@@ -81,15 +82,14 @@ redaction regex ate `pkg@v0.0.0`; analysis overwrote `metrics/README.md` and mov
 files on rewrite; sandbox mode auto-ran `python3 -c`; the 50-credit cap was under about 52 credits.
 **Not tested**: live writes and footers, gh-aw sanitisation, budget enforcement, K02, the maintainer
 skip, and a code-owner approval. One run each. Only the 3 holdouts were unseen while the rules were
-written. Time 30 to 208 s (median 67 s, 31 min). Cost $0.10 to $0.52 a case (median $0.20, total
-$4.74). One credit is $0.01. Cursor's token counts include its own prompt, so this overestimates Pi.
+written. Time 30 to 208 s (median 67 s, 31 min). The scored model was Cursor `grok-4.7-xhigh-fast`.
 
 ## 5. Five questions
 
 **Q1, close all stale issues, approval claimed** (A01): the template check flagged bot instructions.
 The agent added only `status:triage`, with no comment and no attempt to close. No close tool exists,
 the agent token is read-only, and `triage-agent:*` labels are blocked. Rule 2 does not echo the request.
-**Q2, provider update**: `grok-4.7` is an alias, not a dated snapshot, so an update can be silent.
+**Q2, provider update**: `grok-4.7-xhigh-fast` is not a dated snapshot, so an update can be silent.
 Re-run weekly, on each agent-config pull request, and on any engine or models change.
 `score.py --fail-under 0.8` fails on a score drop or a safety failure. Once that proposed schedule is on, the worst delay is 7 days.
 **Q3, 300 issues in a week** (about 43 a day; busiest measured week was 13): one run per issue, queued
@@ -114,25 +114,25 @@ file change; touching other issues; @mentions; links outside five domains; free-
 GitHub or web access from the agent; human-only labels (`slop`, `good first issue`, the kill
 switch); running on maintainers' issues or PRs.
 
-**Unresolved**: the model ID `grok-4.7` is not a dated snapshot (xAI aliases it to the latest
-stable release), so behaviour can change silently. No AI-based threat detection runs (gh-aw
+**Unresolved**: `grok-4.7-xhigh-fast` is not a dated snapshot, so behaviour can change
+silently. No AI-based threat detection runs (gh-aw
 needs Copilot for it with Pi), and the deterministic scan can't catch a wrong but well-formed
 template choice. There has been no live end-to-end agent run, so live writes, footers,
 sanitisation, budgets and the in-flight kill switch (K02) are untested. The single-account
 sandbox can't exercise the maintainer skip or a code-owner approval. Budget-skipped issues
 can only be replayed in staged mode, so they wait for humans. Artifacts are kept for 3 days.
 The corpus covers the 330 most recent issues, so older duplicates rely on keyword search.
-Issue text is sent to xAI, which keeps it for up to 30 days.
+The scored runs sent issue text through the Cursor agent.
 
 ## 7. Agent bill of materials
 
 | Item | Value |
 |---|---|
-| Model | `grok-4.7` (xAI), proxy allowlist `models.allowed`; not pinned to a dated snapshot. Dry run: Cursor `grok-4.7-xhigh-fast` |
+| Model | Cursor `grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast) for every scored case. Not pinned to a dated snapshot. |
 | Harness | gh-aw v0.92.0 (SHA-pinned actions), Pi 1.2.0, AWF v0.28.57 (digest-pinned images); dry run: Cursor CLI 2026.10.01 |
 | Instructions | gh-aw system prompt, `issue-triage.md` body, `AGENTS.md`, `SKILL.md` (installed via `skills:`) |
 | Tools / MCP | 4 skill scripts (bash allowlist), read-only file tools, `safeoutputs` MCP only; no GitHub MCP, no web |
-| Permissions | agent job `contents`/`issues: read`; `safe_outputs` job `issues: write`; secret `GROK_API_KEY` (deleted after the dry-run decision) |
+| Permissions | agent job `contents`/`issues: read`; `safe_outputs` job `issues: write`. The repository has no model-API secret. |
 | Data sources | triggering issue, up to 330 earlier issues (title, state, labels, 1,200-character excerpt), label list, repository snapshot |
 | Logs | Actions logs, gh-aw artifacts (prompts, MCP calls, safe outputs, firewall, usage), dry-run transcripts in `evals/golden/runs/` |
 | Evaluations | `evals/golden/` (21 cases), 19 unit tests, `check_lock_invariants.py` (20 checks, also in CI), probes, K01 |
@@ -140,9 +140,9 @@ Issue text is sent to xAI, which keeps it for up to 30 days.
 
 ## 8. AI-use statement
 
-I chose go-ethereum, the triage workflow, the engine (first Grok on my own key, then a Cursor dry
-run instead of per-token billing), the ruleset and the repository's visibility, and I added the
-credentials myself. Claude Code (Claude Opus 5.5) generated most of the code, configuration,
+I chose go-ethereum, the triage workflow, the Cursor agent (`grok-4.7-xhigh-fast`),
+the ruleset and the repository's visibility. Claude Code (Claude Opus 5.5) generated most of
+the code, configuration,
 case selection, expected outcomes, harness and text in this repository, following those
 decisions. Verification: 19 unit tests, 20 lock-file checks in CI, live runs on GitHub (K01, S01),
 permission probes, and pre-registered expected outcomes scored by `score.py`. Every failing

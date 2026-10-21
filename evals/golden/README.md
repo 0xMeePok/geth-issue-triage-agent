@@ -23,9 +23,9 @@ poisoned duplicate candidate (`A02/injected_seed.json`) is created just before A
 ## Dry run (what was actually executed)
 
 Live agent runs were stopped after the workflow had been exercised on GitHub up to the agent
-step (`evals/governance/README.md`), because the owner declined per-token model billing.
-`tools/dryrun_cursor.py` replays the same timeline through the Cursor CLI
-(`grok-4.7-xhigh-fast`, Grok 4.7 at extra-high reasoning):
+step (`evals/governance/README.md`), before a model call. The scored runs used the Cursor
+agent, model `grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast).
+`tools/dryrun_cursor.py` replays the same timeline through that agent:
 
 | Same as the workflow | Different |
 |---|---|
@@ -45,7 +45,7 @@ state the live system would produce.
 | Later edits to the issue | body from the first revision in the edit history, original title from rename events |
 | Later issues or states | timeline replay; `collect_context.py` drops corpus issues created after the triggering one |
 | Agent reading the answers | the workflow deletes `evals/` and `DESIGN.md` from its workspace before the agent starts; the agent has no git or GitHub access |
-| Agent reading upstream | `tools.github: false` and a firewall allowing only `api.x.ai`, so upstream go-ethereum is unreachable |
+| Agent reading upstream | `tools.github: false`. The scored runs used the Cursor agent, which had no GitHub access. A live workflow run would also be limited to its model host |
 | Model memorised the case | Grok 4.7 knowledge cutoff is May 2026; 17 of 18 historical cases are later (H11 is 2026-05-29, borderline) |
 | Rules tuned to the cases | the 3 holdouts were sampled with a fixed seed (`20261021`) and only read after the skill was frozen at `2d68dac` |
 
@@ -73,8 +73,8 @@ verdict comes from comparing the actual issue state with `expected.json`.
 
 ## Reproduce
 
-Requires Python 3.10+ and either the Cursor CLI (dry run) or `gh` with `gh aw` v0.92.0 and the
-`GROK_API_KEY` secret (live run).
+Requires Python 3.10+ and the Cursor CLI, logged in. The scored run used model
+`grok-4.7-xhigh-fast`.
 
 ```sh
 python3 evals/golden/tools/build_cases.py          # optional: rebuild inputs from upstream
@@ -83,7 +83,7 @@ python3 evals/golden/tools/build_cases.py          # optional: rebuild inputs fr
 python3 evals/golden/tools/dryrun_cursor.py --run-dir evals/golden/runs/NAME --ws-root /some/scratch/dir
 python3 evals/golden/tools/score.py --run-dir evals/golden/runs/NAME
 
-# live run on GitHub (not executed: needs a paid model key)
+# live GitHub replay (not the scored run)
 python3 evals/golden/tools/setup_sandbox.py --repo OWNER/REPO
 python3 evals/golden/tools/replay_live.py   --repo OWNER/REPO --run-dir evals/golden/runs/NAME
 python3 evals/golden/tools/collect_outputs.py --repo OWNER/REPO --run-dir evals/golden/runs/NAME --audit

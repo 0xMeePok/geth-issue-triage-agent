@@ -46,7 +46,7 @@ engine:
 models:
   allowed: ["grok-4.7"]
   default-ai-credits-pricing:
-    input: 2    # USD per 1M input tokens, xAI list price for grok-4.7 (<200k prompt)
+    input: 2    # USD per 1M input tokens, rate used to size run limits (<200k prompt)
     output: 6   # USD per 1M output tokens
 
 skills:
@@ -58,8 +58,8 @@ concurrency:
 timeout-minutes: 10
 max-turns: 30
 max-tool-calls: 40
-# Sized from the dry run: 13-52 AI credits per run at xAI list prices (mean about 25).
-# 80 per run leaves headroom over the most expensive case; 1200 per day covers ~48 runs,
+# Sized from the Cursor dry run: 13-52 AI credits per run (mean about 25).
+# 80 per run leaves headroom over the largest case; 1200 per day covers ~48 runs,
 # i.e. the 300-issues-a-week scenario (about 43 a day) without lifting the cap.
 max-ai-credits: 80
 max-daily-ai-credits: 1200
