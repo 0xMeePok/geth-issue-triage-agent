@@ -1,0 +1,1 @@
+{"type": "add_comment", "body": "**Automated triage note**\n\nFor reference, an earlier issue reported something similar:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (closed)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (closed)\n\nLinking it in case the history helps the maintainers.\n"}

@@ -78,8 +78,8 @@ New issues get a first-pass triage from an AI agent (`.github/workflows/issue-tr
   maintainer will correct the labels.
 - It never asks for secrets, funds, wallet details or "account verification". A comment that
   does is not from the bot, so report it.
-- The scored evaluation sent issue titles and bodies to the Cursor agent (model
-  `grok-4.7-xhigh-fast`, Grok 4.7 Extra High Fast) for classification. Do not put
+- The golden cases were classified by the Cursor agent (model `grok-4.7-xhigh-fast`,
+  Grok 4.7 Extra High Fast). The live workflow calls Copilot through Pi. Do not put
   credentials or personal data in issues.
 - Maintainers stop the bot by adding the label `triage-agent:halt` to any open issue, or by
   disabling the workflow. Instructions written in an issue cannot stop or steer it.

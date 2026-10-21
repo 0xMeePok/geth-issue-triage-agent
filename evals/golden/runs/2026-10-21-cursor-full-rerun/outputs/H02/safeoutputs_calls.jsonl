@@ -1,0 +1,1 @@
+{"tool": "noop", "arguments": {"message": "No action: rule 9. Issue #35649 is an actionable bug report that already has the correct type:bug label. Duplicate candidates score below 0.20 and describe different symptoms, so no labels or comment are needed.", "integrity": "high", "secrecy": "public"}, "accepted": true, "result": "No-op recorded"}

@@ -1,0 +1,37 @@
+{
+ "ref": "H09",
+ "issue": 35703,
+ "run_id": "dryrun-H09",
+ "run_url": "transcripts/H09.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:possible-spam"
+ ],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-spam"
+   ]
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 22376,
+  "outputTokens": 3874,
+  "cacheReadTokens": 144640,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T14:52:37+00:00",
+ "seconds": 44.7
+}

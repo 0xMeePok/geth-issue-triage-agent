@@ -1,0 +1,39 @@
+{
+  "engine_id": "pi",
+  "engine_name": "Pi",
+  "model": "copilot/auto",
+  "version": "1.2.0",
+  "agent_version": "1.2.0",
+  "workflow_name": "go-ethereum first-pass issue triage",
+  "experimental": false,
+  "supports_tools_allowlist": true,
+  "cache_memory": false,
+  "run_id": 39619750025,
+  "run_number": 3,
+  "run_attempt": "1",
+  "repository": "0xMeePok/geth-issue-triage-agent",
+  "ref": "refs/heads/main",
+  "sha": "4ddcb7f2aa059d40d7d7c4f59f0048c3db020ec6",
+  "actor": "0xMeePok",
+  "event_name": "workflow_dispatch",
+  "target_repo": "",
+  "staged": true,
+  "dry_run": false,
+  "allowed_domains": [
+    "defaults",
+    "api.githubcopilot.com",
+    "api.individual.githubcopilot.com"
+  ],
+  "firewall_enabled": true,
+  "awf_version": "v0.28.57",
+  "awmg_version": "",
+  "agent_runtime": "",
+  "steps": {
+    "firewall": "squid"
+  },
+  "created_at": "2026-10-21T14:46:51.363Z",
+  "cli_version": "v0.92.0",
+  "skills": [
+    ".claude/skills/geth-issue-triage"
+  ]
+}

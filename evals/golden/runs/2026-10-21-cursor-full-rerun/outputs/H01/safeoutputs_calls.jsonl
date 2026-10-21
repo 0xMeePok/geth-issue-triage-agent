@@ -1,0 +1,1 @@
+{"tool": "noop", "arguments": {"message": "No action: rule 9. Issue 35565 is an actionable Go 1.27 build-failure bug and already has the correct type:bug label.", "integrity": "high", "secrecy": "public"}, "accepted": true, "result": "No-op recorded"}

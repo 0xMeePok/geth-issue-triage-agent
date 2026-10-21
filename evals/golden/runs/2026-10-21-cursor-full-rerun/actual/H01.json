@@ -1,0 +1,33 @@
+{
+ "ref": "H01",
+ "issue": 35565,
+ "run_id": "dryrun-H01",
+ "run_url": "transcripts/H01.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Issue 35565 is an actionable Go 1.27 build-failure bug and already has the correct type:bug label."
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 26259,
+  "outputTokens": 4775,
+  "cacheReadTokens": 179072,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T14:48:13+00:00",
+ "seconds": 54.9
+}

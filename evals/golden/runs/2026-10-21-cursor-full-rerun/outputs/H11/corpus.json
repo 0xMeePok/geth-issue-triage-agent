@@ -1,0 +1,523 @@
+{
+ "generated_for": 35071,
+ "search_terms": [
+  "lighthouse",
+  "private",
+  "pos",
+  "chain",
+  "never",
+  "becomes"
+ ],
+ "issues": [
+  {
+   "number": 35039,
+   "title": "error code is same in rpc error",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:docs"
+   ],
+   "created_at": "2026-05-23T15:53:12Z",
+   "closed_at": null,
+   "body_excerpt": "https://github.com/ethereum/go-ethereum/blob/6f08c2f3f1b97f0f7d80ce67fca7992c2b2cb0f8/rpc/errors.go#L63-L65\n\nthese three code is same, should it be difference or not.\n"
+  },
+  {
+   "number": 35033,
+   "title": "graphql: limit request body size",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-05-22T20:44:19Z",
+   "closed_at": "2026-05-27T10:53:36Z",
+   "body_excerpt": "## Problem\n\nThe GraphQL HTTP handler decodes request bodies directly:\n\n```go\njson.NewDecoder(r.Body).Decode(&params)\n```\n\nThe GraphQL schema has a max query depth limit, but there does not appear to be an explicit cap on the HTTP request body before JSON decoding. This means very large request bodies, including large variables payloads, are handled differently from the JSON-RPC HTTP path.\n\nThe JSON-RPC server already has request body limiting machinery via `defaultBodyLimit = 5 * 1024 * 1024`, `SetHTTPBodyLimit`, content-length validation, and `io.LimitReader`. GraphQL is registered separately through the node HTTP mux and wrapped with the generic HTTP handler stack, so that RPC body limit does not apply to `/graphql` requests.\n\n## Expected behavior\n\nGraphQL should enforce an explicit request body size limit, ideally aligned with the existing JSON-RPC HTTP default limit unless there is a reason to use a different value.\n\n## Suggested fix\n\nWrap the GraphQL request body before decoding, for example with `http.MaxBytesReader`, and return `413 Request Entity Too Large` when the limit is exceeded.\n\nA minimal patch would likely live in `graphql/service.go`, with regression coverage for a"
+  },
+  {
+   "number": 35018,
+   "title": "beacon/engine: nil blob proof lists encode as empty arrays",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-05-20T22:51:36Z",
+   "closed_at": "2026-05-21T07:56:17Z",
+   "body_excerpt": "## Problem\n\nThe hand-written JSON marshalers for `BlobAndProofListV1` and `BlobAndProofListV2` always emit a JSON array. When the list is nil, this encodes as `[]`.\n\nFor `engine_getBlobsV2`, the missing-blob path returns a nil `BlobAndProofListV2`, and the API comments state that clients must return `null` when any requested blob is missing or has an older version. The current custom marshaler changes that wire result from `null` to `[]`.\n\n## Expected behavior\n\nNil blob proof lists should preserve the standard nil-slice JSON behavior and encode as `null`.\n\n## Reproduction\n\n```go\nvar result engine.BlobAndProofListV2\nenc, _ := json.Marshal(result)\nfmt.Println(string(enc))\n```\n\nCurrent output:\n\n```text\n[]\n```\n\nExpected output:\n\n```text\nnull\n```\n\n## Suggested fix\n\nReturn `[]byte(\"null\")` from the V1 and V2 custom marshalers when the receiver is nil, and add regression coverage for JSON encoding of nil blob proof lists and the `GetBlobsV2` missing-blob path."
+  },
+  {
+   "number": 34984,
+   "title": "b50a18c8f3d3ce87dea027a979df88998755fd915669ad86b7967477cb29d9e2",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:feature"
+   ],
+   "created_at": "2026-05-16T02:09:02Z",
+   "closed_at": "2026-05-18T06:12:02Z",
+   "body_excerpt": "# Rationale\n\nWhy should this feature exist?\nWhat are the use-cases?\n\n# Implementation\n\nDo you have ideas regarding the implementation of this feature?\nAre you willing to implement this feature?"
+  },
+  {
+   "number": 34983,
+   "title": "Data race in core/txpool/locals (go-ethereum) — journal.writer concurrent read/write",
+   "state": "open",
+   "state_reason": null,
+   "labels": [],
+   "created_at": "2026-05-15T18:20:34Z",
+   "closed_at": null,
+   "body_excerpt": "## Summary\n`journal.writer` field is accessed concurrently without synchronization in\n`core/txpool/locals`, confirmed by Go race detector with 8 WARNING: DATA RACE.\n\n## Affected Component\n- Repository: `github.com/ethereum/go-ethereum`\n- Commit: `8a0223e` (HEAD/master)\n- Files: `core/txpool/locals/journal.go`, `core/txpool/locals/tx_tracker.go`\n\n## Race Condition\n\n**Writer goroutine** — `loop()` → `setupWriter()` (tx_tracker.go:200):\n```go\njournal.writer = sink  // journal.go:134 — unsynchronized WRITE\n```\n\n**Reader goroutine** — `TrackAll()` → `insert()` (tx_tracker.go:111):\n```go\nif journal.writer == nil {  // journal.go:141 — unsynchronized READ\n    return errNoActiveJournal\n}\nrlp.Encode(journal.writer, tx)  // journal.go:144 — unsynchronized READ\n```\n\n`TrackAll()` acquires `tracker.mu` but `journal` has no internal mutex.\n`loop()` calls `setupWriter()` without holding any lock.\n\n## Reproduction\n```bash\ngo test -race ./core/txpool/locals/... -timeout 60s\n```\nOutput: 8x WARNING: DATA RACE, FAIL TestJournal\n\n## Impact\n- Concurrent write to `journal.writer` while another goroutine reads it\n- Can cause crash or data corruption in local transaction journal\n- Affects nodes using local"
+  },
+  {
+   "number": 34944,
+   "title": "core/txpool/blobpool: data loss in limbo.update on setAndIndex failure",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-05-12T05:12:16Z",
+   "closed_at": null,
+   "body_excerpt": "## Bug Report\n### Summary\n`limbo.update()` in `core/txpool/blobpool/limbo.go` performs a delete-before-write\noperation: `getAndDrop()` removes the blob entry from the persistent store (billy)\nand in-memory indices before `setAndIndex()` attempts to re-insert it with a new\nblock number. If `setAndIndex()` fails, the blob sidecar is permanently lost.\n### Affected file\n`core/txpool/blobpool/limbo.go`, function `func (l *limbo) update(txhash common.Hash, block uint64)`\n### The code (current HEAD)\n```go\nitem, err := l.getAndDrop(id)      // deletes from store, index, groups\nif err != nil { return }\nif err := l.setAndIndex(item.Tx, block); err != nil {\n    log.Error(...)                 // data already gone — no recovery path\n    return\n}\nContext: where is the data?\nWhen update() is called, the blob transaction is already in limbo — not in blobpool.\nThe lifecycle is:\n1. Tx included in block → recheck() → offload() → limbo.push(tx, block) →\n   blobpool removes tx from its store, lookup, and eviction queue\n2. At this point the tx exists only in limbo\n3. Reorg occurs → update() is called to change the block number\nEIP-4844 blob sidecars are not stored in chain state. After offload, limbo is"
+  },
+  {
+   "number": 34913,
+   "title": "Mohamed",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-05-09T07:44:47Z",
+   "closed_at": "2026-05-09T16:04:36Z",
+   "body_excerpt": "#### System information\n\nGeth version: `geth version`\nCL client & version: e.g. lighthouse/nimbus/prysm@v1.0.0\nOS & Version: Windows/Linux/OSX\nCommit hash : (if `develop`)\n\n#### Expected behaviour\n\n\n#### Actual behaviour\n\n\n#### Steps to reproduce the behaviour\n\n\n#### Backtrace\n\n````\n[backtrace]\n````\n\nWhen submitting logs: please submit them as text and not screenshots.\n"
+  },
+  {
+   "number": 34907,
+   "title": "9568811785470964",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-05-08T12:46:10Z",
+   "closed_at": "2026-05-08T17:37:32Z",
+   "body_excerpt": ""
+  },
+  {
+   "number": 34893,
+   "title": "Getting into ethereum development is way too hard, the barrier is insane(1TB harddisk)",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:docs"
+   ],
+   "created_at": "2026-05-07T01:45:10Z",
+   "closed_at": "2026-05-07T14:17:25Z",
+   "body_excerpt": "any way to improve?"
+  },
+  {
+   "number": 34881,
+   "title": "p2p/discover: Deadlock in Table when `discv5` iterator is in `waitForNodes` during `doRefresh.loadSeedNode`",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-05-05T19:58:41Z",
+   "closed_at": "2026-05-08T09:33:21Z",
+   "body_excerpt": "#### System information\n\n**Geth version (as a library, not the binary):** `v1.16.5` (No issue with `v1.16.4`)\n**CL client & version:** Prysm v7.1.3 (using actually `github.com/ethereum/go-ethereum v1.17.2` in `go.mod`, but the issue is already present in `v1.16.5`\n\nParent Prysm issue:\n- https://github.com/OffchainLabs/prysm/issues/16755\n\n**OS & Version:** Linux/OSX (not tested on Windows, but probably the same)\n\nPrysm does:\n```go\n// Create an discovery iterator to find new peers.\niterator := s.dv5Listener.RandomNodes()\n\n// `iterator.Next` can block indefinitely. `iterator.Close` unblocks it.\n// So it is important to close the iterator when the context is done to ensure\n// that the search does not hang indefinitely.\ngo func() {\n\t<-ctx.Done()\n\titerator.Close()\n}()\n\n...\nfor missingPeerCount > 0 && iterator.Next() {\n\t...\n}\n```\n\n**Symptom**\n\nAfter a brief external network outage, a discv5 user that drives `RandomNodes()` to find peers stops returning peers entirely. New iterators created via `RandomNodes()` block forever inside `Next()`. Calling `iterator.Close()` does not unblock `Next()`.\n\nThis is reproducible by:\n1. Running a beacon node (Prysm in our case) that uses `RandomNodes()` "
+  },
+  {
+   "number": 34877,
+   "title": "Flakey test on windows amd64",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-05-05T09:21:24Z",
+   "closed_at": null,
+   "body_excerpt": "-- FAIL: TestServerWebsocketReadLimit (0.07s)\n    --- FAIL: TestServerWebsocketReadLimit/limit_with_large_request_-_should_fail (0.02s)\n        server_test.go:279: unexpected error for read limit violation: read tcp 127.0.0.1:56703->127.0.0.1:56700: wsarecv: An existing connection was forcibly closed by the remote host.\nFAIL\nFAIL\tgithub.com/ethereum/go-ethereum/rpc\t13.971s\n\nhttps://github.com/ethereum/go-ethereum/actions/runs/25364841576/job/74378334589"
+  },
+  {
+   "number": 34865,
+   "title": "Cantap.eth",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:feature"
+   ],
+   "created_at": "2026-05-02T22:11:21Z",
+   "closed_at": "2026-05-03T13:35:55Z",
+   "body_excerpt": "[https___www.loo-2.txt](https://github.com/user-attachments/files/27309113/https___www.loo-2.txt)\n\n# Rationale\n\nWhy should this feature exist?\nWhat are the use-cases?\n\n# Implementation\n\nDo you have ideas regarding the implementation of this feature?\nAre you willing to implement this feature?"
+  },
+  {
+   "number": 34853,
+   "title": "snap: GetTrieNodes accepts invalid compact-encoded paths instead of rejecting them",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-30T05:01:24Z",
+   "closed_at": null,
+   "body_excerpt": "System information\n\n  Geth version: latest\n  CL client & version: N/A\n  OS & Version: N/A\n  Commit hash: N/A\n\n  Expected behaviour\n\n  When a peer sends a GetTrieNodes request containing a compact-encoded path longer than 33 bytes, the server should reject or skip it, or even disconnect the peer because it sent a malformed message. A compact-encoded path of 33 bytes represents the maximum trie depth of 64 nibbles (Keccak256 = 32 bytes = 64 nibbles). Any path exceeding 33 bytes is structurally invalid, it cannot address a node in any Ethereum state trie.\n\n  Actual behaviour\n\n  In ServiceGetTrieNodesQuery (eth/protocols/snap/handlers.go), path bytes are passed directly to accTrie.GetNode(accKey), which calls compactToHex(path) (trie/encoding.go) and traverses the trie  without validating the path length. Since no trie node exists at such a depth, geth returns an empty node keccak256(\"\")).\n\n  This has two consequences:\n\n  1. Resource waste: compactToHex allocates a nibble slice of 2*len(path)+1 bytes for every path, then the trie is traversed with this oversized key. A malicious peer could send many requests with  large paths (up to the 10 MB message limit) to amplify memory allocation"
+  },
+  {
+   "number": 34838,
+   "title": "CVE-2026-22862: KZG/ECIES dos-fixes not present on release/1.15",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-27T15:46:25Z",
+   "closed_at": "2026-04-29T16:53:37Z",
+   "body_excerpt": "While auditing `crypto/ecies/ecies.go` and `eth/fetcher/tx_fetcher.go` on `release/1.15`, the dos-fixes merge `abeb78c647e354ed922726a1d719ac7bc64a07e2` (CVE-2026-22862) doesn't appear to have made it onto this branch.\n\nTwo pieces are missing here:\n\n1. **ECIES bound check** (`crypto/ecies/ecies.go`): the original `len(c) < (rLen + hLen + 1)` is still in place; upstream tightens it to `len(c) < (rLen + hLen + params.BlockSize)` so the ciphertext can hold at least one block.\n2. **KZG-violation handling** (`eth/fetcher/tx_fetcher.go` + `core/txpool/errors.go`): `release/1.15` doesn't define `ErrKZGVerificationError`, and the `txDelivery.violation` field plus the per-batch break-on-violation path aren't there. Without that, a peer that fails KZG verification keeps having the rest of its batch processed.\n\nOn `release/1.15` HEAD, `grep ErrKZGVerificationError` returns nothing across `core/txpool/`, and `tx_fetcher.go` only mentions `violation` in two unrelated comments — no field, no break.\n\nOpening this so it's tracked. Drop me a note if 1.15 isn't getting these DoS fixes and I'll close.\n\n— vulgraph"
+  },
+  {
+   "number": 34836,
+   "title": "eth_getLogs significantly slower on Geth compared to Reth for the same query",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-27T14:45:48Z",
+   "closed_at": null,
+   "body_excerpt": "#### System information\n\nGeth version: `1.17.2-stable-be4dc0c4`\nCL client & version: e.g. `lighthouse` `v8.1.2-3deab9b`\nOS & Version: Linux:\n```\nUbuntu 24.04.4 LTS\n6.8.0-110-generic #110-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 15:09:20 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux\n```\n#### Expected behaviour\nGood afternoon Geth team,\n\nI am observing that the same `eth_getLogs` request is significantly slower on Geth compared to Reth. In my tests, Geth takes around 5–6.6 seconds, while Reth returns the same query in around 0.76–1.04 seconds.\n\nI understand that different clients may have different internal indexing and log filtering implementations, so I do not necessarily expect identical performance. However, the difference seems quite large, so I would like to understand whether this is expected for Geth or whether there is a known configuration/performance tuning option that could improve this.\n\n#### Actual behaviour\nThe same eth_getLogs query is around 5–10x slower on Geth than on Reth.\nResults:\nGeth node 1\n\nHardware:\n\nVM with 16 CPU cores\nHypervisor CPU: Intel Xeon Gold 5412U\nRAM: 40 GB\nSSD: Samsung MZQL27T6HBLA-00A07\n```\nDNS: 0.000023\nConnect: 0.000137\nTTFB: 6.652341\nTotal: 6.657787\n`"
+  },
+  {
+   "number": 34835,
+   "title": "CVE-2026-22862: ECIES bound check fix not on release/1.14",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-27T14:25:50Z",
+   "closed_at": "2026-04-29T16:57:45Z",
+   "body_excerpt": "**CVE-2026-22862** landed on `release/1.16` via the `dos-fixes` merge (`abeb78c`). It bundles three things, but only one is relevant here on `release/1.14`:\n\n- `crypto/ecies/ecies.go` — the ECIES `Decrypt` length check was tightened from `len(c) < (rLen + hLen + 1)` to `len(c) < (rLen + hLen + params.BlockSize)`.\n- The KZG/blob-sidecar pieces (`core/txpool/validation.go`, `eth/fetcher/tx_fetcher.go`) don't apply pre-Cancun, so I'm setting them aside for this branch.\n\nCurrent state on `release/1.14`:\n\n```go\n// crypto/ecies/ecies.go (around line 293)\ncase 2, 3, 4:\n    rLen = (prv.PublicKey.Curve.Params().BitSize + 7) / 4\n    if len(c) < (rLen + hLen + 1) {\n        return nil, ErrInvalidMessage\n    }\n```\n\nThat's the pre-fix bound. Just opening this so it's tracked — happy to close if `release/1.14` is no longer being patched.\n\nvulgraph"
+  },
+  {
+   "number": 34830,
+   "title": "📌 { LIGHT CLIENT ROADMAP }",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-27T08:12:02Z",
+   "closed_at": "2026-04-27T08:16:56Z",
+   "body_excerpt": "These issues are supposed to help track the progress of the PoS ultralight client project and discuss its proposed roadmap: 👇\n\n- [Light client roadmap](upstream issues 28499)\n\nThanks for read this type"
+  },
+  {
+   "number": 34829,
+   "title": "📌 LIGHT CLIENT ROADMAP",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-27T08:07:46Z",
+   "closed_at": "2026-04-27T08:08:12Z",
+   "body_excerpt": "These issues are supposed to help track the progress of the PoS ultralight client project and discuss its proposed roadmap: 👇\n\n- [Light client roadmap](upstream issues 28499)"
+  },
+  {
+   "number": 34826,
+   "title": "How to protect my geth-teku node? Particularly from Eclipse Attacks",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:docs"
+   ],
+   "created_at": "2026-04-25T13:11:47Z",
+   "closed_at": null,
+   "body_excerpt": "I'm running a geth-teku stack and wanted to know some good security practices.\n\nRight now, we have done some hardening of the geth.service and our exposure rating is bellow 2 and the RPC API is behind a nginx with TLS.\n\nWhat else should I do?\n\nParticularly, I wanted to know about **Eclipse attacks**, how can we detect them? How can we prevent/stop them? How serious of a threat they actually are?"
+  },
+  {
+   "number": 34805,
+   "title": "Fund",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-23T11:28:39Z",
+   "closed_at": "2026-04-23T11:28:58Z",
+   "body_excerpt": "Please add funds "
+  },
+  {
+   "number": 34796,
+   "title": "[CRITICAL] GP5 vs XDPoSChain v2.6.8: 4 consensus-critical divergences identified",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-22T17:24:22Z",
+   "closed_at": "2026-04-22T17:24:31Z",
+   "body_excerpt": "# GP5 Fork vs XDPoSChain v2.6.8: Critical Consensus Divergences\n\n## Summary\n\nComprehensive line-by-line comparison between official XinFin **XDPoSChain v2.6.8** and our **GP5 xdc-network** fork reveals **4 CRITICAL**, **5 HIGH**, **4 MEDIUM**, and **3 LOW** severity divergences. Several are consensus-critical and could cause forks, state root mismatches, or security vulnerabilities.\n\n**Full Report:** See `RESEARCH_V2_6_8_COMPARISON.md` (1,124 lines, 44KB) in this repo for complete file-by-file analysis.\n\n---\n\n## CRITICAL Issues (Must Fix Before Mainnet)\n\n### 1. `yourturn` Leader Index Calculation Wrong\n- **v2.6.8:** `round % Epoch % len(masterNodes)`\n- **Our fork:** `round % len(masternodes)` (missing `Epoch` mod!)\n- **Impact:** For round ≥ 900, produces **different block proposers** → consensus fork\n- **Example:** Epoch=900, len=52, round=1000:\n  - v2.6.8: `1000 % 900 % 52 = 48`\n  - Our fork: `1000 % 52 = 12`\n\n### 2. `yourturn` Missing Epoch Switch Detection\n- **v2.6.8:** Calls `calcMasternodes()` at epoch switches; `GetMasternodes()` otherwise\n- **Our fork:** Always uses `snap.NextEpochCandidates` — never recomputes penalties at epoch boundaries\n- **Impact:** Epoch switch blocks "
+  },
+  {
+   "number": 34775,
+   "title": "PBSS diskRoot stuck at genesis — crash-resume and snapshot restore fail",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-21T02:44:41Z",
+   "closed_at": "2026-04-21T02:44:57Z",
+   "body_excerpt": "## Summary\n\nIn every snapshot restore and crash-resume test, the PBSS `diskRoot` remains stuck at its genesis value. The node cannot find a valid checkpoint snapshot during walk-back, causing:\n- \"snapshot walk-back exceeded safe limit without finding a checkpoint snapshot\"\n- \"Failed to load snapshot: head doesn't match snapshot\"\n- Sync resume failure after restart\n\n## Test Evidence\n\n### Crash-Resume Test (v39, prod @ ~32.2M)\n| Metric | Value |\n|--------|-------|\n| Pre-crash block | 32,214,369 |\n| Post-crash block | 32,214,625 |\n| Delta | +256 blocks (no rewind!) |\n| Last P1 checkpoint | 32,213,700 |\n| Peers after restart | 1 |\n\nLog: `ERROR snapshot walk-back exceeded safe limit without finding a checkpoint snapshot`\n\n### Cold Snapshot Restore Test (v39, prod @ 4.9M)\n| Metric | Value |\n|--------|-------|\n| Snapshot block | 4,905,223 |\n| Restore block | 4,905,223 ✅ |\n| diskRoot | `8e3faa..1c160f` ❌ |\n| headerRoot | `1c31bc..e7155d` ❌ |\n| Snapshot walk-back | `Exceeded 2M limit` ❌ |\n| Sync resume | FAILED ❌ |\n\n## Root Cause Analysis (Suspected)\n\nIn `core/blockchain.go` `writeBlockWithState()` (line ~1856):\n\n```go\nif bc.triedb.Scheme() == rawdb.PathScheme {\n    return nil  // <-- retur"
+  },
+  {
+   "number": 34759,
+   "title": "trie/bintrie: flag-byte serialization for stem padding (follow-up to #34055)",
+   "state": "open",
+   "state_reason": null,
+   "labels": [],
+   "created_at": "2026-04-18T16:11:56Z",
+   "closed_at": null,
+   "body_excerpt": "In [PR #34055 review comment 3101638279](upstream pull 34055#discussion_r3101638279), @​gballet suggested on \\`trie/bintrie/store_commit.go:157\\` (stem-node serialization):\n\n> might be worth putting some flag in the first byte instead of storing 0s. That should save a lot of disk, even though the compression code should also take care of that I guess.\n\nTracked as a follow-up because it's a wire-format change that shouldn't be conflated with the current arena / refactor PR:\n\n- Changing the stem-encoding byte layout is backward-incompatible with existing bintrie blobs on disk.\n- Needs a versioning story (explicit format flag or on-open migration).\n- Orthogonal to the \\`NodeStore\\` unexport / representation-revert work in #34055.\n\nScope here:\n1. Define the flag-byte encoding (which bits mean what, how empty slots are distinguished from present-but-zero).\n2. Bump a format version so existing DBs can be detected at open and either migrated or rejected cleanly.\n3. Measure the actual disk-size delta vs. the compressed baseline — gballet's own hedge (\"the compression code should also take care of that I guess\") means the win may be marginal post-compression.\n4. Implement + benchmark + land"
+  },
+  {
+   "number": 34744,
+   "title": "Error in block freeze operation  err=\"canonical hash missing, can't freeze block",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-17T07:00:37Z",
+   "closed_at": null,
+   "body_excerpt": "#### System information\n\nGeth version: Version: 1.17.2-stable\nCL client & version: Prysm version is v7.1.3.\nOS & Version: Linux\n\n#### Expected behaviour\nGeth should get the missing hash and freeze the block\n\n#### Actual behaviour\nGeth throws error (see below) and the beacon chain validator dies after a while. \n\n#### Steps to reproduce the behaviour\nAround two weeks ago, might be related to the upgrade of geth to version 1.17.2-stable i started to see the ERROR you can see in belows backtrace. after discord consultation i ran a geth removedb (including ancientdir), after re-syncing i stumbled into the same problem again, the effect of this error is that after ~24h the prysm validator client dies with a \"Context exceeded\" error, only workaround currently is to restart geth every 24h. \n\n#### Backtrace/Logs\n\n````\nApr 15 18:18:09 blckchain geth[827839]: ERROR[04-15|18:18:09.338] Chain view: block hash unavailable       number=24,874,886 head=24,886,358\nApr 15 18:18:09 blckchain geth[827839]: ERROR[04-15|18:18:09.338] Log index head rendering failed, reverting to unindexed mode error=\"failed to advance log iterator at 24852735241 while rendering map 379222: receipts not found for block 2"
+  },
+  {
+   "number": 34711,
+   "title": "freezer: incorrect fsync ordering in freezerTable.truncateTail",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-04-12T16:16:35Z",
+   "closed_at": "2026-04-17T11:45:05Z",
+   "body_excerpt": "The `freezerTable.truncateTail` method uses `copyFrom` to truncate the index file. The sequence of operations is as follows:\n1. a temporary file is created\n2. data is copied into it from the existing index file\n3. a rename is performed\n4. the directory is fsync-ed (to persist the rename)\n5. the new index file is fsync-ed\n\nHowever, there is a time window that can leave the index in an inconsistent state. Although there is a recovery mechanism for the index, this scenario can still lead to unnecessary data loss.\n\nThe problematic window is between the fsync of the directory (after the rename) and the fsync of the new index file. If a crash occurs at that point (e.g., due to power loss), the following can happen:\n- the directory fsync ensures that the rename is durable (i.e., the index filename now points to the inode of the new index file),\n- but the contents of that new index file may be empty or partially written, since the file itself was not fsync-ed.\n\nWhat should be done instead is the same approach already used in the `reset` function (`core/rawdb/freezer_utils.go`). There, the ordering is correct: data is first written to a temporary file, then that file is fsync-ed, and only a"
+  },
+  {
+   "number": 34709,
+   "title": "triedb/pathdb: bintrie flat state has no reverse-diff support for reorgs",
+   "state": "open",
+   "state_reason": null,
+   "labels": [],
+   "created_at": "2026-04-12T14:24:11Z",
+   "closed_at": null,
+   "body_excerpt": "## Summary\n\nThe bintrie flat state implementation (`stemData` / per-stem KV storage in `triedb/pathdb`) has no reverse-diff representation in `history_state.go`. When a bintrie block is reverted (reorg, sidechain winner), the reverse diff only contains MPT-shaped `accountOrigin` / `storageOrigin` entries — there is no mechanism to roll back the corresponding stem entries in the bintrie flat state. The bintrie flat state and the actual state root silently diverge after any revert.\n"
+  },
+  {
+   "number": 34708,
+   "title": "trie/bintrie: InternalNode is not goroutine-safe; concurrent storage updates race on shared trie",
+   "state": "open",
+   "state_reason": null,
+   "labels": [],
+   "created_at": "2026-04-12T14:24:05Z",
+   "closed_at": null,
+   "body_excerpt": "## Summary\n\n`trie/bintrie.InternalNode.InsertValuesAtStem` mutates `bt.left`, `bt.right`, and `bt.mustRecompute` without synchronization. When `core/state.IntermediateRoot` parallelizes per-account `updateTrie()` calls via errgroup and the underlying hasher wraps a single shared `*BinaryTrie` (EIP-7864 unified layout), multiple goroutines call `BinaryTrie.UpdateStorage` concurrently on the same internal nodes — producing a data race.\n\n## Current state on master\n\nMaster's `IntermediateRoot` has an `if s.db.TrieDB().IsVerkle()` bypass that serializes all bintrie storage updates in a single sequential loop. This prevents the race today.\n\nHowever, the bypass is a runtime workaround — `InternalNode` itself has no documentation or compile-time guard marking it as goroutine-unsafe. Any future refactor that drops or restructures the bypass (as happened on the `bintrie-flat-state` feature branch during a hasher-routed refactor in #34706 ) silently reintroduces the race.\n\n## Race trace (observed on `bintrie-flat-state` where the bypass was accidentally dropped)\n\n```\nWARNING: DATA RACE\nRead at 0x... by goroutine 58:\n  trie/bintrie.(*InternalNode).InsertValuesAtStem()\n      trie/bintrie/intern"
+  },
+  {
+   "number": 34705,
+   "title": "Add a `GetABI()` method to abigen v2 or expose `abi` as `ABI`.",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:feature"
+   ],
+   "created_at": "2026-04-11T19:18:27Z",
+   "closed_at": null,
+   "body_excerpt": "# Rationale\n\nThe current implementation requires that:\n1. either the generated binds share a package with their users; or that\n2. users call `ParseABI()` themselves to access the abi.\n\nHaving `abi` exposed as `ABI` or a `GetABI()` method would simplify client code.\n\nHere is a section of the documentation on ethereum website showing direct `abi` access during `Storage` construction in a way that other packages are not allowed to do (`abi` accessible).\n```\n\t...\n\t// create a BoundContract instance to interact with the pending contract\n\tstorageABI, _ := StorageMetaData.ParseABI()\n\tcontract := Storage{*storageABI}\n\tinstance := contract.Instance(conn, address)\n\t...\n```\nref. https://geth.ethereum.org/docs/developers/dapp-developer/native-bindings-v2\n\nWhy should this feature exist?\n\nBetter ergonomics. Make the API simpler to use.\n\nWhat are the use-cases?\n\nSimplify ABI access. For instance when filling the topics for a filter query with multiple contracts.\nHere is a hypothetical call whith it implemented.\n```\n\tcontractA := ContractA.NewContractA()\n\tcontractB := ContractB.NewContractB()\n\n\tfq := ethereum.FilterQuery{\n\t\tTopics: [][]common.Hash{\n\t\t\tcontractA.GetABI().Events[ContractA.ContractAF"
+  },
+  {
+   "number": 34692,
+   "title": "node: HTTP vhost validation rejects mixed-case Host headers",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-09T13:41:09Z",
+   "closed_at": "2026-05-18T02:37:13Z",
+   "body_excerpt": "#### System information\n\nCL client & version: N/A\nOS & Version: macOS 26.4 (`Darwin 25.4.0 arm64`)\nCommit hash : `58557cb4635d4e6f3e49fcdc82a6469554e929a6`\n\n#### Expected behaviour\n\nHTTP virtual host validation should treat hostnames case-insensitively.\n\nIf `test` is present in the configured vhost allowlist, requests with `Host: test`,\n`Host: TEST`, or `Host: TeSt:1234` should all be accepted.\n\n#### Actual behaviour\n\nThe configured vhost allowlist is normalized to lowercase, but the incoming HTTP\n`Host` header is compared without lowercasing it first.\n\nAs a result, a request with a mixed-case hostname such as `Host: TeSt:1234` is\nrejected with:\n\n```text\nHTTP/1.1 403 Forbidden\ninvalid host specified\n```\n\nThis is a user-facing RPC issue because hostname matching is expected to be\ncase-insensitive.\n\n#### Steps to reproduce the behaviour\n\n1. Start geth with HTTP RPC enabled and a lowercase vhost allowlist entry, for example:\n\n```sh\ngeth --http --http.addr 127.0.0.1 --http.port 8545 --http.api web3 --http.vhosts test\n```\n\n2. Send a JSON-RPC request with a mixed-case `Host` header:\n\n```sh\ncurl -i \\\n  -H 'Host: TeSt:1234' \\\n  -H 'Content-Type: application/json' \\\n  --data '{\"jsonrpc\":\"2."
+  },
+  {
+   "number": 34648,
+   "title": "debug_traceTransaction returns wrong data for unauthorizations of EIP-7702",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-03T10:38:23Z",
+   "closed_at": "2026-04-16T08:51:28Z",
+   "body_excerpt": "#### System information\n\nGeth version: `1.17.1` (archive mode)\nCL client & version: Maru (Linea mainnet)\nOS & Version: Linux\nCommit hash : (if `develop`)\n\n#### Expected behaviour\n\nAs stated in https://geth.ethereum.org/docs/developers/evm-tracing/built-in-tracers#prestate-tracer-config point 4:\n\n> The post object is more selective - it only contains the specific fields that were actually modified during the transaction. For example, if only the storage was modified, post will not include unchanged fields like nonce, balance, or code.\n\nWhen an EIP-7702 deauthorization occurs (authorization to `address(0)`), the account's code is cleared — it transitions from `0xef0100 || <delegate>` to empty code. Per [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702):\n\n> If address is `0x0000000000000000000000000000000000000000`, do not write the delegation indicator. Clear the account's code by resetting the account's code hash to the empty code hash `0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470`.\n\nSince `code` and `codeHash` are modified by the transaction, the `post` object should reflect their new values:\n\n```json\n\"pre\": {\n    \"0x7ec0e5a95169d31d6fa7d44e3308872e090c5bd1\":"
+  },
+  {
+   "number": 34646,
+   "title": "eth/filters: return -32602 for block range limit exceeded error",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-03T10:32:31Z",
+   "closed_at": "2026-04-08T10:57:32Z",
+   "body_excerpt": "geth 1.17.2\n\n#### Description\n\nThe eth_getLogs endpoint returns a -32000 (server error) when the requested block range exceeds the configured limit. This is inconsistent with:\n\n - Other parameter validation errors in the same package (e.g. invalid block range params, invalid topic(s)), which already return -32602 (invalid params).\n - Reth, which returns -32602 for the same condition.\n\nProposed change: return -32602 for the block range limit error, in line with the rest of the parameter validation errors in eth/filters and with other client implementations."
+  },
+  {
+   "number": 34632,
+   "title": "geth 1.17.2 does not build on FreeBSD",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-04-01T19:22:19Z",
+   "closed_at": "2026-04-23T08:43:44Z",
+   "body_excerpt": "#### System information\n\nGeth version: commit be4dc0c4be2fe316dbdd0a73e48421f64978232f (HEAD, tag: v1.17.2, origin/release/1.17)\nOS & Version: FreeBSD 15.0-p4\n\n#### Expected behaviour\n`gmake geth` should build geth (this worked for v1.17.1 and previous versions.)\n\n#### Actual behaviour\n```\n$ gmake geth\ngo run build/ci.go install ./cmd/geth\n>>> /usr/local/go126/bin/go build -ldflags \"--buildid=none -X github.com/ethereum/go-ethereum/internal/version.gitCommit=be4dc0c4be2fe316dbdd0a73e48421f64978232f -X github.com/ethereum/go-ethereum/internal/version.gitDate=20260330\" -tags urfave_cli_no_docs,ckzg -trimpath -v -o /home/build/box/go-ethereum/build/bin/geth ./cmd/geth\n# github.com/karalabe/hid\n../../go/pkg/mod/github.com/karalabe/hid@v1.0.1-0.20260315100226-f5d04adeffeb/hid_enabled.go:69:11: fatal error: 'hidapi/hidapi.h' file not found\n   69 |         #include <hidapi/hidapi.h>\n      |                  ^~~~~~~~~~~~~~~~~\n1 error generated.\nutil.go:48: exit status 1\nexit status 1\ngmake: *** [Makefile:13: geth] Error 1\n```\n\nNote the hidapi package from ports is installed.\n```\n$ pkg info -E hidapi\nhidapi-0.15.0\n$ ls -l /usr/local/include/hidapi/* /usr/local/lib/libhidapi.*\n-rw-r--r--  1 "
+  },
+  {
+   "number": 34628,
+   "title": "Prometheus metrics violate counter monotonicity convention: _count and _sum reset on every scrape due to ResettingSample",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:docs"
+   ],
+   "created_at": "2026-04-01T01:39:27Z",
+   "closed_at": null,
+   "body_excerpt": "  All Prometheus histogram metrics using `ResettingSample` have broken `_count` and `_sum` values. They decrease on every scrape instead of monotonically increasing, which violates the Prometheus counter type spec and breaks `rate()`,\n  `increase()`, and average latency calculations.\n\nhttps://prometheus.io/docs/concepts/metric_types/#counter\n\n> A counter is a cumulative metric that represents a single [monotonically increasing counter ](https://en.wikipedia.org/wiki/Monotonic_function) whose value can only increase or be reset to zero on restart.\n\nShould we fix it?"
+  },
+  {
+   "number": 34623,
+   "title": "EIP-7708 missing OnLog tracing hook for burns",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-31T11:20:07Z",
+   "closed_at": "2026-04-09T01:12:37Z",
+   "body_excerpt": "`EmitLogsForBurnAccounts()` in the hooked statedb delegates directly to s.inner.EmitLogsForBurnAccounts(). It will not emit OnLog tracing hook for burn logs."
+  },
+  {
+   "number": 34622,
+   "title": "Follow-up on Ethereum Bug Bounty Submission – recover_cells() Validation Issue",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-31T09:37:52Z",
+   "closed_at": "2026-03-31T11:59:00Z",
+   "body_excerpt": "Hello Ethereum Foundation Security Team,\n\nI hope you’re doing well.\n\nI am writing to follow up on my bug bounty submission regarding the input validation issue in the recover_cells() function (c-kzg-4844), which may lead to consensus divergence due to the use of assert() in production builds.\n\nI submitted the report on March 22 via the official form and understand that response times can take up to 7 days due to high volume. As we have now reached that timeframe, I wanted to kindly check if there are any updates regarding the review status of my report.\n\nGiven the potential impact on consensus and validator behavior across production deployments, I would appreciate confirmation that the report has been received and is under review.\n\nIf any additional details, clarifications, or reproduction steps are required, I would be happy to assist immediately.\n\nThank you for your time and for maintaining the security of the Ethereum ecosystem.\n\nBest regards,\n(fixsear7)\n"
+  },
+  {
+   "number": 34621,
+   "title": "Security vulnerability in pion/dtls dependency",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-31T09:19:31Z",
+   "closed_at": "2026-05-27T11:38:20Z",
+   "body_excerpt": "There has been a vulnerability in `github.com/pion/dtls/v2`:\nhttps://nvd.nist.gov/vuln/detail/CVE-2026-26014.\n\nIt's fixed in latest `github.com/pion/dtls/v3`. It is an indirect dependency, used by `github.com/pion/stun/v2`, which also has a v3 `github.com/pion/stun/v3` that uses the fixed pion/dtls."
+  },
+  {
+   "number": 34114,
+   "title": "core/rawdb: freezer table tests fail on Windows (AppVeyor) due to dir.Sync()",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-29T15:44:26Z",
+   "closed_at": "2026-03-30T07:34:25Z",
+   "body_excerpt": "## Description\n\nThree `core/rawdb` freezer table tests consistently fail on Windows (AppVeyor CI) on the `master` branch. AppVeyor has been red for 100+ commits.\n\n### Failing tests\n\n- `TestTruncateTail` — `freezer_table_test.go:707: read ...truncate-tail-xxx.ridx: file already closed`\n- `TestTruncateHead` — `freezer_table_test.go:795: read ...truncate-head-blow-tail-xxx.ridx: file already closed`\n- `TestTruncateOverHead` — `freezer_table_test.go:1658: sync C:\\Users\\appveyor\\AppData\\Local\\Temp\\1: Access is denied.`\n\n### Root cause\n\n`atomicRename()` in `core/rawdb/freezer_utils.go` calls `dir.Sync()` on a directory file handle. Windows does not support `fsync` on directories, so this always returns \"Access is denied\".\n\nWhen this error propagates back through `truncateTail` or `resetTo`, the index file (`t.index`) has already been closed (line 787 / 849) but is never reopened (line 803 / 865 is unreachable due to the error). Subsequent reads against `t.index` then fail with \"file already closed\".\n\n### Precedent\n\nThe same issue was already solved in `triedb/pathdb/` with platform-specific `syncDir()` implementations:\n- `triedb/pathdb/fileutils_windows.go` — no-op (fsync on dirs unsuppo"
+  },
+  {
+   "number": 34113,
+   "title": "Missing 64-bit Windows binary on website Downloads listing",
+   "state": "open",
+   "state_reason": null,
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-29T15:44:07Z",
+   "closed_at": null,
+   "body_excerpt": "Looks like v1.17.1 Windows 64-bit library is not available or not listed at https://geth.ethereum.org/downloads.\n\nThe file is available by changing the extension when download, https://gethstore.blob.core.windows.net/builds/geth-windows-amd64-1.17.1-16783c16.zip. So not sure if not listed being pulled out or just a bug in the listing on the website.\n\nOn another note, the Windows 64-bit binary does is available as Geth & Tools library version."
+  },
+  {
+   "number": 34108,
+   "title": "p2p/discover: flaky TestUDPv5_findnodeHandling",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-27T19:14:23Z",
+   "closed_at": "2026-04-14T07:43:46Z",
+   "body_excerpt": "#### System information\n\nGeth version: master (commit c3467dd8b)\nOS & Version: Linux (GitHub Actions CI), macOS (local)\n\n#### Expected behaviour\n\n`TestUDPv5_findnodeHandling` should pass reliably.\n\n#### Actual behaviour\n\nThe test intermittently fails with:\n\n```\n--- FAIL: TestUDPv5_findnodeHandling (0.01s)\n    panic.go:694: 1 unmatched UDP packets in queue\n```\n\nThis has been observed in CI (e.g. run [#23626948218](https://github.com/ethereum/go-ethereum/actions/runs/23626948218)) and can be reproduced locally with:\n\n```\ngo test -race -run TestUDPv5_findnodeHandling -count=50 ./p2p/discover/\n```\n\n#### Root cause\n\n`TestUDPv5_findnodeHandling` inserts nodes into the routing table via `fillTable`. The table's revalidation loop (`tableRevalidation.run`) may schedule PING packets for these nodes, which are dispatched through the transport and written to the test's `dgramPipe`. The test's `close()` method asserts that the pipe queue is empty, but these background PING packets can arrive after the test's last `expectNodes` call completes, leaving unmatched packets in the queue.\n\nThe default `PingInterval` is 3 seconds, and under the race detector the test runs slowly enough for revalidation"
+  },
+  {
+   "number": 34075,
+   "title": "abigen v2: expose package-level ErrEventSignatureMismatch for event unpacking errors",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:feature"
+   ],
+   "created_at": "2026-03-23T14:28:50Z",
+   "closed_at": "2026-05-05T09:29:28Z",
+   "body_excerpt": "# Rationale\n\nCurrently, `UnpackXxxEvent` methods return signature mismatch errors defined inline via `errors.New(\"event signature mismatch\")`. This makes it impossible for callers to distinguish between a signature mismatch and other unpacking failures (e.g. malformed ABI data, topic parsing errors) using errors.Is, since the error value is unexported and not addressable.\n\nA concrete use-case: Block-wide log processing via `eth_getBlockReceipts`. When consuming all logs from a block rather than pre-filtering with `eth_getLogs`, a caller receives logs for every contract and every event in that block. Pre-filtering by topic before calling `UnpackXxxEvent` would introduce redundant checks, so the idiomatic approach is to attempt unpacking every log and continue on mismatch. However, any other error should halt execution and trigger an alert -- meaning a reliable, typed distinction between *wrong event* and *corrupt data* is critical for correctness.\nWithout a sentinel error, the only option is brittle string matching, which is not acceptable in production monitoring code.\n\n# Implementation\nDefine a package-level sentinel error in bind (or in the generated runtime) and return it from a"
+  },
+  {
+   "number": 34038,
+   "title": "core: txLookupLock mutex leaked on error returns in reorg()",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-17T21:50:08Z",
+   "closed_at": "2026-03-18T07:02:19Z",
+   "body_excerpt": "## Bug Report\n\n### Summary\n\n`BlockChain.reorg()` in `core/blockchain.go` acquires `bc.txLookupLock.Lock()` at line 2630 but has three early-return paths that exit **without** releasing the mutex. The `bc.txLookupLock.Unlock()` at line 2734 is only reached on the `return nil` happy path.\n\n### Affected file\n`core/blockchain.go`, function `func (bc *BlockChain) reorg(...) error`\n\n### The code (current HEAD `ab357151`)\n\n```go\n// Line 2630\nbc.txLookupLock.Lock()\n\n// Path 1 — block == nil during oldChain iteration (~line 2651)\nif block == nil {\n    return errInvalidOldChain  // ← txLookupLock never released\n}\n\n// Path 2 — block == nil during oldChain undo (~line 2671)  \nif block == nil {\n    return errInvalidOldChain  // ← txLookupLock never released\n}\n\n// Path 3 — block == nil during newChain apply (~line 2688)\nif block == nil {\n    return errInvalidNewChain  // ← txLookupLock never released\n}\n\n// Line 2734 — only reached on success path\nbc.txLookupLock.Unlock()\nreturn nil\n```\n\n### Impact\n\nWhen the canonical database is corrupted and any `GetBlock()` returns `nil` during reorg, `txLookupLock` is held permanently. All subsequent callers that acquire this lock — including transaction look"
+  },
+  {
+   "number": 34010,
+   "title": "Potential deadlock in reorg() due to unreleased txLookupLock on error paths",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-16T06:33:25Z",
+   "closed_at": "2026-03-19T14:18:28Z",
+   "body_excerpt": "In core/blockchain.go, the reorg function acquires a write lock via bc.txLookupLock.Lock(). However, several early return paths (specifically when bc.GetBlock returns nil) fail to call bc.txLookupLock.Unlock().\n\nLines leading to leak:\n\n[Line 2651]: return errInvalidOldChain\n[Line 2670]: return errInvalidOldChain\n[Line 2685]: return errInvalidNewChain\n\nThis will cause any subsequent transaction lookups or further reorgs to hang indefinitely.\n\n**Proposed Fix:**\nUse defer bc.txLookupLock.Unlock() right after bc.txLookupLock.Lock() and remove the manual Unlock() at the end of the function to ensure the lock is always released."
+  },
+  {
+   "number": 33977,
+   "title": "System calls should not read/write the balance of the caller address",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-09T15:48:50Z",
+   "closed_at": "2026-03-09T16:21:39Z",
+   "body_excerpt": "#### System information\n\nGeth version: v1.16.9 (op-geth equivalent)\nCL client & version: op-node\nOS & Version: Linux\n\n#### Expected behaviour\n\nSystem calls read/write the balance even though the value is always 0 for system calls.\n\n#### Actual behaviour\n\nSystem calls should not read/write the balance. This causes geth and reth witnesses to differ (reth witnesses do not include system address balance, so cannot be used by geth to execute a block).\n\n#### Steps to reproduce the behaviour\n\nGenerate a witness using `debug_executionWitness` that includes a system transaction. Notice that it does include the system address account leaf node.\n\nAlso have an issue open on revm in case this is the correct behavior: https://github.com/bluealloy/revm/issues/3484 (probably a bit up to interpretation)"
+  },
+  {
+   "number": 33965,
+   "title": "Meni cend",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [
+    "type:bug"
+   ],
+   "created_at": "2026-03-06T01:49:00Z",
+   "closed_at": "2026-03-06T05:19:18Z",
+   "body_excerpt": "#### System information\n\nGeth version: `geth version`\nCL client & version: e.g. lighthouse/nimbus/prysm@v1.0.0\nOS & Version: Windows/Linux/OSX\nCommit hash : (if `develop`)\n\n#### Expected behaviour\n\n\n#### Actual behaviour\n\n\n#### Steps to reproduce the behaviour\n\n\n#### Backtrace\n\n````\n[backtrace]\n````\n\nWhen submitting logs: please submit them as text and not screenshots.\n"
+  },
+  {
+   "number": 33953,
+   "title": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.1",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-04T17:21:13Z",
+   "closed_at": "2026-03-05T00:56:04Z",
+   "body_excerpt": "admin.addPeer(\"enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c@52.16.188.185:30303"
+  },
+  {
+   "number": 33939,
+   "title": "chore(Amsterdam): Break up tiered gas pricing",
+   "state": "closed",
+   "state_reason": "completed",
+   "labels": [],
+   "created_at": "2026-03-03T10:05:04Z",
+   "closed_at": "2026-03-17T21:27:52Z",
+   "body_excerpt": "`core/vm/gas.go` has constant tiers for gas pricing. \n\n```go\n GasFastStep    uint64 = 5   // used by DIV, SDIV, MOD, SMOD, SIGNEXTEND\n GasMidStep     uint64 = 8   // used by ADDMOD, MULMOD, \n```\n\nThis prevents repricing individual opcodes as proposed in [EIP-7904](https://eips.ethereum.org/EIPS/eip-7904)\n\n```sh\n  ┌────────┬─────────┬─────────────┬─────┐\n  │ Opcode │ Current │    Tier     │ New │\n  ├────────┼─────────┼─────────────┼─────┤\n  │ DIV    │ 5       │ GasFastStep │ 15  │\n  ├────────┼─────────┼─────────────┼─────┤\n  │ SDIV   │ 5       │ GasFastStep │ 20  │\n  ├────────┼─────────┼─────────────┼─────┤\n  │ MOD    │ 5       │ GasFastStep │ 12  │\n  ├────────┼─────────┼─────────────┼─────┤\n  │ MULMOD │ 8       │ GasMidStep  │ 11  │\n  └────────┴─────────┴─────────────┴─────┘\n```"
+  }
+ ]
+}

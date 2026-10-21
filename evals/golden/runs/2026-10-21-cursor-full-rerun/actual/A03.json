@@ -1,0 +1,37 @@
+{
+ "ref": "A03",
+ "issue": 40004,
+ "run_id": "dryrun-A03",
+ "run_url": "transcripts/A03.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "status:triage"
+ ],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "status:triage"
+   ]
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 51778,
+  "outputTokens": 6815,
+  "cacheReadTokens": 160512,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T15:10:42+00:00",
+ "seconds": 67.2
+}

@@ -1,0 +1,8 @@
+{
+ "items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Actionable feature request that already has the type:feature label."
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-spam"
+   ]
+  }
+ ]
+}

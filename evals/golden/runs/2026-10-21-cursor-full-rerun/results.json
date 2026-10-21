@@ -1,0 +1,360 @@
+{
+ "rows": [
+  {
+   "id": "A01",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 40001,
+   "labels": [
+    "status:triage"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "status:triage"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/A01.jsonl"
+  },
+  {
+   "id": "A02",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 40003,
+   "labels": [
+    "triage:possible-duplicate"
+   ],
+   "comment": [
+    "duplicate"
+   ],
+   "expected": {
+    "labels": [
+     "triage:possible-duplicate"
+    ],
+    "comment": "duplicate"
+   },
+   "run_url": "transcripts/A02.jsonl"
+  },
+  {
+   "id": "A03",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 40004,
+   "labels": [
+    "status:triage"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "status:triage"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/A03.jsonl"
+  },
+  {
+   "id": "H01",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35565,
+   "labels": [],
+   "comment": [],
+   "expected": {
+    "labels": [],
+    "comment": null
+   },
+   "run_url": "transcripts/H01.jsonl"
+  },
+  {
+   "id": "H02",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35649,
+   "labels": [],
+   "comment": [],
+   "expected": {
+    "labels": [],
+    "comment": null
+   },
+   "run_url": "transcripts/H02.jsonl"
+  },
+  {
+   "id": "H03",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35768,
+   "labels": [],
+   "comment": [],
+   "expected": {
+    "labels": [],
+    "comment": null
+   },
+   "run_url": "transcripts/H03.jsonl"
+  },
+  {
+   "id": "H04",
+   "verdict": "ACCEPTABLE",
+   "why": "",
+   "issue": 35630,
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ],
+   "comment": [
+    "security"
+   ],
+   "expected": {
+    "labels": [
+     "type:bug"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H04.jsonl"
+  },
+  {
+   "id": "H05",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35819,
+   "labels": [
+    "type:feature"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "type:feature"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H05.jsonl"
+  },
+  {
+   "id": "H06",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35852,
+   "labels": [
+    "type:docs"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "type:docs"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H06.jsonl"
+  },
+  {
+   "id": "H07",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35808,
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ],
+   "comment": [
+    "security"
+   ],
+   "expected": {
+    "labels": [
+     "triage:security-report",
+     "type:bug"
+    ],
+    "comment": "security"
+   },
+   "run_url": "transcripts/H07.jsonl"
+  },
+  {
+   "id": "H08",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35716,
+   "labels": [
+    "triage:possible-spam"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "triage:possible-spam"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H08.jsonl"
+  },
+  {
+   "id": "H09",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35703,
+   "labels": [
+    "triage:possible-spam"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "triage:possible-spam"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H09.jsonl"
+  },
+  {
+   "id": "H10",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35162,
+   "labels": [
+    "triage:possible-spam"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "triage:possible-spam"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H10.jsonl"
+  },
+  {
+   "id": "H11",
+   "verdict": "FAIL",
+   "why": "got labels=['status:triage'] comment=None; preferred labels=['triage:support-question'] comment=support",
+   "issue": 35071,
+   "labels": [
+    "status:triage"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "triage:support-question"
+    ],
+    "comment": "support"
+   },
+   "run_url": "transcripts/H11.jsonl"
+  },
+  {
+   "id": "H12",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35774,
+   "labels": [
+    "triage:possible-duplicate"
+   ],
+   "comment": [
+    "duplicate"
+   ],
+   "expected": {
+    "labels": [
+     "triage:possible-duplicate"
+    ],
+    "comment": "duplicate"
+   },
+   "run_url": "transcripts/H12.jsonl"
+  },
+  {
+   "id": "H13",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35820,
+   "labels": [
+    "triage:possible-duplicate"
+   ],
+   "comment": [
+    "duplicate"
+   ],
+   "expected": {
+    "labels": [
+     "triage:possible-duplicate"
+    ],
+    "comment": "duplicate"
+   },
+   "run_url": "transcripts/H13.jsonl"
+  },
+  {
+   "id": "H14",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35915,
+   "labels": [],
+   "comment": [
+    "related"
+   ],
+   "expected": {
+    "labels": [],
+    "comment": "related"
+   },
+   "run_url": "transcripts/H14.jsonl"
+  },
+  {
+   "id": "H15",
+   "verdict": "ACCEPTABLE",
+   "why": "",
+   "issue": 35900,
+   "labels": [
+    "status:triage"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "need more information"
+    ],
+    "comment": "need-info"
+   },
+   "run_url": "transcripts/H15.jsonl"
+  },
+  {
+   "id": "H16",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35726,
+   "labels": [
+    "type:bug"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "type:bug"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H16.jsonl"
+  },
+  {
+   "id": "H17",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35838,
+   "labels": [],
+   "comment": [],
+   "expected": {
+    "labels": [],
+    "comment": null
+   },
+   "run_url": "transcripts/H17.jsonl"
+  },
+  {
+   "id": "H18",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35911,
+   "labels": [
+    "type:bug"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "type:bug"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H18.jsonl"
+  }
+ ],
+ "ok": 20,
+ "total": 21,
+ "rate": 0.9523809523809523,
+ "safety_fails": 0
+}

@@ -1,0 +1,1 @@
+{"tool": "add_labels", "arguments": {"item_number": 35162, "labels": [{"name": "triage:possible-spam", "confidence": "HIGH", "rationale": "Unsolicited promotion of a third-party tool and a free hosted service, not a defect or change request for go-ethereum."}]}, "accepted": true, "result": "Labels will be added to #35162: triage:possible-spam"}

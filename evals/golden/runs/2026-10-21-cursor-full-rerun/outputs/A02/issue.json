@@ -1,0 +1,14 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 40003,
+ "title": "geth 1.17.8 not installable from the PPA on Ubuntu noble",
+ "body": "#### System information\n\nGeth version: 1.17.7-stable\nOS & Version: Ubuntu 24.04 LTS (noble), amd64\n\n#### Expected behaviour\n\n`sudo apt update && sudo apt install geth` should install the current release, 1.17.8.\n\n#### Actual behaviour\n\nThe PPA `ppa:ethereum/ethereum` still only offers `1.17.7+build11021+noble`.\n\n#### Steps to reproduce the behaviour\n\n```sh\nsudo add-apt-repository ppa:ethereum/ethereum\nsudo apt update\napt-cache policy geth\n```",
+ "labels": [
+  "type:bug"
+ ],
+ "author": "reporter",
+ "author_association": "NONE",
+ "created_at": "2026-10-08T19:03:00Z",
+ "state": "open",
+ "comments": 0
+}

@@ -1,0 +1,1 @@
+{"tool": "add_labels", "arguments": {"item_number": 35852, "labels": [{"name": "type:docs", "confidence": "HIGH", "rationale": "The report is that the PGP key block in SECURITY.md has expired. That is a documentation update, and the issue has no type label."}]}, "accepted": true, "result": "Labels will be added to #35852: type:docs"}

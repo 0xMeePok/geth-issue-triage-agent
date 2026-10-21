@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-duplicate"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #40002: Ubuntu PPA: geth packages for noble are missing again (workaround inside) (open)\n- #35915: (v1.17.8) not available for Noble Ubuntu (open)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here.\n"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"type": "noop", "message": "No action: rule 9. Issue 35838 is an actionable bug report (eth_call execution gas capped at 2^24 after Amsterdam) and already has type:bug. The bug template fields are present, there are no bot-instruction or vulnerability signals, and the nearest corpus issues are different symptoms with scores below 0.20."}

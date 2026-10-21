@@ -1,0 +1,33 @@
+{
+ "ref": "H17",
+ "issue": 35838,
+ "run_id": "dryrun-H17",
+ "run_url": "transcripts/H17.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Issue 35838 is an actionable bug report (eth_call execution gas capped at 2^24 after Amsterdam) and already has type:bug. The bug template fields are present, there are no bot-instruction or vulnerability signals, and the nearest corpus issues are different symptoms with scores below 0.20."
+  }
+ ],
+ "model": "grok-4.7-xhigh-fast",
+ "transcript_model": "Grok 4.7 256K Extra High Fast",
+ "usage": {
+  "inputTokens": 32219,
+  "outputTokens": 6117,
+  "cacheReadTokens": 197504,
+  "cacheWriteTokens": 0
+ },
+ "started": "2026-10-21T15:01:22+00:00",
+ "seconds": 75.8
+}
