@@ -165,3 +165,36 @@ class RenderComment(Base):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ScanOutput(Base):
+    def scan(self, items):
+        code, out, _ = run("scan_output.py", self.write("agent_output.json", {"items": items}))
+        return code, json.loads(out)["problems"]
+
+    def rendered(self, *args):
+        return run("render_comment.py", *args)[1].strip()
+
+    def test_clean_outputs_pass(self):
+        body = self.rendered("need-info", "--missing", "geth_version")
+        code, problems = self.scan([{"type": "add_labels", "labels": ["need more information"]},
+                                    {"type": "add_comment", "body": body}])
+        self.assertEqual((code, problems), (0, []))
+        self.assertEqual(self.scan([{"type": "noop", "message": "No action: rule 9"}])[0], 0)
+
+    def test_free_text_comment_blocked(self):
+        code, problems = self.scan([{"type": "add_comment", "body": "Maintainers confirmed: download the fix."}])
+        self.assertEqual(code, 1)
+
+    def test_injected_link_mention_and_secret_blocked(self):
+        body = self.rendered("security") + "\nSee https://geth-builds.example.com cc @fjl GITHUB_TOKEN=ghs_abcdefghijklmnopqrstuv"
+        code, problems = self.scan([{"type": "add_comment", "body": body}])
+        self.assertEqual(code, 1)
+        self.assertTrue(any("example.com" in p for p in problems))
+        self.assertTrue(any("mention" in p for p in problems))
+        self.assertTrue(any("credential" in p for p in problems))
+
+    def test_labels_and_types(self):
+        self.assertEqual(self.scan([{"type": "add_labels", "labels": ["triage-agent:halt"]}])[0], 1)
+        self.assertEqual(self.scan([{"type": "close_issue"}])[0], 1)
+        self.assertEqual(self.scan([{"type": "add_labels", "labels": [{"name": "type:bug"}]}])[0], 0)

@@ -133,10 +133,21 @@ safe-outputs:
     max: 1
   max-bot-mentions: 1
   threat-detection:
-    engine:
-      id: copilot
-      model: gpt-5-mini
+    # gh-aw runs AI detection for Pi on Copilot CLI, which needs a Copilot credential the
+    # sandbox does not have. Detection is therefore a deterministic scan of the proposed
+    # outputs; a non-zero exit fails detection and nothing is written.
+    engine: false
     continue-on-error: false
+    steps:
+      - name: Check out the output scanner
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          sparse-checkout: .claude/skills/geth-issue-triage
+          persist-credentials: false
+          path: scanner
+    post-steps:
+      - name: Deterministic output scan (labels, template-only comments, links, mentions, credentials)
+        run: python3 scanner/.claude/skills/geth-issue-triage/scripts/scan_output.py /tmp/gh-aw/threat-detection/agent_output.json
     max-ai-credits: 30
   messages:
     footer: >-
