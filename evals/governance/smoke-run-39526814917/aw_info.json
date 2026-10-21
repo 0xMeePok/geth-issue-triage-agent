@@ -1,0 +1,38 @@
+{
+  "engine_id": "pi",
+  "engine_name": "Pi",
+  "model": "grok-4.7",
+  "version": "1.2.0",
+  "agent_version": "1.2.0",
+  "workflow_name": "go-ethereum first-pass issue triage",
+  "experimental": false,
+  "supports_tools_allowlist": true,
+  "cache_memory": false,
+  "run_id": 39526814917,
+  "run_number": 2,
+  "run_attempt": "1",
+  "repository": "0xMeePok/geth-issue-triage-agent",
+  "ref": "refs/heads/main",
+  "sha": "c42a2f0e7cde6280a6b3aff6c519e8d6da33dd23",
+  "actor": "0xMeePok",
+  "event_name": "workflow_dispatch",
+  "target_repo": "",
+  "staged": true,
+  "dry_run": false,
+  "allowed_domains": [
+    "defaults",
+    "api.x.ai"
+  ],
+  "firewall_enabled": true,
+  "awf_version": "v0.28.57",
+  "awmg_version": "",
+  "agent_runtime": "",
+  "steps": {
+    "firewall": "squid"
+  },
+  "created_at": "2026-10-21T01:22:02.229Z",
+  "cli_version": "v0.92.0",
+  "skills": [
+    ".claude/skills/geth-issue-triage"
+  ]
+}

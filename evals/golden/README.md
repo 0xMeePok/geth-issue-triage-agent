@@ -20,6 +20,23 @@ and only then continues. Every case therefore sees the repository, and the earli
 and their states, as they were when it was filed. The adversarial cases run last; A02's
 poisoned duplicate candidate (`A02/injected_seed.json`) is created just before A02.
 
+## Dry run (what was actually executed)
+
+Live agent runs were stopped after the workflow had been exercised on GitHub up to the agent
+step (`evals/governance/README.md`), because the owner declined per-token model billing.
+`tools/dryrun_cursor.py` replays the same timeline through the Cursor CLI
+(`grok-4.7-xhigh-fast`, Grok 4.7 at extra-high reasoning):
+
+| Same as the workflow | Different |
+|---|---|
+| prompt: the exact system and user text gh-aw rendered in run 39526814917 (`tools/dryrun/prompt_*.txt`) | harness: Cursor agent instead of Pi |
+| `AGENTS.md`, skill, scripts, and `issue.json`/`corpus.json`/`labels.json` built with `collect_context.py`'s functions | isolation: Cursor permission rules (only the 4 scripts may run; writes, other MCP servers and `/Users` reads are denied, probe `P01`) instead of the AWF container and firewall |
+| safe-output tools: gh-aw's own definitions (`tools/dryrun/safeoutputs_tools.json`), with limits read from the lock file by `tools/dryrun/safeoutputs_mcp.py` | shell `cat`/`head` are denied, so the agent reads files with its read tool |
+| detection: `scan_output.py` gates what counts as written | `/tmp/gh-aw/triage` paths point into the dry-run workspace; the environment is wiped except for a canary token |
+
+Earlier cases keep the labels the agent gave them, so later cases see the same repository
+state the live system would produce.
+
 ## Leakage controls
 
 | Risk | Control |
@@ -56,17 +73,24 @@ verdict comes from comparing the actual issue state with `expected.json`.
 
 ## Reproduce
 
-Requires `gh` (logged in with `repo` and `workflow` scopes), `gh aw` v0.92.0 and Python 3.10+.
-The sandbox needs the `GROK_API_KEY` and `COPILOT_GITHUB_TOKEN` secrets.
+Requires Python 3.10+ and either the Cursor CLI (dry run) or `gh` with `gh aw` v0.92.0 and the
+`GROK_API_KEY` secret (live run).
 
 ```sh
-python3 evals/golden/tools/build_cases.py                     # rebuild inputs from upstream (optional)
-python3 evals/golden/tools/setup_sandbox.py --repo OWNER/REPO # labels
+python3 evals/golden/tools/build_cases.py          # optional: rebuild inputs from upstream
+
+# dry run (as executed): one Cursor agent run per case, in timeline order
+python3 evals/golden/tools/dryrun_cursor.py --run-dir evals/golden/runs/NAME --ws-root /some/scratch/dir
+python3 evals/golden/tools/score.py --run-dir evals/golden/runs/NAME
+
+# live run on GitHub (not executed: needs a paid model key)
+python3 evals/golden/tools/setup_sandbox.py --repo OWNER/REPO
 python3 evals/golden/tools/replay_live.py   --repo OWNER/REPO --run-dir evals/golden/runs/NAME
 python3 evals/golden/tools/collect_outputs.py --repo OWNER/REPO --run-dir evals/golden/runs/NAME --audit
 python3 evals/golden/tools/score.py --run-dir evals/golden/runs/NAME
 ```
 
-`runs/<name>/` holds `map.json` (case to sandbox issue), `runs.json` (case to workflow run),
-`actual/*.json`, `logs/` (`gh aw audit` reports: model, tokens, tool calls, firewall),
-`collateral.json` and `results.md`.
+`runs/<name>/` holds `map.json` (case to issue number), `runs.json`, `actual/*.json` (labels,
+comment, model, token usage, seconds), `transcripts/*.jsonl` (the agent's full stream-json
+transcript), `outputs/<case>/` (exact inputs, prompt, proposed outputs, safe-output call log,
+detection result) and `results.md`. Live runs add `logs/` (`gh aw audit`) and `collateral.json`.
