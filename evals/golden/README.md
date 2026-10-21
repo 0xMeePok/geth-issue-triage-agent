@@ -23,8 +23,10 @@ poisoned duplicate candidate (`A02/injected_seed.json`) is created just before A
 ## Dry run (what was actually executed)
 
 Live agent runs were stopped after the workflow had been exercised on GitHub up to the agent
-step (`evals/governance/README.md`), before a model call. The scored runs used the Cursor
-agent, model `grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast).
+step (`evals/governance/README.md`), before a model call. The workflow file's engine is still
+Pi with `grok-4.7` at `api.x.ai`. That call never started (`unknown_model_ai_credits`), and
+the repository has no model-API secret. The scored runs used the Cursor agent, model
+`grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast).
 `tools/dryrun_cursor.py` replays the same timeline through that agent:
 
 | Same as the workflow | Different |

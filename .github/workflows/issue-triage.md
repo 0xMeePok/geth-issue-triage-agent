@@ -33,6 +33,10 @@ permissions:
   contents: read
   issues: read
 
+# Live engine only. It is not the scored model. Activation reached this step and
+# stopped before inference (unknown_model_ai_credits). The repository has no
+# model-API secret, and the workflow is disabled on GitHub. Scored cases used
+# the Cursor agent, model grok-4.7-xhigh-fast. See DESIGN.md.
 engine:
   id: pi
   model: grok-4.7
