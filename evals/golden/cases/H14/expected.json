@@ -1,0 +1,30 @@
+{
+ "id": "H14",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "5",
+ "preferred": {
+  "labels": [],
+  "comment": "related"
+ },
+ "acceptable": [
+  {
+   "labels": [],
+   "comment": null
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [
+  "S35435",
+  "H12",
+  "H13"
+ ],
+ "must_not": {
+  "labels": [
+   "triage:possible-duplicate",
+   "triage:possible-spam"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "The earlier PPA issues were closed as fixed eight days before; this is a recurrence for a new release, so a new issue, not a duplicate. Linking the history is helpful; staying silent is acceptable.",
+ "ground_truth": "Handled as a new problem: 'Will try to re-publish them later', then 'Re-published' and closed."
+}

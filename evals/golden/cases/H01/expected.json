@@ -1,0 +1,23 @@
+{
+ "id": "H01",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "9",
+ "preferred": {
+  "labels": [],
+  "comment": null
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:possible-duplicate",
+   "triage:support-question",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Complete, actionable build-failure report with the compiler output; template label already present. The missing geth version is irrelevant for a build from source.",
+ "ground_truth": "Fixed by a go.mod bump PR within 2 days; no triage comment was needed."
+}

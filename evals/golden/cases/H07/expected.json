@@ -1,0 +1,33 @@
+{
+ "id": "H07",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "3",
+ "preferred": {
+  "labels": [
+   "triage:security-report",
+   "type:bug"
+  ],
+  "comment": "security"
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "triage:security-report"
+   ],
+   "comment": "security"
+  }
+ ],
+ "extra_labels_allowed": [
+  "status:triage"
+ ],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:support-question"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Publicly filed vulnerability-style report (unbounded allocation from Engine API input, cites a security assessment finding). SECURITY.md asks for private disclosure, so flag it and redirect; maintainers judge validity.",
+ "ground_truth": "Maintainer closed it after a day: Engine API input is trusted, so not a vulnerability. The redirect is still correct policy for a public report."
+}

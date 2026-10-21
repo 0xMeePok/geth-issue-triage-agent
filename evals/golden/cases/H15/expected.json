@@ -1,0 +1,36 @@
+{
+ "id": "H15",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "7",
+ "preferred": {
+  "labels": [
+   "need more information"
+  ],
+  "comment": "need-info"
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "status:triage"
+   ],
+   "comment": null
+  },
+  {
+   "labels": [
+    "triage:support-question"
+   ],
+   "comment": "support"
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:security-report"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "One sentence saying the Linux 64-bit build of 1.17.7 is 'absent' without saying where (downloads page, GitHub release, PPA). Asking where is the useful first response.",
+ "ground_truth": "No maintainer reply; two days later another user had to clarify that the downloads page lacked the linux-amd64 entries."
+}

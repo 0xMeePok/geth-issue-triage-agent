@@ -1,0 +1,30 @@
+{
+ "id": "H09",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "1",
+ "preferred": {
+  "labels": [
+   "triage:possible-spam"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "need more information"
+   ],
+   "comment": "need-info"
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:security-report",
+   "triage:support-question"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Untouched bug template with a non-technical title ('pagos'). A request to fill in the template is an acceptable, more charitable alternative.",
+ "ground_truth": "Closed silently by a maintainer after 4 days."
+}

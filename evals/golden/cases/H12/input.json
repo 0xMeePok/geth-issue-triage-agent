@@ -1,0 +1,15 @@
+{
+ "id": "H12",
+ "set": "dev",
+ "category": "duplicate of an open issue",
+ "upstream_number": 35774,
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35774",
+ "original_created_at": "2026-09-23T10:16:26Z",
+ "original_author_association": "NONE",
+ "labels_at_creation": [
+  "type:bug"
+ ],
+ "title": "Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04)",
+ "body": "#### System information\n\nGeth version:\n```\nGeth\nVersion: 1.17.4-stable\nGit Commit: 36a7dc72e96b3f42846be925cfeb2fad18489917\nArchitecture: amd64\nGo Version: go1.25.10\nOperating System: linux\n```\n\nOS:\n```\nUbuntu 24.04.5 LTS (Noble), amd64\n```\n\nRepository:\n```\nhttps://ppa.launchpadcontent.net/ethereum/ethereum/ubuntu\n```\n\n#### Expected behaviour\n\nGeth v1.17.5 is the current stable release. The v1.17.5 release notes state that Ubuntu packages are available in the Launchpad PPA.\n\nI would therefore expect `ppa:ethereum/ethereum` on Ubuntu 24.04 (Noble) to provide the v1.17.5 stable package.\n\n#### Actual behaviour\n\nThe latest stable package available for Noble amd64 is still:\n\n```\ngeth 1.17.4+build10975+noble\n```\n\n`apt-cache policy geth ethereum` returns:\n\n```\ngeth:\n  Installed: 1.17.4+build10975+noble\n  Candidate: 1.17.4+build10975+noble\n  Version table:\n *** 1.17.4+build10975+noble 500\n        500 https://ppa.launchpadcontent.net/ethereum/ethereum/ubuntu noble/main amd64 Packages\n        100 /var/lib/dpkg/status\n\nethereum:\n  Installed: 1.17.4+build10975+noble\n  Candidate: 1.17.4+build10975+noble\n  Version table:\n *** 1.17.4+build10975+noble 500\n        500 https://ppa.launchpadcontent.net/ethereum/ethereum/ubuntu noble/main amd64 Packages\n        100 /var/lib/dpkg/status\n```\n\nAt the same time, the same PPA already provides the v1.17.6 development build for Noble:\n\n```\nethereum-unstable:\n  Candidate: 1.17.6+build12864+noble\n\ngeth-unstable:\n  Candidate: 1.17.6+build12864+noble\n```\n\nI also checked the PPA package index directly:\n\n```\nhttps://ppa.launchpadcontent.net/ethereum/ethereum/ubuntu/dists/noble/main/binary-amd64/Packages.gz\n```\n\nIt contains:\n\n```\nPackage: ethereum\nVersion: 1.17.4+build10975+noble\n\nPackage: ethereum-unstable\nVersion: 1.17.6+build12864+noble\n\nPackage: geth\nVersion: 1.17.4+build10975+noble\n\nPackage: geth-unstable\nVersion: 1.17.6+build12864+noble\n```\n\nThere is no v1.17.5 stable package in the Noble amd64 package index.\n\n#### Steps to reproduce the behaviour\n\nOn Ubuntu 24.04 Noble with `ppa:ethereum/ethereum` configured:\n\n```\nsudo apt update\napt-cache policy geth ethereum\napt-cache policy geth-unstable ethereum-unstable\napt-cache madison geth\n```\n\n`apt update` completes successfully and the PPA is reachable, but v1.17.4 remains the latest stable candidate.\n\nCould you please check whether the v1.17.5 stable PPA publication for Ubuntu Noble was missed or failed?",
+ "replay_transformations": []
+}

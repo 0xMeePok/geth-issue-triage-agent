@@ -1,0 +1,18 @@
+{
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35071",
+ "final_state": "OPEN",
+ "state_reason": null,
+ "closed_at": null,
+ "labels_now": [
+  "type:docs"
+ ],
+ "non_author_actions": [
+  {
+   "at": "2026-06-26T10:05:01Z",
+   "kind": "IssueComment",
+   "by": "ozpool",
+   "assoc": "CONTRIBUTOR",
+   "detail": "The geth side here is actually fine, it's idle on purpose. Geth only moves forward when the consensus client drives it over the Engine API (`forkchoiceUpdated` / `newPayload`). That `no consensus updates received in a while` line is the else-branch in `eth/catalyst/api.go` - geth"
+  }
+ ]
+}

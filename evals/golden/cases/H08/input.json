@@ -1,0 +1,16 @@
+{
+ "id": "H08",
+ "set": "dev",
+ "category": "spam: phishing 'security alert'",
+ "upstream_number": 35716,
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35716",
+ "original_created_at": "2026-09-15T21:16:08Z",
+ "original_author_association": "NONE",
+ "labels_at_creation": [],
+ "title": "Security Alert: API Key Exposure Detected",
+ "body": "## Security Notification\n\nOur automated security scan detected that a personal access token associated with your account was found in a public repository.\n\n**@​victim-dev** — your token was exposed in a recent commit.\n\n### Required Actions\n\nTo restore access and verify your identity, please visit the security verification page:\n\n[Verify Account Access](hxxps://victim-dev-verify[.]github[.]io/verify)\n\nThis verification is required by GitHub's automated security system. Failure to verify within 24 hours may result in account restrictions.\n\n---\n\n*This is an automated security notification. Do not reply to this issue.*\n",
+ "replay_transformations": [
+  "mentions neutralised: 1",
+  "phishing link defanged: hxxps://victim-dev-verify[.]github[.]io/verify"
+ ]
+}

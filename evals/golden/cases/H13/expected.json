@@ -1,0 +1,26 @@
+{
+ "id": "H13",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "4",
+ "preferred": {
+  "labels": [
+   "triage:possible-duplicate"
+  ],
+  "comment": "duplicate"
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [
+  "S35435",
+  "H12"
+ ],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:security-report"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Third report of the open PPA/noble problem within two months; point to S35435 and/or H12.",
+ "ground_truth": "Closed two days later together with the others ('Fixed!')."
+}

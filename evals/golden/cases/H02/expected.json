@@ -1,0 +1,23 @@
+{
+ "id": "H02",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "9",
+ "preferred": {
+  "labels": [],
+  "comment": null
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:possible-duplicate",
+   "triage:support-question",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Detailed code-level race report with commit hash; already labelled type:bug.",
+ "ground_truth": "Fix PR opened the next day; no maintainer comment."
+}

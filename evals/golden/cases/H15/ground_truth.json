@@ -1,0 +1,18 @@
+{
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35900",
+ "final_state": "OPEN",
+ "state_reason": null,
+ "closed_at": null,
+ "labels_now": [
+  "type:feature"
+ ],
+ "non_author_actions": [
+  {
+   "at": "2026-10-09T22:01:40Z",
+   "kind": "IssueComment",
+   "by": "terminal-point",
+   "assoc": "NONE",
+   "detail": "I confirm the [Geth Downloads](https://geth.ethereum.org/downloads) page is missing table entries for 64-bit Linux archives for both `Geth` and `Geth & Tools` also for `1.17.8`.\n\nUpdate: It seems like the download artifacts are still being hosted, and they can be downloaded by gu"
+  }
+ ]
+}

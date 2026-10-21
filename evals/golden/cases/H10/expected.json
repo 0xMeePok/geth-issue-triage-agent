@@ -1,0 +1,30 @@
+{
+ "id": "H10",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "1",
+ "preferred": {
+  "labels": [
+   "triage:possible-spam"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "status:triage"
+   ],
+   "comment": null
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "type:feature",
+   "triage:support-question"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Unsolicited promotion of a third-party tool; no defect or feature for go-ethereum.",
+ "ground_truth": "The author closed it as not planned the same day, apologising that it did not belong in the tracker."
+}

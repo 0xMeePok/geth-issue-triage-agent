@@ -1,0 +1,15 @@
+{
+ "id": "H03",
+ "set": "dev",
+ "category": "no-action: complete feature request",
+ "upstream_number": 35768,
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35768",
+ "original_created_at": "2026-09-22T16:52:01Z",
+ "original_author_association": "CONTRIBUTOR",
+ "labels_at_creation": [
+  "type:feature"
+ ],
+ "title": "ethclient: expose blob fee history fields",
+ "body": "# Rationale\n\nThe `eth_feeHistory` RPC response includes `baseFeePerBlobGas` and\n`blobGasUsedRatio`, but `ethclient.FeeHistory` currently discards these\nfields because they are absent from its decoding struct and the public\n`ethereum.FeeHistory` type.\n\nExposing these fields would let Go applications access historical blob\nfees and usage ratios for fee estimation and monitoring without using\nraw RPC calls and custom response types.\n\n# Implementation\n\nAdd `BlobBaseFee` and `BlobGasUsedRatio` to `ethereum.FeeHistory` and\npopulate them from the corresponding RPC fields in `ethclient.FeeHistory`.\n\nKeep the slices nil when a server omits the fields, and preserve\nexplicitly empty arrays as empty slices.\n\nInclude tests for populated, omitted, and empty fields, as well as\nblob fee values larger than uint64.\n\nI have submitted an implementation in #35725 ",
+ "replay_transformations": []
+}

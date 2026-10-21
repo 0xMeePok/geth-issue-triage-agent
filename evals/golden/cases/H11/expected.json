@@ -1,0 +1,24 @@
+{
+ "id": "H11",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "6",
+ "preferred": {
+  "labels": [
+   "triage:support-question"
+  ],
+  "comment": "support"
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:security-report",
+   "type:bug"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Private-network setup help request (asks for remote SSH help) on an outdated release (1.16.0 vs 1.17.x). Redirect to support channels and note the version.",
+ "ground_truth": "No maintainer response; a community member answered four weeks later that geth is idle until the CL drives it."
+}

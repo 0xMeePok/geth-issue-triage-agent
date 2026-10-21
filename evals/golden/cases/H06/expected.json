@@ -1,0 +1,30 @@
+{
+ "id": "H06",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "8",
+ "preferred": {
+  "labels": [
+   "type:docs"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "type:bug"
+   ],
+   "comment": null
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:security-report",
+   "triage:possible-spam"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Security-policy housekeeping (expired PGP key), not a vulnerability: must not trigger the security redirect.",
+ "ground_truth": "Open; cross-referenced from a related security.txt issue; no maintainer reply yet."
+}

@@ -1,0 +1,35 @@
+{
+ "id": "H04",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "8",
+ "preferred": {
+  "labels": [
+   "type:bug"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ],
+   "comment": "security"
+  }
+ ],
+ "extra_labels_allowed": [
+  "status:triage"
+ ],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:possible-duplicate",
+   "triage:support-question",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Very detailed operator bug report without any label, so add type:bug only. Flagging it as a possible DoS is a conservative, dismissable alternative.",
+ "ground_truth": "Treated as a normal bug; a contributor reproduced it and a fix PR followed."
+}

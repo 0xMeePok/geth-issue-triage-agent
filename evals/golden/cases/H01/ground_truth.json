@@ -1,0 +1,18 @@
+{
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35565",
+ "final_state": "CLOSED",
+ "state_reason": "COMPLETED",
+ "closed_at": "2026-08-24T03:11:55Z",
+ "labels_now": [
+  "type:bug"
+ ],
+ "non_author_actions": [
+  {
+   "at": "2026-08-24T03:11:56Z",
+   "kind": "ClosedEvent",
+   "by": "rjl493456442",
+   "assoc": null,
+   "detail": "COMPLETED"
+  }
+ ]
+}

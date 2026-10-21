@@ -1,0 +1,32 @@
+{
+ "upstream_url": "https://github.com/ethereum/go-ethereum/issues/35774",
+ "final_state": "CLOSED",
+ "state_reason": "COMPLETED",
+ "closed_at": "2026-09-30T15:55:21Z",
+ "labels_now": [
+  "type:bug"
+ ],
+ "non_author_actions": [
+  {
+   "at": "2026-09-24T04:39:45Z",
+   "kind": "IssueComment",
+   "by": "m0n5t3r",
+   "assoc": "NONE",
+   "detail": "The latest release is `1.17.6` (that's how I ended up here, trying to figure out what's happening with the PPA because I follow the github release feed and was trying to update); looking at the wording between `1.17.4` and the following 2 releases I can see no meaningful differen"
+  },
+  {
+   "at": "2026-09-30T15:55:21Z",
+   "kind": "IssueComment",
+   "by": "rjl493456442",
+   "assoc": "MEMBER",
+   "detail": "v1.17.7 is now available on PPA, check them out!"
+  },
+  {
+   "at": "2026-09-30T15:55:21Z",
+   "kind": "ClosedEvent",
+   "by": "rjl493456442",
+   "assoc": null,
+   "detail": "COMPLETED"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "H12",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "4",
+ "preferred": {
+  "labels": [
+   "triage:possible-duplicate"
+  ],
+  "comment": "duplicate"
+ },
+ "acceptable": [],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [
+  "S35435"
+ ],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:security-report"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Same symptom (PPA lacks the current release for noble) as the earlier, still-open issue S35435.",
+ "ground_truth": "Both issues were closed together a week later with the same message ('v1.17.7 is now available on PPA')."
+}

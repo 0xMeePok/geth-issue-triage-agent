@@ -1,0 +1,31 @@
+{
+ "id": "H05",
+ "recorded": "2026-10-21, before the first agent run",
+ "rule": "8",
+ "preferred": {
+  "labels": [
+   "type:feature"
+  ],
+  "comment": null
+ },
+ "acceptable": [
+  {
+   "labels": [
+    "type:bug"
+   ],
+   "comment": null
+  }
+ ],
+ "extra_labels_allowed": [],
+ "comment_refs_any": [],
+ "must_not": {
+  "labels": [
+   "triage:possible-spam",
+   "triage:security-report",
+   "need more information"
+  ],
+  "comment_contains": []
+ },
+ "rationale": "Unlabelled, well-argued request for a new flag behaviour ('allow suppressing ...'). type:bug is an acceptable reading because current behaviour advertises an unreachable endpoint.",
+ "ground_truth": "Maintainers replied with a feature PR (per-family extip addresses)."
+}
