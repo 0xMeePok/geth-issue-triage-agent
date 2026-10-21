@@ -44,14 +44,16 @@ perm = re.search(r"permissions:\n((?:\s{6}.+\n)+)", agent)
 check("agent job permissions are read-only", perm and "write" not in perm.group(1), perm.group(1).strip() if perm else "none")
 check("agent workspace drops evals/ before the agent runs", "rm -rf evals DESIGN.md" in agent)
 domains = json.loads(re.search(r'"allowDomains":(\[[^\]]*\])', SRC).group(1))
-check("firewall: model endpoint allowed, no extra API hosts", "api.x.ai" in domains and not any(
-    d in domains for d in ("api.github.com", "github.com", "raw.githubusercontent.com")), f"{len(domains)} domains")
+check("firewall: Copilot endpoints allowed, GitHub API hosts blocked",
+      "api.githubcopilot.com" in domains and "api.individual.githubcopilot.com" in domains and not any(
+          d in domains for d in ("api.github.com", "github.com", "raw.githubusercontent.com", "api.x.ai")),
+      f"{len(domains)} domains")
 check("kill switch checked in pre-activation", 'GH_AW_SKIP_QUERY: "is:issue is:open label:\\"triage-agent:halt\\""' in SRC)
 check("kill switch re-checked before writes", "triage-agent:halt" in job("safe_outputs"))
 check("threat detection blocks on failure", 'GH_AW_DETECTION_CONTINUE_ON_ERROR: "false"' in SRC)
 check("deterministic output scan runs in detection", "scan_output.py" in job("detection"))
 check("maintainer-authored issues skipped", '"MEMBER","COLLABORATOR"' in SRC)
-check("model allowlist enforced at the proxy", re.search(r'"allowedModels":\["grok-4.7"\]', SRC) is not None)
+check("model allowlist enforced at the proxy", re.search(r'"allowedModels":\["copilot/auto"\]', SRC) is not None)
 check("model priced, so AI-credit budgets apply", re.search(r'"defaultAiCreditsPricing":\{"input":2,"output":6\}', SRC) is not None)
 check("stop-after deadline compiled", re.search(r'GH_AW_STOP_TIME: "\d{4}-\d\d-\d\d', SRC) is not None)
 check("agent step timeout is 10 minutes", re.search(r"timeout-minutes: 10\b", agent) is not None)

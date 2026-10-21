@@ -33,22 +33,18 @@ permissions:
   contents: read
   issues: read
 
-# Live engine only. It is not the scored model. Activation reached this step and
-# stopped before inference (unknown_model_ai_credits). The repository has no
-# model-API secret, and the workflow is disabled on GitHub. Scored cases used
-# the Cursor agent, model grok-4.7-xhigh-fast. See DESIGN.md.
+# Live engine. Pi calls Copilot through copilot/auto and the repository secret
+# COPILOT_GITHUB_TOKEN. The earlier grok-4.7 call at api.x.ai never started
+# (unknown_model_ai_credits) and is not this engine. Scored cases are a separate
+# Cursor dry run on grok-4.7-xhigh-fast. See DESIGN.md.
 engine:
   id: pi
-  model: grok-4.7
-  model-provider: openai
-  env:
-    OPENAI_BASE_URL: https://api.x.ai/v1
-    OPENAI_API_KEY: ${{ secrets.GROK_API_KEY }}
+  model: copilot/auto
 
-# The AWF proxy refuses models it cannot price (seen live: "unknown_model_ai_credits"), and
-# only lets the listed model through, so the agent cannot switch to another model.
+# Only the listed model may be called, so the agent cannot switch provider.
+# The rates size the per-run and daily credit caps (13-52 credits on the dry run).
 models:
-  allowed: ["grok-4.7"]
+  allowed: ["copilot/auto"]
   default-ai-credits-pricing:
     input: 2    # USD per 1M input tokens, rate used to size run limits (<200k prompt)
     output: 6   # USD per 1M output tokens
@@ -71,7 +67,9 @@ max-daily-ai-credits: 1200
 network:
   allowed:
     - defaults
-    - api.x.ai
+    # Copilot inference only. GitHub's API hosts stay blocked.
+    - api.githubcopilot.com
+    - api.individual.githubcopilot.com
 
 tools:
   github: false
@@ -148,9 +146,8 @@ safe-outputs:
     max: 1
   max-bot-mentions: 1
   threat-detection:
-    # gh-aw runs AI detection for Pi on Copilot CLI, which needs a Copilot credential the
-    # sandbox does not have. Detection is therefore a deterministic scan of the proposed
-    # outputs; a non-zero exit fails detection and nothing is written.
+    # Detection stays a deterministic scan so the Copilot allowance is spent only on
+    # the triage decision. A non-zero exit fails detection and nothing is written.
     engine: false
     continue-on-error: false
     steps:
