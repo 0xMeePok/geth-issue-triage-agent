@@ -1,0 +1,44 @@
+# Deterministic gate for changes to the triage agent. No model, no secrets.
+# Fails a pull request whose compiled workflow loses a safety invariant (write permissions,
+# extra tools, wider label allowlist, missing kill switch, non-blocking detection, ...) or
+# whose skill scripts break their tests. Intended as a required status check on main.
+name: agent-config-check
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/issue-triage.*"
+      - ".claude/**"
+      - "AGENTS.md"
+      - "evals/governance/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/issue-triage.*"
+      - ".claude/**"
+      - "AGENTS.md"
+      - "evals/governance/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agent-config-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            .claude
+            evals/governance
+      - name: Skill script unit tests
+        run: python3 -m unittest discover -s .claude/skills/geth-issue-triage/tests -v
+      - name: Compiled workflow keeps its safety invariants
+        run: python3 evals/governance/check_lock_invariants.py .github/workflows/issue-triage.lock.yml
