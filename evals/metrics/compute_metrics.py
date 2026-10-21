@@ -2,9 +2,9 @@
 """Compute the triage-need metrics reported in metrics/README.md and DESIGN.md.
 
 Usage:
-    python3 metrics/compute_metrics.py            # reads metrics/data/issues_window.json
+    python3 evals/metrics/compute_metrics.py            # reads evals/metrics/data/issues_window.json
 
-Writes metrics/data/metrics.json and prints a summary. Standard library only.
+Writes evals/metrics/data/metrics.json and prints a summary. Standard library only.
 
 Definitions (see metrics/README.md for the limitations of each):
   maintainer       login with MEMBER/OWNER/COLLABORATOR association on any comment or

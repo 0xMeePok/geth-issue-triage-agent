@@ -75,7 +75,7 @@ tools:
 
 steps:
   - name: Remove evaluation data from the agent workspace
-    run: rm -rf evals metrics DESIGN.md
+    run: rm -rf evals DESIGN.md
   - name: Collect issue context for the triage skill (deterministic, read-only)
     env:
       GH_TOKEN: ${{ github.token }}

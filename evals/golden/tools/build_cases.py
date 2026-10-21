@@ -3,7 +3,7 @@
 
     python3 evals/golden/tools/build_cases.py          # needs `gh` logged in (read-only)
 
-Inputs:  evals/golden/manifest.json, metrics/data/issues_window.json (seed list)
+Inputs:  evals/golden/manifest.json, evals/metrics/data/issues_window.json (seed list)
 Outputs: evals/golden/cases/<ID>/input.json         what the sandbox issue will contain
          evals/golden/cases/<ID>/ground_truth.json  what maintainers did later (never shown
                                                     to the agent; used to justify expected.json)
@@ -116,7 +116,7 @@ def main():
     excluded = {int(k) for k in man["excluded_from_everything"]}
     hist = [c for c in man["cases"] if not c.get("adversarial")]
     case_nums = {c["upstream"] for c in hist}
-    win = json.load(open(os.path.join(ROOT, "metrics", "data", "issues_window.json")))["issues"]
+    win = json.load(open(os.path.join(ROOT, "evals", "metrics", "data", "issues_window.json")))["issues"]
     lo, hi = man["seed_window"]
     seed_nums = sorted(i["number"] for i in win if lo <= i["createdAt"] < hi
                        and i["number"] not in case_nums | excluded)

@@ -1,0 +1,19 @@
+{
+ "mode": "new-runs",
+ "control_issue": 1,
+ "started": "2026-10-21T01:09:31Z",
+ "test_issue": 2,
+ "run_id": 39525867165,
+ "run_url": "https://github.com/0xMeePok/geth-issue-triage-agent/actions/runs/39525867165",
+ "conclusion": "success",
+ "jobs": {
+  "pre_activation": "success",
+  "agent": "skipped",
+  "activation": "skipped",
+  "detection": "skipped",
+  "safe_outputs": "skipped",
+  "conclusion": "skipped"
+ },
+ "bot_events_on_test_issue": [],
+ "finished": "2026-10-21T01:11:44Z"
+}

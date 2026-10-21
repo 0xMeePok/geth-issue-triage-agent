@@ -2,10 +2,10 @@
 """Fetch every go-ethereum issue created in a time window, with its timeline.
 
 Usage:
-    python3 metrics/fetch_issues.py [--since 2025-10-15] [--until 2026-10-14]
+    python3 evals/metrics/fetch_issues.py [--since 2025-10-15] [--until 2026-10-14]
 
-Writes metrics/data/issues_window.json (one object per issue) and
-metrics/data/collected_at.txt. Needs the gh CLI, logged in with any account.
+Writes evals/metrics/data/issues_window.json (one object per issue) and
+evals/metrics/data/collected_at.txt. Needs the gh CLI, logged in with any account.
 
 Only the standard library is used. GitHub search returns at most 1000 results,
 so the window must contain fewer than 1000 issues (it contains about 250).
