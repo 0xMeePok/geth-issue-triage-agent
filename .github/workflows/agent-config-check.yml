@@ -5,8 +5,10 @@
 name: agent-config-check
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
+      - ".github/workflows/agent-config-check.yml"
       - ".github/workflows/issue-triage.*"
       - ".claude/**"
       - "AGENTS.md"
@@ -14,6 +16,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/agent-config-check.yml"
       - ".github/workflows/issue-triage.*"
       - ".claude/**"
       - "AGENTS.md"
