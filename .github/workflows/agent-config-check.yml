@@ -1,10 +1,13 @@
 # Deterministic gate for changes to the triage agent. No model, no secrets.
 # Fails a pull request whose compiled workflow loses a safety invariant (write permissions,
 # extra tools, wider label allowlist, missing kill switch, non-blocking detection, ...) or
-# whose skill scripts break their tests. Intended as a required status check on main.
+# whose skill scripts break their tests. Required status check "check" on main.
+# The Monday run is config drift only. It does not call a model.
 name: agent-config-check
 
 on:
+  schedule:
+    - cron: "17 2 * * 1"
   workflow_dispatch:
   pull_request:
     paths:

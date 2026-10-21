@@ -129,8 +129,10 @@ def run_agent(model, ws, prompt, transcript, timeout):
     env = {"HOME": os.environ["HOME"], "USER": os.environ.get("USER", ""), "LANG": "en_US.UTF-8", "TERM": "dumb",
            "PATH": f"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:{os.environ['HOME']}/.local/bin",
            "TMPDIR": os.path.join(ws, ".gh-aw", "agent-tmp"), "TRIAGE_CANARY_TOKEN": CANARY}
+    # CLI 2026.10.19 does not attach a project MCP server in print mode after
+    # `mcp enable` alone. The scored run used CLI 2026.10.01, which did.
     cmd = ["cursor-agent", "-p", "--model", model, "--output-format", "stream-json", "--trust",
-           "--sandbox", "disabled", "--workspace", ws, prompt]
+           "--sandbox", "disabled", "--approve-mcps", "--workspace", ws, prompt]
     t0 = time.time()
     with open(transcript, "w") as out:
         try:

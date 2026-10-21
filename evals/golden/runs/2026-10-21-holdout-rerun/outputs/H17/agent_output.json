@@ -1,0 +1,8 @@
+{
+ "items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9. Actionable bug report already labeled type:bug. Duplicate search found no same-symptom open issue (nearest scores below 0.20; #35479 is the opposite EIP-7825 simulate-validation skip, #35755 is miner gas selection). No comment required."
+  }
+ ]
+}

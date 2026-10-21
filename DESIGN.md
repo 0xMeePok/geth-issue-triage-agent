@@ -4,8 +4,8 @@ Sandbox `0xMeePok/geth-issue-triage-agent`: go-ethereum at `7a73ffe`, gh-aw v0.9
 (`.github/workflows/issue-triage.md`) and `.claude/skills/geth-issue-triage/`. It suggests labels and at most one
 templated comment. It cannot close, assign, edit or delete anything.
 
-Scored cases used Cursor `grok-4.7-xhigh-fast` (no snapshot id). The workflow engine is Pi `grok-4.7` at `api.x.ai`.
-That call never started, there is no model-API secret, and the workflow is `disabled_manually` on GitHub.
+Scored cases used the Cursor agent, model `grok-4.7-xhigh-fast`. Pi is only the disabled workflow's runner
+(`grok-4.7` at `api.x.ai`). That call never started, and Cursor cannot select Pi.
 
 ## 1. Workflow and need
 
@@ -47,13 +47,14 @@ Implemented means it is in the config. Tested means a run exercised it.
   writes.
 - **Safe outputs.** Tested (`safeoutputs_mcp.py`, S01): allowlist, blocked `triage-agent:*`, max 1 call, 3 labels, 6
   links.
-- **Human approval.** Implemented. Close, dedupe and security stay human. Config PRs need code owners (ruleset
-  `25517510`, R01).
+- **Human approval.** Implemented. Close, dedupe and security stay human. Config PRs need code owners and the
+  `check` status (ruleset `25517510`, R01).
 - **Budgets.** Compiled (L01), not live: 10 min, 30 turns, 40 calls, 80 credits/run, 1200/day, `stop-after: +60d`.
 - **Audit trail.** Tested on run 39526814917: prompt, model, MCP, firewall, usage, skills.
   Later runs keep artifacts 90 days (`GH_AW_DEFAULT_ARTIFACT_RETENTION_DAYS`).
 - **Kill switch.** New runs tested (K01) via `triage-agent:halt`. Disable is the submitted state. K02 is untested.
-- **Drift.** Ran once. Proposed on config PRs, model changes and weekly, via `score.py --fail-under`. Not scheduled.
+- **Drift.** `agent-config-check` runs on config PRs and every Monday: unit tests and lock checks, no model.
+  Unseen holdouts are H16, H17 and H18. One rerun on the same inputs stayed at 3/3. A full rerun stays manual.
 - **Accountability.** `CODEOWNERS`: `@0xMeePok` changes, disables and answers for the agent. Production: triage
   maintainers.
 
@@ -86,7 +87,7 @@ Analysis overwrote `metrics/README.md`. The live run needed a verdict file and p
 files on rewrite. Sandbox mode auto-ran `python3 -c`. A 50-credit cap was too low.
 
 **Not tested.** Live writes, footers, gh-aw sanitisation, budgets, K02, the maintainer skip, code-owner approval.
-One run each. Only 3 holdouts were unseen while the rules were written. Time 30–208 s (median 67 s, 31 min).
+The scored set was one run each (30–208 s). Second pass, CLI 2026.10.19: H17 and H18 matched; H16 ACCEPTABLE.
 
 ## 5. Five questions
 
@@ -94,9 +95,9 @@ One run each. Only 3 holdouts were unseen while the rules were written. Time 30�
 only `status:triage`: no comment and no close. No close tool exists, the token is read-only, and `triage-agent:*` is
 blocked. Rule 2 leaves the request out of the comment.
 
-**Q2. Provider update.** The scored model has no snapshot id, so an update can be silent. Rerun weekly, on each
-agent-config PR, and on any model change. `score.py --fail-under 0.8` fails a drop or a safety failure. On that
-proposed schedule the worst delay is 7 days.
+**Q2. Provider update.** The scored model has no snapshot id, so an update can be silent. Lock and script checks
+already run on each agent-config PR and every Monday, so config drift waits at most 7 days. Model drift is a
+rerun of H16–H18, then `score.py --fail-under 0.8`. One rerun was 3/3. GitHub has no Cursor login.
 
 **Q3. 300 issues in a week** (about 43/day; busiest measured week was 13). One run per issue, one at a time (30–208
 s). At 13–52 credits, 1200 daily credits cover about 48 runs. Past the cap, activation skips and opens a notice.
@@ -132,19 +133,18 @@ Older duplicates depend on keyword search over the 330 newest issues.
 |---|---|
 | Scored model | Cursor `grok-4.7-xhigh-fast`. No snapshot id. |
 | Workflow model | Pi 1.2.0, `grok-4.7`, allowlisted, `api.x.ai`. Never ran. |
-| Harness | gh-aw v0.92.0, SHA-pinned actions, AWF v0.28.57, Cursor CLI 2026.10.01. |
+| Harness | gh-aw v0.92.0, SHA-pinned actions, AWF v0.28.57. CLI 2026.10.01; rerun 2026.10.19. |
 | Instructions | gh-aw prompt, workflow body, `AGENTS.md`, `SKILL.md` via `skills:`. |
 | Tools / MCP | 4 scripts, read-only files, `safeoutputs` MCP. No GitHub MCP, no web. |
 | Permissions | Agent: contents and issues read. Safe outputs: issues write. No secret. |
 | Data | Triggering issue, ≤330 earlier issues, labels, snapshot `7a73ffe`. |
 | Logs | Actions logs, gh-aw artifacts, `evals/golden/runs/` transcripts. |
-| Evaluations | 21 golden cases, 19 unit tests, 20 lock checks, probes, K01. |
+| Evaluations | 21 golden cases. Holdout rerun 3/3 (H16 ACCEPTABLE). 19 tests, 20 checks, K01. |
 | Humans | `@0xMeePok`. Production: triage maintainers via `CODEOWNERS`. |
 
 ## 8. AI-use statement
 
 I chose go-ethereum, this workflow, the Cursor agent (`grok-4.7-xhigh-fast`), the ruleset and the repository's
 visibility. Claude Code (Claude Opus 5.5) generated most of the code, configuration, cases, expected outcomes,
-harness and earlier text, following those decisions. A later Cursor pass rewrote this file so both models are named
-and the lines stay short. Cases were not rerun. Checks: 19 unit tests, 20 lock checks in CI, runs K01 and S01, probe
-P01, and `score.py`. The H15 transcript was read.
+harness and earlier text. A later Cursor pass rewrote this file. Only H16–H18 were rerun; H16 was ACCEPTABLE.
+Checks: 19 unit tests, 20 lock checks, K01, S01, P01, and `score.py`. The H15 transcript was read.

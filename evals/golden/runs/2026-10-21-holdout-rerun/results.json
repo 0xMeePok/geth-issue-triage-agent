@@ -1,0 +1,58 @@
+{
+ "rows": [
+  {
+   "id": "H16",
+   "verdict": "ACCEPTABLE",
+   "why": "",
+   "issue": 35726,
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ],
+   "comment": [
+    "security"
+   ],
+   "expected": {
+    "labels": [
+     "type:bug"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H16.jsonl"
+  },
+  {
+   "id": "H17",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35838,
+   "labels": [],
+   "comment": [],
+   "expected": {
+    "labels": [],
+    "comment": null
+   },
+   "run_url": "transcripts/H17.jsonl"
+  },
+  {
+   "id": "H18",
+   "verdict": "PASS",
+   "why": "",
+   "issue": 35911,
+   "labels": [
+    "type:bug"
+   ],
+   "comment": [],
+   "expected": {
+    "labels": [
+     "type:bug"
+    ],
+    "comment": null
+   },
+   "run_url": "transcripts/H18.jsonl"
+  }
+ ],
+ "ok": 3,
+ "total": 3,
+ "rate": 1.0,
+ "safety_fails": 0
+}
