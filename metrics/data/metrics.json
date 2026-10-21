@@ -1,0 +1,4833 @@
+{
+ "summary": {
+  "window": [
+   "2025-10-15",
+   "2026-10-14"
+  ],
+  "collected_at": "2026-10-20T17:10:34+00:00",
+  "issues_total": 245,
+  "issues_by_external_authors": 222,
+  "maintainers_identified": [
+   "MariusVanDerWijden",
+   "chfast",
+   "cskiraly",
+   "fjl",
+   "gballet",
+   "healthykim",
+   "jrhea",
+   "jwasinger",
+   "karalabe",
+   "lightclient",
+   "nflaig",
+   "rjl493456442",
+   "s1na",
+   "zsfelfoldi"
+  ],
+  "author_association": {
+   "MEMBER": 13,
+   "NONE": 170,
+   "CONTRIBUTOR": 62
+  },
+  "ttfr_hours_external": {
+   "n_responded": 158,
+   "median": 44.8,
+   "p75": 172.3,
+   "p90": 751.7
+  },
+  "responded_within": {
+   "24h": {
+    "eligible": 222,
+    "responded": 64,
+    "share": 0.288
+   },
+   "72h": {
+    "eligible": 222,
+    "responded": 96,
+    "share": 0.432
+   },
+   "7d": {
+    "eligible": 222,
+    "responded": 117,
+    "share": 0.527
+   },
+   "30d": {
+    "eligible": 191,
+    "responded": 124,
+    "share": 0.649
+   }
+  },
+  "never_responded_external": 64,
+  "open_unanswered_external": 40,
+  "open_unanswered_older_than_30d": 26,
+  "first_response_kind": {
+   "IssueComment": 69,
+   "ClosedEvent": 76,
+   "null": 64,
+   "LabeledEvent": 4,
+   "AssignedEvent": 9
+  },
+  "template_label_share": 0.555,
+  "no_label_at_all": 104,
+  "external_with_maintainer_label": 7,
+  "maintainer_label_names": {
+   "status:triage": 6,
+   "website": 1
+  },
+  "state_reason": {
+   "CLOSED/COMPLETED": 167,
+   "CLOSED/NOT_PLANNED": 13,
+   "OPEN/None": 65
+  },
+  "closed_by_author_external": 29,
+  "silent_close_first_external": 76,
+  "per_week_mean": 4.7,
+  "per_week_max": 13
+ },
+ "rows": [
+  {
+   "number": 32922,
+   "created": "2025-10-16T06:49:52Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 148.9586111111111,
+   "ttfa_h": 148.9586111111111,
+   "first_kind": "IssueComment",
+   "age_h": 8866.345,
+   "closed_by_author": false,
+   "body_len": 471
+  },
+  {
+   "number": 32931,
+   "created": "2025-10-17T08:10:52Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 6.764722222222222,
+   "ttfa_h": 2.5036111111111112,
+   "first_kind": "IssueComment",
+   "age_h": 8840.995,
+   "closed_by_author": true,
+   "body_len": 1382
+  },
+  {
+   "number": 32935,
+   "created": "2025-10-17T10:44:23Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 69.28,
+   "ttfa_h": 69.28,
+   "first_kind": "IssueComment",
+   "age_h": 8838.43638888889,
+   "closed_by_author": false,
+   "body_len": 956
+  },
+  {
+   "number": 32975,
+   "created": "2025-10-20T23:03:28Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.09194444444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8754.118333333334,
+   "closed_by_author": false,
+   "body_len": 301
+  },
+  {
+   "number": 32976,
+   "created": "2025-10-21T03:03:20Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 5.518888888888889,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8750.120555555555,
+   "closed_by_author": false,
+   "body_len": 0
+  },
+  {
+   "number": 32977,
+   "created": "2025-10-21T03:03:45Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 5.510833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8750.113611111112,
+   "closed_by_author": false,
+   "body_len": 1
+  },
+  {
+   "number": 32984,
+   "created": "2025-10-21T09:05:41Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1.4108333333333334,
+   "ttfa_h": 1.4108333333333334,
+   "first_kind": "IssueComment",
+   "age_h": 8744.08138888889,
+   "closed_by_author": false,
+   "body_len": 290
+  },
+  {
+   "number": 32990,
+   "created": "2025-10-21T14:27:14Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 8738.722222222223,
+   "closed_by_author": true,
+   "body_len": 592
+  },
+  {
+   "number": 33000,
+   "created": "2025-10-22T20:34:15Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 12.553611111111111,
+   "first_kind": null,
+   "age_h": 8708.605277777779,
+   "closed_by_author": false,
+   "body_len": 1678
+  },
+  {
+   "number": 33008,
+   "created": "2025-10-23T17:49:17Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 8687.354722222222,
+   "closed_by_author": true,
+   "body_len": 409
+  },
+  {
+   "number": 33014,
+   "created": "2025-10-24T12:25:20Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2.6475,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8668.753888888888,
+   "closed_by_author": false,
+   "body_len": 4893
+  },
+  {
+   "number": 33034,
+   "created": "2025-10-28T01:57:31Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1.66,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8583.2175,
+   "closed_by_author": false,
+   "body_len": 860
+  },
+  {
+   "number": 33039,
+   "created": "2025-10-28T14:17:13Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 0.7230555555555556,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8570.889166666666,
+   "closed_by_author": false,
+   "body_len": 2359
+  },
+  {
+   "number": 33040,
+   "created": "2025-10-28T15:09:28Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 1008.3211111111111,
+   "first_kind": null,
+   "age_h": 8570.018333333333,
+   "closed_by_author": false,
+   "body_len": 5255
+  },
+  {
+   "number": 33049,
+   "created": "2025-10-29T11:21:50Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 53.87166666666667,
+   "ttfa_h": 53.87166666666667,
+   "first_kind": "IssueComment",
+   "age_h": 8549.812222222223,
+   "closed_by_author": false,
+   "body_len": 2067
+  },
+  {
+   "number": 33073,
+   "created": "2025-11-01T17:02:01Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 168.20583333333335,
+   "ttfa_h": 41.326388888888886,
+   "first_kind": "IssueComment",
+   "age_h": 8472.1425,
+   "closed_by_author": false,
+   "body_len": 467
+  },
+  {
+   "number": 33079,
+   "created": "2025-11-02T06:43:02Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 5.063888888888889,
+   "ttfa_h": 5.063888888888889,
+   "first_kind": "IssueComment",
+   "age_h": 8458.458888888888,
+   "closed_by_author": false,
+   "body_len": 7618
+  },
+  {
+   "number": 33091,
+   "created": "2025-11-03T13:33:41Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.2886111111111111,
+   "ttfa_h": 0.2886111111111111,
+   "first_kind": "IssueComment",
+   "age_h": 8427.614722222223,
+   "closed_by_author": false,
+   "body_len": 3228
+  },
+  {
+   "number": 33106,
+   "created": "2025-11-05T14:46:15Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "status:triage",
+    "type:bug"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 0.17222222222222222,
+   "ttfa_h": 0.23666666666666666,
+   "first_kind": "LabeledEvent",
+   "age_h": 8378.405277777778,
+   "closed_by_author": false,
+   "body_len": 334
+  },
+  {
+   "number": 33114,
+   "created": "2025-11-06T19:11:12Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1670.8997222222222,
+   "ttfa_h": 1670.8997222222222,
+   "first_kind": "IssueComment",
+   "age_h": 8349.989444444445,
+   "closed_by_author": false,
+   "body_len": 699
+  },
+  {
+   "number": 33158,
+   "created": "2025-11-12T07:57:35Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 0.3397222222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8217.216388888888,
+   "closed_by_author": false,
+   "body_len": 395
+  },
+  {
+   "number": 33165,
+   "created": "2025-11-13T02:19:07Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 4.840833333333333,
+   "ttfa_h": 4.840833333333333,
+   "first_kind": "IssueComment",
+   "age_h": 8198.8575,
+   "closed_by_author": false,
+   "body_len": 11098
+  },
+  {
+   "number": 33177,
+   "created": "2025-11-13T11:58:38Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1.0902777777777777,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8189.198888888889,
+   "closed_by_author": false,
+   "body_len": 301
+  },
+  {
+   "number": 33178,
+   "created": "2025-11-13T13:05:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2.035833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8188.0858333333335,
+   "closed_by_author": false,
+   "body_len": 301
+  },
+  {
+   "number": 33197,
+   "created": "2025-11-16T04:05:09Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2976.7858333333334,
+   "ttfa_h": 543.4697222222222,
+   "first_kind": "ClosedEvent",
+   "age_h": 8125.090277777777,
+   "closed_by_author": false,
+   "body_len": 505
+  },
+  {
+   "number": 33199,
+   "created": "2025-11-16T05:56:57Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1.7036111111111112,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8123.226944444445,
+   "closed_by_author": false,
+   "body_len": 301
+  },
+  {
+   "number": 33200,
+   "created": "2025-11-16T06:03:05Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.5988888888888888,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 8123.124722222222,
+   "closed_by_author": false,
+   "body_len": 40
+  },
+  {
+   "number": 33212,
+   "created": "2025-11-17T06:03:26Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "good first issue",
+    "help wanted",
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 6.288888888888889,
+   "ttfa_h": 5.435,
+   "first_kind": "IssueComment",
+   "age_h": 8099.118888888889,
+   "closed_by_author": true,
+   "body_len": 299
+  },
+  {
+   "number": 33221,
+   "created": "2025-11-18T10:11:58Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 195.09777777777776,
+   "first_kind": null,
+   "age_h": 8070.9766666666665,
+   "closed_by_author": false,
+   "body_len": 983
+  },
+  {
+   "number": 33233,
+   "created": "2025-11-20T03:02:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 3537.543888888889,
+   "first_kind": null,
+   "age_h": 8030.1375,
+   "closed_by_author": false,
+   "body_len": 2379
+  },
+  {
+   "number": 33268,
+   "created": "2025-11-25T16:35:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs",
+    "website"
+   ],
+   "maint_labels": [
+    "website"
+   ],
+   "ttfr_h": 124.05944444444444,
+   "ttfa_h": 124.05944444444444,
+   "first_kind": "IssueComment",
+   "age_h": 7896.586111111111,
+   "closed_by_author": false,
+   "body_len": 186
+  },
+  {
+   "number": 33311,
+   "created": "2025-11-27T23:09:13Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 7842.0225,
+   "closed_by_author": true,
+   "body_len": 3
+  },
+  {
+   "number": 33312,
+   "created": "2025-11-27T23:09:23Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 7842.019722222222,
+   "closed_by_author": true,
+   "body_len": 3
+  },
+  {
+   "number": 33313,
+   "created": "2025-11-27T23:09:30Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 7842.017777777778,
+   "closed_by_author": true,
+   "body_len": 3
+  },
+  {
+   "number": 33316,
+   "created": "2025-11-28T09:19:12Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 7831.856111111111,
+   "closed_by_author": true,
+   "body_len": 3408
+  },
+  {
+   "number": 33317,
+   "created": "2025-11-28T09:25:26Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [
+    "rpc"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 426.09472222222223,
+   "ttfa_h": 11.77111111111111,
+   "first_kind": "IssueComment",
+   "age_h": 7831.752222222222,
+   "closed_by_author": false,
+   "body_len": 605
+  },
+  {
+   "number": 33345,
+   "created": "2025-12-02T10:26:40Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 887.2691666666667,
+   "ttfa_h": null,
+   "first_kind": "AssignedEvent",
+   "age_h": 7734.731666666667,
+   "closed_by_author": false,
+   "body_len": 384
+  },
+  {
+   "number": 33351,
+   "created": "2025-12-04T04:38:36Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.1238888888888889,
+   "ttfa_h": 0.1238888888888889,
+   "first_kind": "IssueComment",
+   "age_h": 7692.5327777777775,
+   "closed_by_author": false,
+   "body_len": 5245
+  },
+  {
+   "number": 33365,
+   "created": "2025-12-07T17:47:09Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 36.06055555555555,
+   "ttfa_h": 60.41027777777778,
+   "first_kind": "AssignedEvent",
+   "age_h": 7607.390277777778,
+   "closed_by_author": false,
+   "body_len": 3720
+  },
+  {
+   "number": 33369,
+   "created": "2025-12-08T08:41:08Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 334.7133333333333,
+   "ttfa_h": 334.7133333333333,
+   "first_kind": "IssueComment",
+   "age_h": 7592.490555555555,
+   "closed_by_author": false,
+   "body_len": 1242
+  },
+  {
+   "number": 33371,
+   "created": "2025-12-08T11:19:45Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 17.891111111111112,
+   "ttfa_h": 17.891111111111112,
+   "first_kind": "IssueComment",
+   "age_h": 7589.8469444444445,
+   "closed_by_author": false,
+   "body_len": 45455
+  },
+  {
+   "number": 33387,
+   "created": "2025-12-10T11:14:27Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 694.8355555555555,
+   "ttfa_h": 694.8355555555555,
+   "first_kind": "IssueComment",
+   "age_h": 7541.935277777778,
+   "closed_by_author": true,
+   "body_len": 745
+  },
+  {
+   "number": 33390,
+   "created": "2025-12-10T13:18:30Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 188.68694444444444,
+   "ttfa_h": 25.933055555555555,
+   "first_kind": "IssueComment",
+   "age_h": 7539.8677777777775,
+   "closed_by_author": false,
+   "body_len": 2135
+  },
+  {
+   "number": 33394,
+   "created": "2025-12-11T17:00:04Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 160.91722222222222,
+   "ttfa_h": 94.38444444444444,
+   "first_kind": "ClosedEvent",
+   "age_h": 7512.175,
+   "closed_by_author": false,
+   "body_len": 837
+  },
+  {
+   "number": 33396,
+   "created": "2025-12-12T06:38:37Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 20.91638888888889,
+   "ttfa_h": 0.4363888888888889,
+   "first_kind": "IssueComment",
+   "age_h": 7498.5325,
+   "closed_by_author": false,
+   "body_len": 5625
+  },
+  {
+   "number": 33397,
+   "created": "2025-12-12T06:45:22Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 240.66694444444445,
+   "ttfa_h": 5.683055555555556,
+   "first_kind": "IssueComment",
+   "age_h": 7498.42,
+   "closed_by_author": false,
+   "body_len": 9685
+  },
+  {
+   "number": 33398,
+   "created": "2025-12-12T06:49:24Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 20.948611111111113,
+   "ttfa_h": 20.948611111111113,
+   "first_kind": "IssueComment",
+   "age_h": 7498.352777777778,
+   "closed_by_author": false,
+   "body_len": 2982
+  },
+  {
+   "number": 33401,
+   "created": "2025-12-12T14:29:03Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 0.3625,
+   "ttfa_h": 0.3625,
+   "first_kind": "IssueComment",
+   "age_h": 7490.691944444445,
+   "closed_by_author": false,
+   "body_len": 13711
+  },
+  {
+   "number": 33417,
+   "created": "2025-12-15T13:08:08Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 24.265833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7420.040555555555,
+   "closed_by_author": false,
+   "body_len": 208
+  },
+  {
+   "number": 33420,
+   "created": "2025-12-15T15:45:48Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 66.11194444444445,
+   "ttfa_h": 27.643333333333334,
+   "first_kind": "IssueComment",
+   "age_h": 7417.412777777778,
+   "closed_by_author": false,
+   "body_len": 1544
+  },
+  {
+   "number": 33426,
+   "created": "2025-12-15T23:35:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 2.446388888888889,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7409.5858333333335,
+   "closed_by_author": false,
+   "body_len": 87
+  },
+  {
+   "number": 33427,
+   "created": "2025-12-15T23:40:10Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 2.3644444444444446,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7409.506666666667,
+   "closed_by_author": false,
+   "body_len": 87
+  },
+  {
+   "number": 33433,
+   "created": "2025-12-16T16:00:38Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 7393.165555555555,
+   "closed_by_author": true,
+   "body_len": 4
+  },
+  {
+   "number": 33456,
+   "created": "2025-12-19T12:35:33Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 477.4025,
+   "ttfa_h": 114.26472222222222,
+   "first_kind": "IssueComment",
+   "age_h": 7324.583611111111,
+   "closed_by_author": false,
+   "body_len": 915
+  },
+  {
+   "number": 33482,
+   "created": "2025-12-23T07:04:23Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.7708333333333334,
+   "ttfa_h": 0.7708333333333334,
+   "first_kind": "IssueComment",
+   "age_h": 7234.103055555555,
+   "closed_by_author": false,
+   "body_len": 1009
+  },
+  {
+   "number": 33488,
+   "created": "2025-12-25T04:18:53Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 262.5391666666667,
+   "ttfa_h": 262.56555555555553,
+   "first_kind": "AssignedEvent",
+   "age_h": 7188.8613888888885,
+   "closed_by_author": true,
+   "body_len": 1011
+  },
+  {
+   "number": 33491,
+   "created": "2025-12-26T09:37:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 99.20805555555556,
+   "ttfa_h": 99.20805555555556,
+   "first_kind": "IssueComment",
+   "age_h": 7159.554166666667,
+   "closed_by_author": false,
+   "body_len": 1255
+  },
+  {
+   "number": 33493,
+   "created": "2025-12-27T20:48:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 2.499722222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7124.3694444444445,
+   "closed_by_author": false,
+   "body_len": 126
+  },
+  {
+   "number": 33507,
+   "created": "2026-01-01T00:50:58Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 31.497777777777777,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7024.326666666667,
+   "closed_by_author": false,
+   "body_len": 665
+  },
+  {
+   "number": 33509,
+   "created": "2026-01-01T19:26:48Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 12.905833333333334,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 7005.729444444444,
+   "closed_by_author": false,
+   "body_len": 39
+  },
+  {
+   "number": 33512,
+   "created": "2026-01-02T18:36:53Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 35.71472222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6982.561388888889,
+   "closed_by_author": false,
+   "body_len": 2818
+  },
+  {
+   "number": 33514,
+   "created": "2026-01-02T23:42:07Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 30.572222222222223,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6977.474166666667,
+   "closed_by_author": false,
+   "body_len": 301
+  },
+  {
+   "number": 33524,
+   "created": "2026-01-04T19:36:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 32.96944444444444,
+   "ttfa_h": 32.96944444444444,
+   "first_kind": "IssueComment",
+   "age_h": 6933.570833333333,
+   "closed_by_author": false,
+   "body_len": 280
+  },
+  {
+   "number": 33527,
+   "created": "2026-01-05T11:35:19Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 759.7380555555555,
+   "ttfa_h": 2.1375,
+   "first_kind": "ClosedEvent",
+   "age_h": 6917.5875,
+   "closed_by_author": false,
+   "body_len": 3180
+  },
+  {
+   "number": 33562,
+   "created": "2026-01-09T10:05:01Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 102.415,
+   "ttfa_h": 102.415,
+   "first_kind": "IssueComment",
+   "age_h": 6823.0925,
+   "closed_by_author": false,
+   "body_len": 1010
+  },
+  {
+   "number": 33566,
+   "created": "2026-01-09T14:17:00Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 139.76083333333332,
+   "ttfa_h": 139.76083333333332,
+   "first_kind": "IssueComment",
+   "age_h": 6818.892777777778,
+   "closed_by_author": false,
+   "body_len": 1572
+  },
+  {
+   "number": 33572,
+   "created": "2026-01-09T20:23:11Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1253.588888888889,
+   "ttfa_h": 33.047222222222224,
+   "first_kind": "IssueComment",
+   "age_h": 6812.789722222222,
+   "closed_by_author": false,
+   "body_len": 14185
+  },
+  {
+   "number": 33595,
+   "created": "2026-01-13T16:46:36Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.8513888888888889,
+   "ttfa_h": 0.5491666666666667,
+   "first_kind": "IssueComment",
+   "age_h": 6720.399444444444,
+   "closed_by_author": false,
+   "body_len": 207
+  },
+  {
+   "number": 33597,
+   "created": "2026-01-13T18:11:28Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 25.640833333333333,
+   "ttfa_h": 25.640833333333333,
+   "first_kind": "IssueComment",
+   "age_h": 6718.985,
+   "closed_by_author": true,
+   "body_len": 132
+  },
+  {
+   "number": 33630,
+   "created": "2026-01-17T15:18:05Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "good first issue",
+    "help wanted",
+    "type:bug"
+   ],
+   "maint_labels": [
+    "good first issue",
+    "help wanted"
+   ],
+   "ttfr_h": 45.896388888888886,
+   "ttfa_h": 12.155555555555555,
+   "first_kind": "LabeledEvent",
+   "age_h": 6625.874722222222,
+   "closed_by_author": false,
+   "body_len": 657
+  },
+  {
+   "number": 33661,
+   "created": "2026-01-22T10:08:36Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [
+    "amsterdam"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 6511.0327777777775,
+   "closed_by_author": false,
+   "body_len": 521
+  },
+  {
+   "number": 33662,
+   "created": "2026-01-22T10:36:29Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 128.38416666666666,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6510.5680555555555,
+   "closed_by_author": false,
+   "body_len": 374
+  },
+  {
+   "number": 33663,
+   "created": "2026-01-22T11:00:20Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1642.006111111111,
+   "ttfa_h": 475.7086111111111,
+   "first_kind": "IssueComment",
+   "age_h": 6510.170555555555,
+   "closed_by_author": false,
+   "body_len": 231
+  },
+  {
+   "number": 33664,
+   "created": "2026-01-22T11:08:08Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 2140.3355555555554,
+   "ttfa_h": 0.19444444444444445,
+   "first_kind": "IssueComment",
+   "age_h": 6510.040555555555,
+   "closed_by_author": false,
+   "body_len": 209
+  },
+  {
+   "number": 33666,
+   "created": "2026-01-22T14:52:40Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 254.54583333333332,
+   "ttfa_h": 254.54583333333332,
+   "first_kind": "IssueComment",
+   "age_h": 6506.298333333333,
+   "closed_by_author": false,
+   "body_len": 745
+  },
+  {
+   "number": 33668,
+   "created": "2026-01-23T08:45:48Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2.2519444444444443,
+   "ttfa_h": 2.2519444444444443,
+   "first_kind": "IssueComment",
+   "age_h": 6488.412777777778,
+   "closed_by_author": false,
+   "body_len": 5
+  },
+  {
+   "number": 33687,
+   "created": "2026-01-26T18:37:44Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 29.9675,
+   "ttfa_h": 5.839722222222222,
+   "first_kind": "IssueComment",
+   "age_h": 6406.547222222222,
+   "closed_by_author": false,
+   "body_len": 969
+  },
+  {
+   "number": 33696,
+   "created": "2026-01-28T11:42:09Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 113.59916666666666,
+   "ttfa_h": 71.77277777777778,
+   "first_kind": "ClosedEvent",
+   "age_h": 6365.4736111111115,
+   "closed_by_author": false,
+   "body_len": 397
+  },
+  {
+   "number": 33731,
+   "created": "2026-01-31T18:58:16Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 6286.205,
+   "closed_by_author": true,
+   "body_len": 128
+  },
+  {
+   "number": 33744,
+   "created": "2026-02-03T09:52:17Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 6223.304722222222,
+   "closed_by_author": false,
+   "body_len": 1133
+  },
+  {
+   "number": 33762,
+   "created": "2026-02-04T22:24:33Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 28.995833333333334,
+   "ttfa_h": 28.995833333333334,
+   "first_kind": "IssueComment",
+   "age_h": 6186.766944444445,
+   "closed_by_author": true,
+   "body_len": 497
+  },
+  {
+   "number": 33768,
+   "created": "2026-02-05T16:30:21Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.816111111111111,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6168.670277777778,
+   "closed_by_author": false,
+   "body_len": 502
+  },
+  {
+   "number": 33769,
+   "created": "2026-02-05T16:30:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.8138888888888889,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6168.669166666667,
+   "closed_by_author": false,
+   "body_len": 493
+  },
+  {
+   "number": 33770,
+   "created": "2026-02-05T16:31:30Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.7922222222222222,
+   "ttfa_h": 1.7922222222222222,
+   "first_kind": "IssueComment",
+   "age_h": 6168.651111111111,
+   "closed_by_author": false,
+   "body_len": 254
+  },
+  {
+   "number": 33771,
+   "created": "2026-02-05T16:31:33Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.726388888888889,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6168.650277777778,
+   "closed_by_author": false,
+   "body_len": 243
+  },
+  {
+   "number": 33784,
+   "created": "2026-02-07T04:21:22Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 8.197222222222223,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 6132.82,
+   "closed_by_author": false,
+   "body_len": 193
+  },
+  {
+   "number": 33795,
+   "created": "2026-02-09T01:42:38Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.38416666666666666,
+   "ttfa_h": 0.38416666666666666,
+   "first_kind": "IssueComment",
+   "age_h": 6087.4655555555555,
+   "closed_by_author": false,
+   "body_len": 804
+  },
+  {
+   "number": 33809,
+   "created": "2026-02-10T10:54:14Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 6054.272222222222,
+   "closed_by_author": false,
+   "body_len": 612
+  },
+  {
+   "number": 33811,
+   "created": "2026-02-10T14:52:00Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 304.8575,
+   "first_kind": null,
+   "age_h": 6050.309444444444,
+   "closed_by_author": false,
+   "body_len": 768
+  },
+  {
+   "number": 33814,
+   "created": "2026-02-11T01:17:56Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2369.1341666666667,
+   "ttfa_h": 470.35333333333335,
+   "first_kind": "ClosedEvent",
+   "age_h": 6039.877222222222,
+   "closed_by_author": false,
+   "body_len": 1741
+  },
+  {
+   "number": 33828,
+   "created": "2026-02-12T12:47:29Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "status:triage",
+    "type:feature"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 19.859166666666667,
+   "ttfa_h": 19.87388888888889,
+   "first_kind": "LabeledEvent",
+   "age_h": 6004.384722222222,
+   "closed_by_author": false,
+   "body_len": 2336
+  },
+  {
+   "number": 33871,
+   "created": "2026-02-19T16:53:05Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 109.92972222222222,
+   "ttfa_h": 109.92972222222222,
+   "first_kind": "IssueComment",
+   "age_h": 5832.291388888889,
+   "closed_by_author": false,
+   "body_len": 373
+  },
+  {
+   "number": 33873,
+   "created": "2026-02-19T23:43:37Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "status:triage",
+    "type:feature"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 609.1027777777778,
+   "ttfa_h": 609.1027777777778,
+   "first_kind": "IssueComment",
+   "age_h": 5825.449166666666,
+   "closed_by_author": true,
+   "body_len": 2083
+  },
+  {
+   "number": 33877,
+   "created": "2026-02-23T01:33:38Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 7.485833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 5751.615555555555,
+   "closed_by_author": false,
+   "body_len": 137
+  },
+  {
+   "number": 33907,
+   "created": "2026-02-27T19:48:03Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 58.42194444444444,
+   "ttfa_h": 58.42194444444444,
+   "first_kind": "IssueComment",
+   "age_h": 5637.375277777778,
+   "closed_by_author": false,
+   "body_len": 1675
+  },
+  {
+   "number": 33939,
+   "created": "2026-03-03T10:05:04Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 347.38,
+   "ttfa_h": 347.38,
+   "first_kind": "IssueComment",
+   "age_h": 5551.091666666666,
+   "closed_by_author": false,
+   "body_len": 789
+  },
+  {
+   "number": 33953,
+   "created": "2026-03-04T17:21:13Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 7.5808333333333335,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 5519.8225,
+   "closed_by_author": false,
+   "body_len": 171
+  },
+  {
+   "number": 33965,
+   "created": "2026-03-06T01:49:00Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 3.505,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 5487.359444444444,
+   "closed_by_author": false,
+   "body_len": 372
+  },
+  {
+   "number": 33977,
+   "created": "2026-03-09T15:48:50Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 0.5469444444444445,
+   "ttfa_h": 0.5469444444444445,
+   "first_kind": "IssueComment",
+   "age_h": 5401.362222222222,
+   "closed_by_author": false,
+   "body_len": 797
+  },
+  {
+   "number": 34010,
+   "created": "2026-03-16T06:33:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 14.969166666666666,
+   "ttfa_h": 14.969166666666666,
+   "first_kind": "IssueComment",
+   "age_h": 5242.619166666666,
+   "closed_by_author": false,
+   "body_len": 630
+  },
+  {
+   "number": 34038,
+   "created": "2026-03-17T21:50:08Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 3.5241666666666664,
+   "first_kind": null,
+   "age_h": 5203.3405555555555,
+   "closed_by_author": true,
+   "body_len": 2059
+  },
+  {
+   "number": 34075,
+   "created": "2026-03-23T14:28:50Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1027.0105555555556,
+   "ttfa_h": 921.8325,
+   "first_kind": "ClosedEvent",
+   "age_h": 5066.695555555556,
+   "closed_by_author": false,
+   "body_len": 1678
+  },
+  {
+   "number": 34108,
+   "created": "2026-03-27T19:14:23Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 420.4897222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4965.936388888889,
+   "closed_by_author": false,
+   "body_len": 1335
+  },
+  {
+   "number": 34113,
+   "created": "2026-03-29T15:44:07Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4921.440833333333,
+   "closed_by_author": false,
+   "body_len": 441
+  },
+  {
+   "number": 34114,
+   "created": "2026-03-29T15:44:26Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 15.833055555555555,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4921.435555555556,
+   "closed_by_author": false,
+   "body_len": 1436
+  },
+  {
+   "number": 34621,
+   "created": "2026-03-31T09:19:31Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1370.3136111111112,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4879.850833333333,
+   "closed_by_author": false,
+   "body_len": 300
+  },
+  {
+   "number": 34622,
+   "created": "2026-03-31T09:37:52Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2.352222222222222,
+   "ttfa_h": 2.326111111111111,
+   "first_kind": "ClosedEvent",
+   "age_h": 4879.545,
+   "closed_by_author": false,
+   "body_len": 973
+  },
+  {
+   "number": 34623,
+   "created": "2026-03-31T11:20:07Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 204.9427777777778,
+   "ttfa_h": 166.34972222222223,
+   "first_kind": "IssueComment",
+   "age_h": 4877.840833333334,
+   "closed_by_author": false,
+   "body_len": 157
+  },
+  {
+   "number": 34628,
+   "created": "2026-04-01T01:39:27Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4863.518611111111,
+   "closed_by_author": false,
+   "body_len": 571
+  },
+  {
+   "number": 34632,
+   "created": "2026-04-01T19:22:19Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 5.692222222222222,
+   "ttfa_h": 5.755,
+   "first_kind": "AssignedEvent",
+   "age_h": 4845.804166666667,
+   "closed_by_author": false,
+   "body_len": 1838
+  },
+  {
+   "number": 34646,
+   "created": "2026-04-03T10:32:31Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 120.41694444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4806.634166666667,
+   "closed_by_author": false,
+   "body_len": 562
+  },
+  {
+   "number": 34648,
+   "created": "2026-04-03T10:38:23Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 96.23194444444445,
+   "ttfa_h": 96.23194444444445,
+   "first_kind": "IssueComment",
+   "age_h": 4806.536388888889,
+   "closed_by_author": false,
+   "body_len": 4178
+  },
+  {
+   "number": 34692,
+   "created": "2026-04-09T13:41:09Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 924.9344444444445,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4659.490277777778,
+   "closed_by_author": false,
+   "body_len": 1554
+  },
+  {
+   "number": 34705,
+   "created": "2026-04-11T19:18:27Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1932.3725,
+   "ttfa_h": 42.532222222222224,
+   "first_kind": "ClosedEvent",
+   "age_h": 4605.868611111111,
+   "closed_by_author": false,
+   "body_len": 1932
+  },
+  {
+   "number": 34708,
+   "created": "2026-04-12T14:24:05Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 90.29055555555556,
+   "first_kind": null,
+   "age_h": 4586.774722222222,
+   "closed_by_author": false,
+   "body_len": 1616
+  },
+  {
+   "number": 34709,
+   "created": "2026-04-12T14:24:11Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 84.35722222222222,
+   "ttfa_h": 73.93027777777777,
+   "first_kind": "IssueComment",
+   "age_h": 4586.773055555555,
+   "closed_by_author": false,
+   "body_len": 485
+  },
+  {
+   "number": 34711,
+   "created": "2026-04-12T16:16:35Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 17.68111111111111,
+   "ttfa_h": 17.68111111111111,
+   "first_kind": "IssueComment",
+   "age_h": 4584.899722222222,
+   "closed_by_author": false,
+   "body_len": 1235
+  },
+  {
+   "number": 34744,
+   "created": "2026-04-17T07:00:37Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 4.7844444444444445,
+   "ttfa_h": 4.7844444444444445,
+   "first_kind": "IssueComment",
+   "age_h": 4474.1658333333335,
+   "closed_by_author": false,
+   "body_len": 1450
+  },
+  {
+   "number": 34759,
+   "created": "2026-04-18T16:11:56Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4440.977222222222,
+   "closed_by_author": false,
+   "body_len": 1393
+  },
+  {
+   "number": 34775,
+   "created": "2026-04-21T02:44:41Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4382.431388888889,
+   "closed_by_author": true,
+   "body_len": 3574
+  },
+  {
+   "number": 34796,
+   "created": "2026-04-22T17:24:22Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 2.746111111111111,
+   "first_kind": null,
+   "age_h": 4343.77,
+   "closed_by_author": true,
+   "body_len": 4625
+  },
+  {
+   "number": 34805,
+   "created": "2026-04-23T11:28:39Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4325.698611111111,
+   "closed_by_author": true,
+   "body_len": 17
+  },
+  {
+   "number": 34826,
+   "created": "2026-04-25T13:11:47Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 1484.8875,
+   "first_kind": null,
+   "age_h": 4275.979722222222,
+   "closed_by_author": false,
+   "body_len": 398
+  },
+  {
+   "number": 34829,
+   "created": "2026-04-27T08:07:46Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4233.046666666667,
+   "closed_by_author": true,
+   "body_len": 205
+  },
+  {
+   "number": 34830,
+   "created": "2026-04-27T08:12:02Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 4232.975555555556,
+   "closed_by_author": true,
+   "body_len": 232
+  },
+  {
+   "number": 34835,
+   "created": "2026-04-27T14:25:50Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 50.53194444444444,
+   "ttfa_h": 50.53194444444444,
+   "first_kind": "IssueComment",
+   "age_h": 4226.745555555555,
+   "closed_by_author": false,
+   "body_len": 844
+  },
+  {
+   "number": 34836,
+   "created": "2026-04-27T14:45:48Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 50.184444444444445,
+   "ttfa_h": 50.184444444444445,
+   "first_kind": "IssueComment",
+   "age_h": 4226.412777777778,
+   "closed_by_author": false,
+   "body_len": 4947
+  },
+  {
+   "number": 34838,
+   "created": "2026-04-27T15:46:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 49.12,
+   "ttfa_h": 49.12,
+   "first_kind": "IssueComment",
+   "age_h": 4225.4025,
+   "closed_by_author": false,
+   "body_len": 1111
+  },
+  {
+   "number": 34853,
+   "created": "2026-04-30T05:01:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1038.2186111111112,
+   "ttfa_h": 1038.2186111111112,
+   "first_kind": "IssueComment",
+   "age_h": 4164.152777777777,
+   "closed_by_author": false,
+   "body_len": 1987
+  },
+  {
+   "number": 34865,
+   "created": "2026-05-02T22:11:21Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 15.409444444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4098.986944444445,
+   "closed_by_author": false,
+   "body_len": 292
+  },
+  {
+   "number": 34877,
+   "created": "2026-05-05T09:21:24Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 727.5969444444445,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4039.8194444444443,
+   "closed_by_author": false,
+   "body_len": 457
+  },
+  {
+   "number": 34881,
+   "created": "2026-05-05T19:58:41Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 61.577777777777776,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 4029.1980555555556,
+   "closed_by_author": false,
+   "body_len": 8133
+  },
+  {
+   "number": 34893,
+   "created": "2026-05-07T01:45:10Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 12.5375,
+   "ttfa_h": 12.5375,
+   "first_kind": "IssueComment",
+   "age_h": 3999.423333333333,
+   "closed_by_author": false,
+   "body_len": 19
+  },
+  {
+   "number": 34907,
+   "created": "2026-05-08T12:46:10Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 4.856111111111111,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3964.4066666666668,
+   "closed_by_author": false,
+   "body_len": 0
+  },
+  {
+   "number": 34913,
+   "created": "2026-05-09T07:44:47Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 8.330277777777777,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3945.429722222222,
+   "closed_by_author": false,
+   "body_len": 372
+  },
+  {
+   "number": 34944,
+   "created": "2026-05-12T05:12:16Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 747.4241666666667,
+   "ttfa_h": 82.30333333333333,
+   "first_kind": "ClosedEvent",
+   "age_h": 3875.971666666667,
+   "closed_by_author": false,
+   "body_len": 2644
+  },
+  {
+   "number": 34983,
+   "created": "2026-05-15T18:20:34Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 415.4275,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3790.8333333333335,
+   "closed_by_author": false,
+   "body_len": 1565
+  },
+  {
+   "number": 34984,
+   "created": "2026-05-16T02:09:02Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 52.05,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3783.0255555555555,
+   "closed_by_author": false,
+   "body_len": 193
+  },
+  {
+   "number": 35018,
+   "created": "2026-05-20T22:51:36Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 9.078055555555556,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3666.3161111111112,
+   "closed_by_author": false,
+   "body_len": 967
+  },
+  {
+   "number": 35033,
+   "created": "2026-05-22T20:44:19Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 110.15472222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3620.4375,
+   "closed_by_author": false,
+   "body_len": 1233
+  },
+  {
+   "number": 35039,
+   "created": "2026-05-23T15:53:12Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 137.70694444444445,
+   "ttfa_h": 137.70694444444445,
+   "first_kind": "IssueComment",
+   "age_h": 3601.2894444444446,
+   "closed_by_author": false,
+   "body_len": 167
+  },
+  {
+   "number": 35071,
+   "created": "2026-05-29T09:21:05Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 672.7322222222223,
+   "first_kind": null,
+   "age_h": 3463.824722222222,
+   "closed_by_author": false,
+   "body_len": 8959
+  },
+  {
+   "number": 35092,
+   "created": "2026-05-31T02:58:30Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 3422.201111111111,
+   "closed_by_author": false,
+   "body_len": 2647
+  },
+  {
+   "number": 35145,
+   "created": "2026-06-11T03:28:22Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 29.31888888888889,
+   "ttfa_h": 29.31888888888889,
+   "first_kind": "IssueComment",
+   "age_h": 3157.7033333333334,
+   "closed_by_author": false,
+   "body_len": 1072
+  },
+  {
+   "number": 35161,
+   "created": "2026-06-12T09:38:04Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 113.59972222222223,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 3127.5416666666665,
+   "closed_by_author": false,
+   "body_len": 435
+  },
+  {
+   "number": 35162,
+   "created": "2026-06-12T11:02:50Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 3126.128888888889,
+   "closed_by_author": true,
+   "body_len": 1149
+  },
+  {
+   "number": 35164,
+   "created": "2026-06-12T19:33:41Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 104.71805555555555,
+   "ttfa_h": 104.71805555555555,
+   "first_kind": "IssueComment",
+   "age_h": 3117.614722222222,
+   "closed_by_author": false,
+   "body_len": 304
+  },
+  {
+   "number": 35182,
+   "created": "2026-06-16T11:27:20Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 15.768888888888888,
+   "ttfa_h": 15.768888888888888,
+   "first_kind": "IssueComment",
+   "age_h": 3029.7205555555556,
+   "closed_by_author": false,
+   "body_len": 3334
+  },
+  {
+   "number": 35210,
+   "created": "2026-06-23T08:22:46Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 3.5280555555555555,
+   "ttfa_h": 136.86277777777778,
+   "first_kind": "AssignedEvent",
+   "age_h": 2864.7966666666666,
+   "closed_by_author": false,
+   "body_len": 1113
+  },
+  {
+   "number": 35240,
+   "created": "2026-06-27T20:47:06Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 2756.391111111111,
+   "closed_by_author": true,
+   "body_len": 447
+  },
+  {
+   "number": 35241,
+   "created": "2026-06-27T20:50:55Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 24.849722222222223,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2756.3275,
+   "closed_by_author": false,
+   "body_len": 372
+  },
+  {
+   "number": 35249,
+   "created": "2026-06-28T16:50:38Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 4.856944444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2736.3322222222223,
+   "closed_by_author": false,
+   "body_len": 133
+  },
+  {
+   "number": 35262,
+   "created": "2026-06-30T02:55:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 2702.2541666666666,
+   "closed_by_author": true,
+   "body_len": 266
+  },
+  {
+   "number": 35263,
+   "created": "2026-06-30T05:42:23Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 314.2083333333333,
+   "ttfa_h": 314.2083333333333,
+   "first_kind": "IssueComment",
+   "age_h": 2699.469722222222,
+   "closed_by_author": false,
+   "body_len": 4458
+  },
+  {
+   "number": 35275,
+   "created": "2026-07-02T03:48:01Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 1253.7625,
+   "first_kind": null,
+   "age_h": 2653.3758333333335,
+   "closed_by_author": false,
+   "body_len": 2387
+  },
+  {
+   "number": 35303,
+   "created": "2026-07-05T09:43:26Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 18.698888888888888,
+   "first_kind": null,
+   "age_h": 2575.452222222222,
+   "closed_by_author": true,
+   "body_len": 193
+  },
+  {
+   "number": 35314,
+   "created": "2026-07-07T07:34:27Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 34.385,
+   "ttfa_h": 33.55361111111111,
+   "first_kind": "ClosedEvent",
+   "age_h": 2529.6019444444446,
+   "closed_by_author": false,
+   "body_len": 2102
+  },
+  {
+   "number": 35319,
+   "created": "2026-07-08T05:57:00Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 9.844722222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2507.226111111111,
+   "closed_by_author": false,
+   "body_len": 1344
+  },
+  {
+   "number": 35325,
+   "created": "2026-07-09T04:52:44Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2013.1341666666667,
+   "ttfa_h": 2010.2516666666668,
+   "first_kind": "IssueComment",
+   "age_h": 2484.2972222222224,
+   "closed_by_author": false,
+   "body_len": 887
+  },
+  {
+   "number": 35329,
+   "created": "2026-07-09T13:59:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 89.35722222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2475.1858333333334,
+   "closed_by_author": false,
+   "body_len": 60
+  },
+  {
+   "number": 35339,
+   "created": "2026-07-10T10:06:12Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 2455.072777777778,
+   "closed_by_author": false,
+   "body_len": 1347
+  },
+  {
+   "number": 35354,
+   "created": "2026-07-14T12:41:58Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "help wanted",
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 120.41444444444444,
+   "first_kind": null,
+   "age_h": 2356.4766666666665,
+   "closed_by_author": false,
+   "body_len": 283
+  },
+  {
+   "number": 35359,
+   "created": "2026-07-14T19:10:08Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 2051.6388888888887,
+   "ttfa_h": 2038.9247222222223,
+   "first_kind": "AssignedEvent",
+   "age_h": 2350.007222222222,
+   "closed_by_author": false,
+   "body_len": 9553
+  },
+  {
+   "number": 35379,
+   "created": "2026-07-18T08:41:14Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 2264.488888888889,
+   "closed_by_author": false,
+   "body_len": 2230
+  },
+  {
+   "number": 35394,
+   "created": "2026-07-21T01:33:18Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1024.3730555555555,
+   "ttfa_h": 1024.3730555555555,
+   "first_kind": "IssueComment",
+   "age_h": 2199.621111111111,
+   "closed_by_author": false,
+   "body_len": 1329
+  },
+  {
+   "number": 35395,
+   "created": "2026-07-21T05:54:59Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 3.0994444444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2195.259722222222,
+   "closed_by_author": false,
+   "body_len": 193
+  },
+  {
+   "number": 35418,
+   "created": "2026-07-25T17:38:37Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 430.31083333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 2087.5325,
+   "closed_by_author": false,
+   "body_len": 6666
+  },
+  {
+   "number": 35431,
+   "created": "2026-07-28T06:49:33Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [
+    "status:triage"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 1035.3222222222223,
+   "ttfa_h": 1035.3347222222221,
+   "first_kind": "LabeledEvent",
+   "age_h": 2026.3502777777778,
+   "closed_by_author": false,
+   "body_len": 1774
+  },
+  {
+   "number": 35435,
+   "created": "2026-07-29T13:20:54Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 306.4111111111111,
+   "ttfa_h": 28.0875,
+   "first_kind": "IssueComment",
+   "age_h": 1995.8277777777778,
+   "closed_by_author": false,
+   "body_len": 152
+  },
+  {
+   "number": 35455,
+   "created": "2026-08-03T10:09:05Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 15.749166666666667,
+   "ttfa_h": 15.749166666666667,
+   "first_kind": "IssueComment",
+   "age_h": 1879.0247222222222,
+   "closed_by_author": false,
+   "body_len": 614
+  },
+  {
+   "number": 35472,
+   "created": "2026-08-07T08:48:33Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 621.34,
+   "ttfa_h": 97.755,
+   "first_kind": "ClosedEvent",
+   "age_h": 1784.3669444444445,
+   "closed_by_author": false,
+   "body_len": 4234
+  },
+  {
+   "number": 35478,
+   "created": "2026-08-08T06:57:31Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 47.833333333333336,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1762.2175,
+   "closed_by_author": false,
+   "body_len": 3964
+  },
+  {
+   "number": 35479,
+   "created": "2026-08-08T13:03:31Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1756.1175,
+   "closed_by_author": false,
+   "body_len": 4807
+  },
+  {
+   "number": 35480,
+   "created": "2026-08-08T13:07:21Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 375.0563888888889,
+   "ttfa_h": 375.0563888888889,
+   "first_kind": "IssueComment",
+   "age_h": 1756.0536111111112,
+   "closed_by_author": false,
+   "body_len": 5428
+  },
+  {
+   "number": 35481,
+   "created": "2026-08-08T13:10:06Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1756.0077777777778,
+   "closed_by_author": false,
+   "body_len": 5989
+  },
+  {
+   "number": 35482,
+   "created": "2026-08-08T13:11:22Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 52.00833333333333,
+   "first_kind": null,
+   "age_h": 1755.9866666666667,
+   "closed_by_author": false,
+   "body_len": 3181
+  },
+  {
+   "number": 35483,
+   "created": "2026-08-08T13:13:41Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 66.70694444444445,
+   "ttfa_h": 51.91861111111111,
+   "first_kind": "IssueComment",
+   "age_h": 1755.9480555555556,
+   "closed_by_author": false,
+   "body_len": 4288
+  },
+  {
+   "number": 35484,
+   "created": "2026-08-08T13:17:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 743.4527777777778,
+   "ttfa_h": 70.7325,
+   "first_kind": "ClosedEvent",
+   "age_h": 1755.8861111111112,
+   "closed_by_author": false,
+   "body_len": 3804
+  },
+  {
+   "number": 35485,
+   "created": "2026-08-08T14:46:17Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1754.4047222222223,
+   "closed_by_author": true,
+   "body_len": 94
+  },
+  {
+   "number": 35488,
+   "created": "2026-08-08T22:04:47Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 62.04888888888889,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1747.096388888889,
+   "closed_by_author": false,
+   "body_len": 458
+  },
+  {
+   "number": 35508,
+   "created": "2026-08-11T07:19:29Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 9.473333333333333,
+   "first_kind": null,
+   "age_h": 1689.8513888888888,
+   "closed_by_author": false,
+   "body_len": 2889
+  },
+  {
+   "number": 35545,
+   "created": "2026-08-16T15:15:23Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 1467.0452777777778,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1561.9197222222222,
+   "closed_by_author": false,
+   "body_len": 16619
+  },
+  {
+   "number": 35546,
+   "created": "2026-08-16T15:17:13Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1561.8891666666666,
+   "closed_by_author": false,
+   "body_len": 26770
+  },
+  {
+   "number": 35547,
+   "created": "2026-08-16T15:17:52Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 624.9419444444444,
+   "first_kind": null,
+   "age_h": 1561.8783333333333,
+   "closed_by_author": false,
+   "body_len": 3881
+  },
+  {
+   "number": 35548,
+   "created": "2026-08-16T15:18:35Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 515.6122222222223,
+   "ttfa_h": 453.4813888888889,
+   "first_kind": "ClosedEvent",
+   "age_h": 1561.8663888888889,
+   "closed_by_author": false,
+   "body_len": 2423
+  },
+  {
+   "number": 35555,
+   "created": "2026-08-19T14:13:53Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 117.33583333333333,
+   "ttfa_h": 115.12083333333334,
+   "first_kind": "IssueComment",
+   "age_h": 1490.9447222222223,
+   "closed_by_author": false,
+   "body_len": 1267
+  },
+  {
+   "number": 35563,
+   "created": "2026-08-21T19:11:53Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 761.7416666666667,
+   "ttfa_h": 692.9238888888889,
+   "first_kind": "IssueComment",
+   "age_h": 1437.9780555555556,
+   "closed_by_author": false,
+   "body_len": 7162
+  },
+  {
+   "number": 35565,
+   "created": "2026-08-22T08:05:54Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 43.10055555555556,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1425.0777777777778,
+   "closed_by_author": false,
+   "body_len": 1158
+  },
+  {
+   "number": 35566,
+   "created": "2026-08-22T11:53:39Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 245.99944444444444,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1421.2819444444444,
+   "closed_by_author": false,
+   "body_len": 372
+  },
+  {
+   "number": 35577,
+   "created": "2026-08-24T16:08:59Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 44.65138888888889,
+   "ttfa_h": 169.06666666666666,
+   "first_kind": "AssignedEvent",
+   "age_h": 1369.026388888889,
+   "closed_by_author": false,
+   "body_len": 5960
+  },
+  {
+   "number": 35602,
+   "created": "2026-08-28T06:59:36Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 1.2066666666666668,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1282.1827777777778,
+   "closed_by_author": false,
+   "body_len": 498
+  },
+  {
+   "number": 35612,
+   "created": "2026-08-29T18:12:14Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 71.68333333333334,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1246.9722222222222,
+   "closed_by_author": false,
+   "body_len": 174
+  },
+  {
+   "number": 35613,
+   "created": "2026-08-30T07:16:49Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 70.7786111111111,
+   "ttfa_h": 70.7786111111111,
+   "first_kind": "IssueComment",
+   "age_h": 1233.8958333333333,
+   "closed_by_author": false,
+   "body_len": 3922
+  },
+  {
+   "number": 35621,
+   "created": "2026-08-31T13:09:55Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 44.93055555555556,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1204.0108333333333,
+   "closed_by_author": false,
+   "body_len": 774
+  },
+  {
+   "number": 35625,
+   "created": "2026-09-01T08:40:26Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1184.5022222222221,
+   "closed_by_author": false,
+   "body_len": 14625
+  },
+  {
+   "number": 35630,
+   "created": "2026-09-02T02:57:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 139.14,
+   "first_kind": null,
+   "age_h": 1166.2191666666668,
+   "closed_by_author": false,
+   "body_len": 11186
+  },
+  {
+   "number": 35632,
+   "created": "2026-09-02T08:13:04Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 342.9972222222222,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1160.9583333333333,
+   "closed_by_author": false,
+   "body_len": 660
+  },
+  {
+   "number": 35649,
+   "created": "2026-09-03T15:16:29Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 1129.901388888889,
+   "closed_by_author": false,
+   "body_len": 4428
+  },
+  {
+   "number": 35659,
+   "created": "2026-09-05T14:53:57Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 154.7302777777778,
+   "first_kind": null,
+   "age_h": 1082.2769444444446,
+   "closed_by_author": false,
+   "body_len": 1508
+  },
+  {
+   "number": 35661,
+   "created": "2026-09-05T16:53:50Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 40.64861111111111,
+   "ttfa_h": 40.64861111111111,
+   "first_kind": "IssueComment",
+   "age_h": 1080.2788888888888,
+   "closed_by_author": false,
+   "body_len": 648
+  },
+  {
+   "number": 35671,
+   "created": "2026-09-08T00:50:12Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 175.37833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 1024.3394444444446,
+   "closed_by_author": false,
+   "body_len": 1704
+  },
+  {
+   "number": 35685,
+   "created": "2026-09-09T22:23:29Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 129.5911111111111,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 978.7847222222222,
+   "closed_by_author": false,
+   "body_len": 636
+  },
+  {
+   "number": 35703,
+   "created": "2026-09-13T09:05:04Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 93.78861111111111,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 896.0916666666667,
+   "closed_by_author": false,
+   "body_len": 372
+  },
+  {
+   "number": 35712,
+   "created": "2026-09-15T04:03:52Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 3.0572222222222223,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 853.1116666666667,
+   "closed_by_author": false,
+   "body_len": 79
+  },
+  {
+   "number": 35713,
+   "created": "2026-09-15T10:20:19Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 141.35777777777778,
+   "first_kind": null,
+   "age_h": 846.8375,
+   "closed_by_author": false,
+   "body_len": 4341
+  },
+  {
+   "number": 35715,
+   "created": "2026-09-15T20:54:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 836.2708333333334,
+   "closed_by_author": true,
+   "body_len": 64
+  },
+  {
+   "number": 35716,
+   "created": "2026-09-15T21:16:08Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 835.9072222222222,
+   "closed_by_author": true,
+   "body_len": 618
+  },
+  {
+   "number": 35717,
+   "created": "2026-09-15T21:40:04Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 835.5083333333333,
+   "closed_by_author": true,
+   "body_len": 534
+  },
+  {
+   "number": 35718,
+   "created": "2026-09-15T22:17:10Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 834.89,
+   "closed_by_author": true,
+   "body_len": 506
+  },
+  {
+   "number": 35726,
+   "created": "2026-09-17T16:08:13Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 793.0391666666667,
+   "closed_by_author": false,
+   "body_len": 3551
+  },
+  {
+   "number": 35744,
+   "created": "2026-09-20T09:06:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [
+    "status:triage"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 69.83083333333333,
+   "ttfa_h": 69.88388888888889,
+   "first_kind": "LabeledEvent",
+   "age_h": 728.0694444444445,
+   "closed_by_author": false,
+   "body_len": 2895
+  },
+  {
+   "number": 35751,
+   "created": "2026-09-21T08:00:45Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 42.07083333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 705.1636111111111,
+   "closed_by_author": false,
+   "body_len": 84
+  },
+  {
+   "number": 35755,
+   "created": "2026-09-21T20:45:58Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 394.4536111111111,
+   "ttfa_h": 394.4536111111111,
+   "first_kind": "IssueComment",
+   "age_h": 692.41,
+   "closed_by_author": false,
+   "body_len": 3895
+  },
+  {
+   "number": 35768,
+   "created": "2026-09-22T16:52:01Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 672.3091666666667,
+   "closed_by_author": false,
+   "body_len": 855
+  },
+  {
+   "number": 35774,
+   "created": "2026-09-23T10:16:26Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 173.6486111111111,
+   "ttfa_h": 18.38861111111111,
+   "first_kind": "IssueComment",
+   "age_h": 654.9022222222222,
+   "closed_by_author": false,
+   "body_len": 2414
+  },
+  {
+   "number": 35775,
+   "created": "2026-09-23T10:49:16Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 654.355,
+   "closed_by_author": false,
+   "body_len": 2531
+  },
+  {
+   "number": 35776,
+   "created": "2026-09-23T10:50:05Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 654.3413888888889,
+   "closed_by_author": false,
+   "body_len": 2008
+  },
+  {
+   "number": 35781,
+   "created": "2026-09-23T14:08:26Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 310.65166666666664,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 651.0355555555556,
+   "closed_by_author": false,
+   "body_len": 2782
+  },
+  {
+   "number": 35783,
+   "created": "2026-09-23T19:33:56Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 645.6105555555556,
+   "closed_by_author": false,
+   "body_len": 4229
+  },
+  {
+   "number": 35788,
+   "created": "2026-09-24T10:00:52Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 99.49833333333333,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 631.1616666666666,
+   "closed_by_author": false,
+   "body_len": 2828
+  },
+  {
+   "number": 35799,
+   "created": "2026-09-25T07:22:52Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 116.30666666666667,
+   "ttfa_h": 116.30666666666667,
+   "first_kind": "IssueComment",
+   "age_h": 609.795,
+   "closed_by_author": false,
+   "body_len": 2373
+  },
+  {
+   "number": 35808,
+   "created": "2026-09-26T04:05:30Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 26.58861111111111,
+   "ttfa_h": 26.58861111111111,
+   "first_kind": "IssueComment",
+   "age_h": 589.0844444444444,
+   "closed_by_author": false,
+   "body_len": 1370
+  },
+  {
+   "number": 35817,
+   "created": "2026-09-28T07:46:46Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 6.1497222222222225,
+   "ttfa_h": null,
+   "first_kind": "AssignedEvent",
+   "age_h": 537.3966666666666,
+   "closed_by_author": false,
+   "body_len": 1897
+  },
+  {
+   "number": 35819,
+   "created": "2026-09-28T10:49:42Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 534.3477777777778,
+   "closed_by_author": false,
+   "body_len": 2355
+  },
+  {
+   "number": 35820,
+   "created": "2026-09-28T13:07:54Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:docs"
+   ],
+   "labels_now": [
+    "type:docs"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 50.783611111111114,
+   "ttfa_h": 50.783611111111114,
+   "first_kind": "IssueComment",
+   "age_h": 532.0444444444445,
+   "closed_by_author": false,
+   "body_len": 101
+  },
+  {
+   "number": 35828,
+   "created": "2026-09-28T21:45:30Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 523.4177777777778,
+   "closed_by_author": false,
+   "body_len": 1179
+  },
+  {
+   "number": 35829,
+   "created": "2026-09-28T21:45:32Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 523.4172222222222,
+   "closed_by_author": false,
+   "body_len": 1009
+  },
+  {
+   "number": 35830,
+   "created": "2026-09-28T21:45:33Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 523.4169444444444,
+   "closed_by_author": false,
+   "body_len": 1307
+  },
+  {
+   "number": 35834,
+   "created": "2026-09-28T23:07:25Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 14.21888888888889,
+   "ttfa_h": null,
+   "first_kind": "AssignedEvent",
+   "age_h": 522.0525,
+   "closed_by_author": false,
+   "body_len": 1184
+  },
+  {
+   "number": 35838,
+   "created": "2026-09-29T10:53:35Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 19.035,
+   "ttfa_h": null,
+   "first_kind": "AssignedEvent",
+   "age_h": 510.28305555555556,
+   "closed_by_author": false,
+   "body_len": 6446
+  },
+  {
+   "number": 35840,
+   "created": "2026-09-29T15:08:48Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [
+    "status:triage"
+   ],
+   "maint_labels": [
+    "status:triage"
+   ],
+   "ttfr_h": 14.54888888888889,
+   "ttfa_h": 14.54888888888889,
+   "first_kind": "IssueComment",
+   "age_h": 506.02944444444444,
+   "closed_by_author": false,
+   "body_len": 3201
+  },
+  {
+   "number": 35852,
+   "created": "2026-09-30T16:03:04Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 481.125,
+   "closed_by_author": false,
+   "body_len": 675
+  },
+  {
+   "number": 35894,
+   "created": "2026-10-07T03:08:42Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "NOT_PLANNED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 326.0311111111111,
+   "closed_by_author": true,
+   "body_len": 6046
+  },
+  {
+   "number": 35897,
+   "created": "2026-10-07T08:40:15Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 17.455555555555556,
+   "ttfa_h": null,
+   "first_kind": "AssignedEvent",
+   "age_h": 320.5052777777778,
+   "closed_by_author": false,
+   "body_len": 8798
+  },
+  {
+   "number": 35900,
+   "created": "2026-10-07T13:30:36Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [
+    "type:feature"
+   ],
+   "labels_now": [
+    "type:feature"
+   ],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 56.51777777777778,
+   "first_kind": null,
+   "age_h": 315.6661111111111,
+   "closed_by_author": false,
+   "body_len": 119
+  },
+  {
+   "number": 35910,
+   "created": "2026-10-08T14:00:47Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 155.46805555555557,
+   "ttfa_h": 147.47055555555556,
+   "first_kind": "IssueComment",
+   "age_h": 291.16305555555556,
+   "closed_by_author": false,
+   "body_len": 2614
+  },
+  {
+   "number": 35911,
+   "created": "2026-10-08T16:04:55Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 289.0941666666667,
+   "closed_by_author": false,
+   "body_len": 3423
+  },
+  {
+   "number": 35912,
+   "created": "2026-10-08T16:05:39Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": 3.2441666666666666,
+   "first_kind": null,
+   "age_h": 289.08194444444445,
+   "closed_by_author": false,
+   "body_len": 3663
+  },
+  {
+   "number": 35913,
+   "created": "2026-10-08T16:07:19Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 289.0541666666667,
+   "closed_by_author": false,
+   "body_len": 3170
+  },
+  {
+   "number": 35915,
+   "created": "2026-10-08T18:38:50Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 11.814444444444444,
+   "ttfa_h": 11.814444444444444,
+   "first_kind": "IssueComment",
+   "age_h": 286.5288888888889,
+   "closed_by_author": false,
+   "body_len": 120
+  },
+  {
+   "number": 35919,
+   "created": "2026-10-09T03:13:03Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [
+    "type:bug"
+   ],
+   "labels_now": [
+    "type:bug"
+   ],
+   "maint_labels": [],
+   "ttfr_h": 3.238611111111111,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 277.9586111111111,
+   "closed_by_author": false,
+   "body_len": 118
+  },
+  {
+   "number": 35921,
+   "created": "2026-10-09T11:01:16Z",
+   "assoc": "MEMBER",
+   "author_is_maintainer": true,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 270.155,
+   "closed_by_author": false,
+   "body_len": 2355
+  },
+  {
+   "number": 35922,
+   "created": "2026-10-09T12:06:58Z",
+   "assoc": "CONTRIBUTOR",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 13.697777777777778,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 269.06,
+   "closed_by_author": false,
+   "body_len": 4864
+  },
+  {
+   "number": 35923,
+   "created": "2026-10-09T13:31:24Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "OPEN",
+   "reason": null,
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": null,
+   "ttfa_h": null,
+   "first_kind": null,
+   "age_h": 267.65277777777777,
+   "closed_by_author": false,
+   "body_len": 1047
+  },
+  {
+   "number": 35932,
+   "created": "2026-10-10T03:36:35Z",
+   "assoc": "NONE",
+   "author_is_maintainer": false,
+   "state": "CLOSED",
+   "reason": "COMPLETED",
+   "template_label": [],
+   "labels_now": [],
+   "maint_labels": [],
+   "ttfr_h": 153.74138888888888,
+   "ttfa_h": null,
+   "first_kind": "ClosedEvent",
+   "age_h": 253.5663888888889,
+   "closed_by_author": false,
+   "body_len": 4738
+  }
+ ]
+}
