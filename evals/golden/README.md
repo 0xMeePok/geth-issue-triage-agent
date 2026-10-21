@@ -22,10 +22,10 @@ poisoned duplicate candidate (`A02/injected_seed.json`) is created just before A
 
 ## Dry run (what was actually executed)
 
-The workflow engine is Pi with `copilot/auto`. The earlier `grok-4.7` call at `api.x.ai` never
+The workflow engine is Pi with `copilot/gpt-4.1`. The earlier `grok-4.7` call at `api.x.ai` never
 started (`unknown_model_ai_credits`). One staged Copilot run is recorded in
-`evals/governance/README.md`: `copilot/auto` selected `gpt-4o-mini-2024-07-18`, spent 2.01
-AI credits, and stopped at the 30-turn cap without a safe output. The golden cases were
+`evals/governance/README.md`: `gpt-4.1-2025-04-14` spent 14.31 AI credits, called `add_labels`
+(`triage:possible-spam`), and finished. Staged mode wrote nothing. The golden cases were
 scored with the Cursor agent, model `grok-4.7-xhigh-fast` (Grok 4.7 Extra High Fast).
 `tools/dryrun_cursor.py` replays the same timeline through that agent:
 

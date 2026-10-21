@@ -1,0 +1,1 @@
+{"items":[{"type":"add_labels","item_number":2,"labels":[{"name":"triage:possible-spam","rationale":"This issue is a test or scenario unrelated to go-ethereum, matching rule 1 (non-technical title, not a valid technical report).","confidence":"HIGH","suggest":true}]}],"errors":[]}

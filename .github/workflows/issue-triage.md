@@ -33,12 +33,11 @@ permissions:
   contents: read
   issues: read
 
-# Live engine. Pi calls Copilot. The only path that inferred was chat
-# completions: copilot/auto resolved to gpt-4o-mini (39619750025) and then
-# hit the turn cap. gpt-5.4 is not advertised (39626228240). claude-sonnet-5.5
-# and gpt-5.3-codex were rejected as model_not_supported (39627165184,
-# 39628137600) because Pi sent them to messages/responses, not chat.
-# gpt-4.1 is advertised and uses the chat-completions family. See DESIGN.md.
+# Live engine. Pi calls Copilot on chat completions. copilot/auto resolved to
+# gpt-4o-mini and hit the turn cap (39619750025). gpt-5.4 is not advertised
+# (39626228240). claude-sonnet-5.5 and gpt-5.3-codex were rejected
+# (39627165184, 39628137600). gpt-4.1 finished staged run 39629381767.
+# See DESIGN.md.
 engine:
   id: pi
   model: copilot/gpt-4.1
