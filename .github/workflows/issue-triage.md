@@ -33,18 +33,18 @@ permissions:
   contents: read
   issues: read
 
-# Live engine. Pi calls a Copilot model this account actually advertises.
-# copilot/auto selected gpt-4o-mini and stopped at the 30-turn cap (39619750025).
-# copilot/gpt-5.4 is not in that account's model list (39626228240). grok-4.7 at
-# api.x.ai never started. Scored cases remain a Cursor dry run. See DESIGN.md.
+# Live engine. Pi calls Copilot through the chat-completions path that already
+# answered. copilot/auto picked gpt-4o-mini and hit the turn cap (39619750025).
+# gpt-5.4 is not advertised (39626228240). claude-sonnet-5.5 was rejected as
+# unsupported (39627165184). grok-4.7 at api.x.ai never started. See DESIGN.md.
 engine:
   id: pi
-  model: copilot/claude-sonnet-5.5
+  model: copilot/gpt-5.3-codex
 
 # Only the listed model may be called, so the agent cannot switch provider.
 # The rates size the per-run and daily credit caps (13-52 credits on the dry run).
 models:
-  allowed: ["copilot/claude-sonnet-5.5"]
+  allowed: ["copilot/gpt-5.3-codex"]
   default-ai-credits-pricing:
     input: 2    # USD per 1M input tokens, rate used to size run limits (<200k prompt)
     output: 6   # USD per 1M output tokens

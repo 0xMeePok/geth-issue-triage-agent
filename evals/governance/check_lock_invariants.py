@@ -53,7 +53,7 @@ check("kill switch re-checked before writes", "triage-agent:halt" in job("safe_o
 check("threat detection blocks on failure", 'GH_AW_DETECTION_CONTINUE_ON_ERROR: "false"' in SRC)
 check("deterministic output scan runs in detection", "scan_output.py" in job("detection"))
 check("maintainer-authored issues skipped", '"MEMBER","COLLABORATOR"' in SRC)
-check("model allowlist enforced at the proxy", re.search(r'"allowedModels":\["copilot/claude-sonnet-5.5"\]', SRC) is not None)
+check("model allowlist enforced at the proxy", re.search(r'"allowedModels":\["copilot/gpt-5\.3-codex"\]', SRC) is not None)
 check("model priced, so AI-credit budgets apply", re.search(r'"defaultAiCreditsPricing":\{"input":2,"output":6\}', SRC) is not None)
 check("stop-after deadline compiled", re.search(r'GH_AW_STOP_TIME: "\d{4}-\d\d-\d\d', SRC) is not None)
 check("agent step timeout is 10 minutes", re.search(r"timeout-minutes: 10\b", agent) is not None)
