@@ -41,6 +41,14 @@ engine:
     OPENAI_BASE_URL: https://api.x.ai/v1
     OPENAI_API_KEY: ${{ secrets.GROK_API_KEY }}
 
+# The AWF proxy refuses models it cannot price (seen live: "unknown_model_ai_credits"), and
+# only lets the listed model through, so the agent cannot switch to another model.
+models:
+  allowed: ["grok-4.7"]
+  default-ai-credits-pricing:
+    input: 2    # USD per 1M input tokens, xAI list price for grok-4.7 (<200k prompt)
+    output: 6   # USD per 1M output tokens
+
 skills:
   - .claude/skills/geth-issue-triage
 
@@ -147,7 +155,10 @@ safe-outputs:
           path: scanner
     post-steps:
       - name: Deterministic output scan (labels, template-only comments, links, mentions, credentials)
-        run: python3 scanner/.claude/skills/geth-issue-triage/scripts/scan_output.py /tmp/gh-aw/threat-detection/agent_output.json
+        run: >-
+          python3 scanner/.claude/skills/geth-issue-triage/scripts/scan_output.py
+          /tmp/gh-aw/threat-detection/agent_output.json
+          --verdict /tmp/gh-aw/threat-detection/detection_result.json
     max-ai-credits: 30
   messages:
     footer: >-

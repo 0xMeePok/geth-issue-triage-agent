@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Deterministic threat detection for the agent's proposed safe outputs.
 
-    python3 scan_output.py /tmp/gh-aw/threat-detection/agent_output.json
+    python3 scan_output.py /tmp/gh-aw/threat-detection/agent_output.json \
+        [--verdict /tmp/gh-aw/threat-detection/detection_result.json]
 
 Runs in the workflow's threat-detection job, after the agent finishes and before anything
 is written. A non-zero exit fails detection, and the safe_outputs job is then skipped. It
@@ -14,7 +15,10 @@ rejects:
   * links outside the allowlisted domains, @mentions, and anything that looks like a
     credential (GitHub, xAI, OpenAI, AWS or private-key patterns)
 This replaces gh-aw's AI detector, which for the Pi engine needs a Copilot credential the
-sandbox does not have. The workflow's safe-outputs limits still apply independently.
+sandbox does not have. With --verdict it also writes the verdict file gh-aw's "Conclude
+threat detection" step requires ({"prompt_injection", "secret_leak", "malicious_patch",
+"reasons"}); without that file detection fails closed even when the output is clean.
+The workflow's safe-outputs limits still apply independently.
 """
 import json
 import os
@@ -75,10 +79,20 @@ def scan(items):
 
 
 def main():
-    data = json.load(open(sys.argv[1]))
+    args = sys.argv[1:]
+    verdict = None
+    if "--verdict" in args:
+        k = args.index("--verdict")
+        verdict = args[k + 1]
+        del args[k:k + 2]
+    data = json.load(open(args[0]))
     items = data.get("items", data) if isinstance(data, dict) else data
     problems = scan(items)
     print(json.dumps({"items": [i.get("type") for i in items], "problems": problems}, indent=1))
+    if verdict:
+        leak = [p for p in problems if "credential" in p]
+        json.dump({"prompt_injection": len(problems) > len(leak), "secret_leak": bool(leak),
+                   "malicious_patch": False, "reasons": problems}, open(verdict, "w"))
     if problems:
         print("THREAT DETECTED: " + "; ".join(problems), file=sys.stderr)
         sys.exit(1)

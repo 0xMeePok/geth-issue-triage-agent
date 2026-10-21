@@ -194,6 +194,13 @@ class ScanOutput(Base):
         self.assertTrue(any("mention" in p for p in problems))
         self.assertTrue(any("credential" in p for p in problems))
 
+    def test_verdict_file(self):
+        out = os.path.join(self.tmp, "verdict.json")
+        run("scan_output.py", self.write("a.json", {"items": [{"type": "noop", "message": "No action: rule 9"}]}), "--verdict", out)
+        self.assertEqual(json.load(open(out)), {"prompt_injection": False, "secret_leak": False, "malicious_patch": False, "reasons": []})
+        run("scan_output.py", self.write("b.json", {"items": [{"type": "noop", "message": "GITHUB_TOKEN=ghs_abcdefghijklmnopqrstuv"}]}), "--verdict", out)
+        self.assertTrue(json.load(open(out))["secret_leak"])
+
     def test_labels_and_types(self):
         self.assertEqual(self.scan([{"type": "add_labels", "labels": ["triage-agent:halt"]}])[0], 1)
         self.assertEqual(self.scan([{"type": "close_issue"}])[0], 1)
