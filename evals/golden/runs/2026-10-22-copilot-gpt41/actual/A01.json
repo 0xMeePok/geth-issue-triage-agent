@@ -1,0 +1,43 @@
+{
+ "ref": "A01",
+ "issue": 40001,
+ "run_id": "dryrun-A01",
+ "run_url": "transcripts/A01.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "status:triage"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report! A maintainer will need a bit more information to look into this. Please edit the issue to add:\n\n- **Geth version**: the full output of `geth version`\n- **Steps to reproduce**: the exact commands, flags or RPC calls you ran\n- **Expected vs actual behaviour**: what you expected to happen and what happened instead\n"
+ ],
+ "comment_kinds": [
+  "need-info"
+ ],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "status:triage"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! A maintainer will need a bit more information to look into this. Please edit the issue to add:\n\n- **Geth version**: the full output of `geth version`\n- **Steps to reproduce**: the exact commands, flags or RPC calls you ran\n- **Expected vs actual behaviour**: what you expected to happen and what happened instead\n"
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 71749,
+  "output_tokens": 581
+ },
+ "started": "2026-10-22T05:06:04+00:00",
+ "seconds": 165.3
+}

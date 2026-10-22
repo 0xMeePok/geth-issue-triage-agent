@@ -1,0 +1,1 @@
+{"tool": "noop", "arguments": {"message": "No action: rule 8 applies. The issue is an actionable bug report without a type label. Only the 'type:bug' label is added, and no comment is required by the procedure."}, "accepted": true, "result": "No-op recorded"}

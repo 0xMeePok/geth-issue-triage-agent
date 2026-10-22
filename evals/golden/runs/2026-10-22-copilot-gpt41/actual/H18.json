@@ -1,0 +1,31 @@
+{
+ "ref": "H18",
+ "issue": 35911,
+ "run_id": "dryrun-H18",
+ "run_url": "transcripts/H18.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 8 applies. The issue is an actionable bug report without a type label. Only the 'type:bug' label is added, and no comment is required by the procedure."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 51580,
+  "output_tokens": 327
+ },
+ "started": "2026-10-22T04:16:23+00:00",
+ "seconds": 73.9
+}

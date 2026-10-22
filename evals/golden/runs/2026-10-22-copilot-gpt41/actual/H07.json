@@ -1,0 +1,45 @@
+{
+ "ref": "H07",
+ "issue": 35808,
+ "run_id": "dryrun-H07",
+ "run_url": "transcripts/H07.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:security-report",
+  "type:bug"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report. If this describes a security vulnerability, please do not add exploit details here: go-ethereum handles vulnerabilities privately through the Ethereum Foundation bug bounty at https://bounty.ethereum.org (or bounty@ethereum.org), as described in `SECURITY.md`. A maintainer has been flagged to review this issue."
+ ],
+ "comment_kinds": [
+  "security"
+ ],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:security-report",
+    "type:bug"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report. If this describes a security vulnerability, please do not add exploit details here: go-ethereum handles vulnerabilities privately through the Ethereum Foundation bug bounty at https://bounty.ethereum.org (or bounty@ethereum.org), as described in `SECURITY.md`. A maintainer has been flagged to review this issue."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 56741,
+  "output_tokens": 546
+ },
+ "started": "2026-10-22T04:06:46+00:00",
+ "seconds": 139.6
+}

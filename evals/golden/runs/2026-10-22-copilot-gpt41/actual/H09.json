@@ -1,0 +1,31 @@
+{
+ "ref": "H09",
+ "issue": 35703,
+ "run_id": "dryrun-H09",
+ "run_url": "transcripts/H09.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9 (issue is actionable and already has the correct type label, nothing to add or comment)."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 54637,
+  "output_tokens": 347
+ },
+ "started": "2026-10-22T03:26:43+00:00",
+ "seconds": 88.6
+}

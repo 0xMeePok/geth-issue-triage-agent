@@ -1,0 +1,15 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "type:bug",
+    "need more information"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! A maintainer will need a bit more information to look into this. Please edit the issue to add:\n\n- **Geth version**: the full output of `geth version`\n"
+  }
+ ]
+}

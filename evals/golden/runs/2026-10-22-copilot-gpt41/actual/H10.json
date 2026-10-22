@@ -1,0 +1,39 @@
+{
+ "ref": "H10",
+ "issue": 35162,
+ "run_id": "dryrun-H10",
+ "run_url": "transcripts/H10.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:possible-spam"
+ ],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-spam"
+   ]
+  },
+  {
+   "type": "noop",
+   "message": "No action: Rule 1 applies. The issue is classified as possible spam or unsolicited promotion, so only the triage:possible-spam label is added and no comment is posted."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 55711,
+  "output_tokens": 404
+ },
+ "started": "2026-10-22T03:22:16+00:00",
+ "seconds": 57.5
+}

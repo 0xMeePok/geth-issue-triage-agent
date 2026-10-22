@@ -1,0 +1,8 @@
+{
+ "items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9 (issue is actionable and already has the correct type label, nothing to add or comment)."
+  }
+ ]
+}

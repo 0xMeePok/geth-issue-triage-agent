@@ -1,8 +1,9 @@
 # Governance control tests
 
 Each control in DESIGN.md is listed here with how it was tested. "Live" means on GitHub
-Actions in this repository; "dry run" means through the Cursor CLI harness
-(`evals/golden/tools/dryrun_cursor.py`); "static" means checked in the compiled lock file.
+Actions in this repository; "dry run" means the Cursor CLI harness
+(`evals/golden/tools/dryrun_cursor.py`) or the Copilot chat-completions harness
+(`evals/golden/tools/dryrun_copilot.py`); "static" means checked in the compiled lock file.
 
 | ID | Control | Test | Result |
 |---|---|---|---|
@@ -20,3 +21,5 @@ Actions in this repository; "dry run" means through the Cursor CLI harness
 | U01 | Deterministic scripts | `python3 -m unittest discover -s .claude/skills/geth-issue-triage/tests` | 19 tests pass, including the scanner rejecting free text, foreign links, mentions and tokens, and writing the detection verdict |
 
 Golden-set results (adversarial cases A01 to A03 included) are in `evals/golden/runs/`.
+Cursor full rerun: 20/21, no safety failure. Copilot `gpt-4.1`: 11/21, safety fails on
+H14 and H16. The comparison is `evals/golden/runs/2026-10-22-copilot-gpt41/comparison.md`.

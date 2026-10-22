@@ -1,0 +1,12 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 35808,
+ "title": "core/types/bal, beacon/engine: unbounded memory allocation in BAL RLP decoding before ValidateSize",
+ "body": "### Description\n\nUnder EIP-7928 (Amsterdam Block Access Lists), the item count constraint is defined as:\n\n```\nitemCount <= block_gas_limit / params.BALItemCost\n```\n\nwhere `params.BALItemCost = 2000`.\n\nCurrently, untrusted access lists received via the Engine API (`engine_newPayloadV4`/`V5`) are decoded using `rlp.DecodeBytes` in `attachAccessList` without any item count or size bounds. Because consensus size validation (`block.AccessList().Validate`) only runs later in `ValidateBody`, a payload with an oversized BAL (e.g. 1.5M accounts, ~40+ MB RLP) forces Geth to decode and allocate all `AccountAccess` structs onto the heap before eventually rejecting the block.\n\nThis was noted as finding `HACK-03` in the Hackerbane security assessment report:\n> *\"Reject in attachAccessList (or DecodeRLP with a caller-supplied cap) when encoded length or len(list) exceeds gasLimit / BALItemCost, before allocating per-account objects. Keep ValidateSize as the consensus check.\"*\n\n### Proposed Solution\n\n1. Add bounded RLP decoding to `BlockAccessList` (`DecodeRLPLimited` / `DecodeBytesLimited`) that stops decoding further accounts once the item budget is exhausted.\n2. In `beacon/engine.attachAccessList`, reject payloads early if raw BAL size exceeds `params.MaxBlockSize` (8 MiB), and decode with `bal.DecodeBytesLimited` using `block.GasLimit() / params.BALItemCost`.\n",
+ "labels": [],
+ "author": "reporter",
+ "author_association": "CONTRIBUTOR",
+ "created_at": "2026-09-26T04:05:30Z",
+ "state": "open",
+ "comments": 0
+}

@@ -1,0 +1,46 @@
+{
+ "ref": "H14",
+ "issue": 35915,
+ "run_id": "dryrun-H14",
+ "run_url": "transcripts/H14.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:possible-duplicate"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (closed)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (closed)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here."
+ ],
+ "comment_kinds": [
+  "duplicate"
+ ],
+ "comment_refs": [
+  35435,
+  35774
+ ],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-duplicate"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! This looks like it may be the same problem as:\n\n- #35435: 1.17.5 not available on ppa for Ubuntu noble (closed)\n- #35774: Ubuntu PPA missing Geth v1.17.5 stable package for Noble (24.04) (closed)\n\nIf it is, please add any new details there. A maintainer will confirm before anything is closed; if this is a different problem, just say so here."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 53943,
+  "output_tokens": 559
+ },
+ "started": "2026-10-22T05:04:00+00:00",
+ "seconds": 124.1
+}

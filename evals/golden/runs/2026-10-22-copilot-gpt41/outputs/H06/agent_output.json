@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "type:docs"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for the report! A maintainer will need a bit more information to look into this. Please edit the issue to add:\n\n- **Geth version**: the full output of `geth version`\n- **Steps to reproduce**: the exact commands, flags or RPC calls you ran\n- **Expected vs actual behaviour**: what you expected to happen and what happened instead\n"
+  }
+ ]
+}

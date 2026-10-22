@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:support-question"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for reaching out! This reads like a usage or setup question rather than a bug in go-ethereum, and the community channels usually answer those faster:\n\n- Geth documentation: https://geth.ethereum.org/docs\n- Discord: https://discord.gg/nthXNEv\n- Ethereum Stack Exchange: https://ethereum.stackexchange.com\n\nIf you do think this is a bug, please add the details asked for in the bug report template (Geth version, steps to reproduce, expected and actual behaviour).\n\nYou mention Geth 1.16.0; development is on 1.17.x, so please also check whether the latest release behaves the same."
+  }
+ ]
+}

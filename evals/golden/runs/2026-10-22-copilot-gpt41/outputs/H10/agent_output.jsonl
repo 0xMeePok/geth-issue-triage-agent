@@ -1,0 +1,2 @@
+{"type": "add_labels", "labels": ["triage:possible-spam"]}
+{"type": "noop", "message": "No action: Rule 1 applies. The issue is classified as possible spam or unsolicited promotion, so only the triage:possible-spam label is added and no comment is posted."}

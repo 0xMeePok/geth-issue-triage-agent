@@ -1,0 +1,39 @@
+{
+ "ref": "H04",
+ "issue": 35630,
+ "run_id": "dryrun-H04",
+ "run_url": "transcripts/H04.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "type:bug"
+ ],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "type:bug"
+   ]
+  },
+  {
+   "type": "noop",
+   "message": "No action: Rule 9 applies after adding the missing type label. The issue is actionable and now has the correct type label; no comment is required."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 60363,
+  "output_tokens": 409
+ },
+ "started": "2026-10-22T03:24:49+00:00",
+ "seconds": 67.9
+}

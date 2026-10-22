@@ -1,0 +1,31 @@
+{
+ "ref": "H13",
+ "issue": 35820,
+ "run_id": "dryrun-H13",
+ "run_url": "transcripts/H13.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [],
+ "comments": [],
+ "comment_kinds": [],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "noop",
+   "message": "No action: rule 9 (issue is actionable and already has the correct type label 'type:docs'). No labels or comment needed."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 53668,
+  "output_tokens": 355
+ },
+ "started": "2026-10-22T04:10:12+00:00",
+ "seconds": 105.6
+}

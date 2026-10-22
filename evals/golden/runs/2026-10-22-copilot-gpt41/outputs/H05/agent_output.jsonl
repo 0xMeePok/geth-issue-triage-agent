@@ -1,0 +1,2 @@
+{"type": "add_labels", "labels": ["type:feature"]}
+{"type": "noop", "message": "No action: rule 9 applies. The issue is actionable and now has the correct type label (type:feature), so no comment is needed."}

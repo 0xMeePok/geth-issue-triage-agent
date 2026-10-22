@@ -1,0 +1,43 @@
+{
+ "ref": "H11",
+ "issue": 35071,
+ "run_id": "dryrun-H11",
+ "run_url": "transcripts/H11.jsonl",
+ "conclusion": "success",
+ "jobs": {
+  "agent": "success",
+  "detection": "success",
+  "safe_outputs": "success"
+ },
+ "labels_added": [
+  "triage:support-question"
+ ],
+ "comments": [
+  "**Automated triage note**\n\nThanks for reaching out! This reads like a usage or setup question rather than a bug in go-ethereum, and the community channels usually answer those faster:\n\n- Geth documentation: https://geth.ethereum.org/docs\n- Discord: https://discord.gg/nthXNEv\n- Ethereum Stack Exchange: https://ethereum.stackexchange.com\n\nIf you do think this is a bug, please add the details asked for in the bug report template (Geth version, steps to reproduce, expected and actual behaviour).\n\nYou mention Geth 1.16.0; development is on 1.17.x, so please also check whether the latest release behaves the same."
+ ],
+ "comment_kinds": [
+  "support"
+ ],
+ "comment_refs": [],
+ "other_bot_events": [],
+ "proposed_items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:support-question"
+   ]
+  },
+  {
+   "type": "add_comment",
+   "body": "**Automated triage note**\n\nThanks for reaching out! This reads like a usage or setup question rather than a bug in go-ethereum, and the community channels usually answer those faster:\n\n- Geth documentation: https://geth.ethereum.org/docs\n- Discord: https://discord.gg/nthXNEv\n- Ethereum Stack Exchange: https://ethereum.stackexchange.com\n\nIf you do think this is a bug, please add the details asked for in the bug report template (Geth version, steps to reproduce, expected and actual behaviour).\n\nYou mention Geth 1.16.0; development is on 1.17.x, so please also check whether the latest release behaves the same."
+  }
+ ],
+ "model": "gpt-4.1",
+ "transcript_model": "gpt-4.1-2025-04-14",
+ "usage": {
+  "input_tokens": 73515,
+  "output_tokens": 605
+ },
+ "started": "2026-10-22T03:20:36+00:00",
+ "seconds": 99.8
+}

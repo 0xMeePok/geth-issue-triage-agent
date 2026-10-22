@@ -166,6 +166,8 @@ def main():
     ap.add_argument("--only", default="")
     ap.add_argument("--timeout", type=int, default=600, help="seconds; the workflow uses 10 minutes")
     ap.add_argument("--probe", action="store_true", help="only test the permission sandbox")
+    ap.add_argument("--resume", action="store_true",
+                    help="skip cases that already have actual/<id>.json and replay their labels")
     ap.add_argument("--ws-root", required=True, help="scratch directory for the agent workspace (outside the repo)")
     a = ap.parse_args()
     run_dir = os.path.abspath(a.run_dir)
@@ -214,6 +216,24 @@ def main():
             n = c.get("upstream_number") or ADV_NUMBERS[ref]
             st.add(n, c["title"], c["body"], c["labels_at_creation"], c.get("original_created_at", ev["at"]))
             refmap[ref] = n
+            if a.resume:
+                prior_path = os.path.join(run_dir, "actual", f"{ref}.json")
+                if os.path.exists(prior_path):
+                    try:
+                        prior = json.load(open(prior_path))
+                    except ValueError:
+                        prior = None
+                    if prior is not None:
+                        if prior.get("conclusion") == "success":
+                            have = {l["name"] for l in st.issues[n]["labels"]}
+                            for l in prior.get("labels_added") or []:
+                                if l not in have:
+                                    st.issues[n]["labels"].append({"name": l})
+                        runs[ref] = {"issue": n, "run_id": prior.get("run_id"), "status": "completed",
+                                     "conclusion": prior.get("conclusion")}
+                        print(f"{ref} #{n}: resumed {prior.get('conclusion')} labels={prior.get('labels_added')}",
+                              flush=True)
+                        continue
             if only and ref not in only:
                 continue
             issue = {"repo": REPO, "number": n, "title": c["title"], "body": c["body"],

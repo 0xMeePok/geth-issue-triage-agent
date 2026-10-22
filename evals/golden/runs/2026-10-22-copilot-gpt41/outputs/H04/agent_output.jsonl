@@ -1,0 +1,2 @@
+{"type": "add_labels", "labels": ["type:bug"]}
+{"type": "noop", "message": "No action: Rule 9 applies after adding the missing type label. The issue is actionable and now has the correct type label; no comment is required."}

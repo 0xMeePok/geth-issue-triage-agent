@@ -1,0 +1,2 @@
+{"tool": "add_labels", "arguments": {"item_number": 35716, "labels": [{"name": "triage:possible-spam", "rationale": "The issue is a phishing attempt with fake security alert and unrelated to go-ethereum. Rule 1 applies.", "confidence": "HIGH"}]}, "accepted": true, "result": "Labels will be added to #35716: triage:possible-spam"}
+{"tool": "noop", "arguments": {"message": "No action: rule 1 applies (phishing/fake security alert, not a technical report). Only the triage:possible-spam label is added; no comment is posted."}, "accepted": true, "result": "No-op recorded"}

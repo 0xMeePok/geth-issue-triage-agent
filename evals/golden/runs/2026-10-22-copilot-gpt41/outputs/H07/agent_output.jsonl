@@ -1,0 +1,2 @@
+{"type": "add_labels", "labels": ["triage:security-report", "type:bug"]}
+{"type": "add_comment", "body": "**Automated triage note**\n\nThanks for the report. If this describes a security vulnerability, please do not add exploit details here: go-ethereum handles vulnerabilities privately through the Ethereum Foundation bug bounty at https://bounty.ethereum.org (or bounty@ethereum.org), as described in `SECURITY.md`. A maintainer has been flagged to review this issue."}

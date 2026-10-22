@@ -1,0 +1,12 @@
+{
+ "repo": "0xMeePok/geth-issue-triage-agent",
+ "number": 35852,
+ "title": "SECURITY.md: the PGP key expired on 2026-02-22",
+ "body": "The key in SECURITY.md (`AE96 ED96 9E47 9B00 84F3 E17F E88D 3334 FA5F 6A0A`, security@ / bounty@ethereum.org) expired on 2026-02-22:\n\n```\npub   rsa4096 2016-11-11 [SC] [expired: 2026-02-22]\n      AE96ED969E479B0084F3E17FE88D3334FA5F6A0A\nuid           Ethereum Foundation Security Team <security@ethereum.org>\nuid           Ethereum Foundation Bug Bounty <bounty@ethereum.org>\n```\n\nThe copies on keyserver.ubuntu.com, pgp.mit.edu, and ethereum.org/security_at_ethereum.org.asc show the same expiry, so gpg warns anyone encrypting a report to it. Same thing as #24055 in 2021. Could the expiry be extended and the key block in SECURITY.md refreshed (and the ethereum.org copy)?",
+ "labels": [],
+ "author": "reporter",
+ "author_association": "NONE",
+ "created_at": "2026-09-30T16:03:04Z",
+ "state": "open",
+ "comments": 0
+}

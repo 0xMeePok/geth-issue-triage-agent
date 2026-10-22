@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "type": "add_labels",
+   "labels": [
+    "triage:possible-spam"
+   ]
+  },
+  {
+   "type": "noop",
+   "message": "No action: rule 1 applies (phishing/fake security alert, not a technical report). Only the triage:possible-spam label is added; no comment is posted."
+  }
+ ]
+}
