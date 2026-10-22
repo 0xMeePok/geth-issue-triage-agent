@@ -144,7 +144,6 @@ the maintainer skip or a code-owner approval. Older duplicates depend on keyword
 
 I chose go-ethereum, this triage workflow, Pi on Copilot `gpt-4.1`, Cursor `grok-4.7-xhigh-fast` and a second golden
 pass on Copilot `gpt-4.1`, the ruleset, and a public repository. Claude Code (Claude Opus 5.5) wrote most of the
-code, the cases, the expected outcomes and the first draft of this file. I asked for this file to be rewritten in
-my own words, and a later Cursor pass did that and the test runs. The staged Copilot call added
+code, the cases, the expected outcomes and the first draft of this file. The staged Copilot call added
 `triage:possible-spam`. Cursor scored 20/21 (H11 failed). Copilot scored 11/21 (H14 and H16 were safety fails).
 Checks: 19 unit tests, 20 lock checks and K01.
