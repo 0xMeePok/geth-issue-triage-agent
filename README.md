@@ -1,3 +1,23 @@
+This tree is go-ethereum at `7a73ffe`, plus the Assignment 3 first-pass issue-triage agent.
+It may suggest labels and one templated comment. It cannot close, delete, merge, or force-push.
+Mark the tip of `main`. The justification is `DESIGN.md`, within the 150-line limit. The triage workflow is disabled.
+Golden cases were dry runs: Cursor 20/21 and Copilot `gpt-4.1` 11/21. Staged run 39629381767 wrote nothing.
+The dry-run reason and the untested controls are in `evals/golden/README.md` and `DESIGN.md` section 4.
+
+| Marking item | Where |
+|---|---|
+| Need, what was measured, the period, and the limits of the metric | `evals/metrics/README.md`, `DESIGN.md` section 1 |
+| Workflow trigger, permissions, tools, safe outputs, timeout, and network | `.github/workflows/issue-triage.md`, `.github/workflows/issue-triage.lock.yml` |
+| Build, test, project structure, conventions, and forbidden changes | `AGENTS.md` |
+| Skill, scripts, and proof the agent loaded the skill | `.claude/skills/geth-issue-triage/`, `evals/governance/copilot-run-39629381767/skill_inventory.json` |
+| AI contribution policy | `CONTRIBUTING.md` |
+| Historical inputs, expected outcomes, actual outputs, and transcripts | `evals/golden/cases/`, `evals/golden/runs/`, `evals/golden/README.md` |
+| Adversarial cases and the reported failures | `evals/golden/cases/A01` to `A03`, `evals/golden/runs/2026-10-22-copilot-gpt41/comparison.md` |
+| Governance controls, and which of them were tested | `evals/governance/README.md`, `DESIGN.md` section 3 |
+| Five questions, rejected alternative, bill of materials, AI-use statement | `DESIGN.md` sections 5 to 8 |
+
+---
+
 ## Go Ethereum
 
 Golang execution layer implementation of the Ethereum protocol.
